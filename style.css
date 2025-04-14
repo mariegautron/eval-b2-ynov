@@ -1,13 +1,14 @@
 :root {
   --color-bg: #0e0e0e;
-  --color-text: #bcbcbc;
-  --color-secondary-text: #8a8a8a;
-  --color-accent: #c17dff;
-  --color-accent-light: #d6a3ff;
+  --color-text: #ffffff; /* brighter color */
+  --color-secondary-text: #ffffff; /* brighter color */
+  --color-accent: #68448a; /* darker */
+  --color-accent-text: #b375ee; /* darker */
+  --color-accent-light: #290c41; /* Change hover color(darker)*/
   --color-card-bg: #1a1a1a;
   --color-hover-bg: #292929;
   --color-focus-outline: #c17dff;
-  --color-bandeau-bg: #c17dff;
+  --color-bandeau-bg: #49325f; /* darker */
   --color-bandeau-text: #fff;
   --color-footer-bg: #1a1a1a;
   --color-svg: #c17dff;
@@ -72,6 +73,29 @@ a:focus-visible {
   background-color: var(--color-focus-bg);
 }
 
+a.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+a.skip-link:focus {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: auto;
+  height: auto;
+  padding: 1rem;
+  background-color: var(--color-accent);
+  color: #fff;
+  z-index: 10000;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 0.5rem;
+}
 img {
   max-width: 100%;
   height: auto;
@@ -126,7 +150,7 @@ img {
 }
 
 .navbar a.active {
-  color: var(--color-accent);
+  color: var(--color-accent-text);
 }
 
 /* HERO */
@@ -171,22 +195,27 @@ img {
 
 .hero-text p {
   font-size: 1.25rem;
-  color: var(--color-accent);
+  color: var(--color-accent-text);
 }
 
 /* BOUTONS */
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.75rem;
   background-color: var(--color-accent);
   color: var(--color-bandeau-text);
   padding: 0.75rem 1.5rem;
   border-radius: 50px;
   font-weight: bold;
-  transition: background 0.3s ease;
   font-family: "Inter", sans-serif;
+  transition: background 0.3s ease;
   margin: 20px;
+  border: none;
+  white-space: nowrap;
+  width: auto;
+  flex: 0 0 auto;
 }
 
 .btn:hover,
@@ -399,12 +428,25 @@ fieldset.form-group {
   gap: 0.5rem;
 }
 
+
 .form-group label,
 fieldset.form-group legend {
   font-weight: 600;
   font-family: "Inter", sans-serif;
   margin-bottom: 0.25rem;
 }
+
+input:focus {
+  outline: 2px solid crimson !important; /* add focus */
+}
+select:focus {
+  outline: 2px solid crimson !important; /* add focus */
+}
+
+textarea:focus{
+  outline: 2px solid crimson !important; /* add focus */
+}
+
 
 input[type="text"],
 input[type="email"],
@@ -452,21 +494,6 @@ textarea {
 .section-intro textarea:focus {
   outline: none;
   background-color: var(--color-card-bg);
-}
-
-.section-intro .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-accent);
-  color: var(--color-bandeau-text);
-  padding: 0.75rem;
-  border-radius: 50%;
-  width: 3rem;
-  height: 3rem;
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s ease;
 }
 
 .section-intro .btn:hover,

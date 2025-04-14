@@ -50,14 +50,14 @@ Ce projet est hébergé ici :
 
 ### ✅ À FAIRE :
 
-- ✅ Utiliser les bonnes pratiques HTML sémantique
-- ✅ **Ajouter un lien d'évitement**
-- ✅ Vérifier la hiérarchie des titres
-- ✅ Contrôler la navigation clavier
-- ✅ Vérifier les contrastes de couleurs
-- ✅ Vérifier les textes de remplacement (alt) sur toutes les images et icônes
-- ✅ Corriger le focus visible pour tous les éléments interactifs
-- ✅ Corriger le formulaire
+- ✅ Utiliser les bonnes pratiques HTML sémantique // pas sur
+- ✅ **Ajouter un lien d'évitement** //Done
+- ✅ Vérifier la hiérarchie des titres // Done
+- ✅ Contrôler la navigation clavier  // Dones
+- ✅ Vérifier les contrastes de couleurs // Done
+- ✅ Vérifier les textes de remplacement (alt) sur toutes les images et icônes // Done
+- ✅ Corriger le focus visible pour tous les éléments interactifs // Done
+- ✅ Corriger le formulaire // Done
 - ✅ Faire des commits clairs et précis
 - ✅ Documenter dans la merge request vos choix et corrections
 
