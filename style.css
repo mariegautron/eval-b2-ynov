@@ -366,6 +366,7 @@ img {
   border-radius: 50px;
   font-weight: bold;
   transition: background 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
 }
 
 .reseaux-links a i {
@@ -378,6 +379,7 @@ img {
   transform: translateY(-2px);
   outline: 3px solid var(--color-focus-outline);
   outline-offset: 4px;
+  text-decoration: underline;
 }
 
 /* FOOTER */
@@ -542,6 +544,28 @@ textarea:focus {
     outline-offset: 3px;
 }
 
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+[tabindex]:focus {
+    outline: 3px solid var(--color-text);
+    outline-offset: 3px;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
+    text-decoration: underline;
+}
+
+/* Style pour les éléments textuels  */
+p[tabindex="0"]:focus,
+li[tabindex="0"]:focus,
+div[tabindex="0"]:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+}
+
 /* Focus spécifique pour le skip link */
 .evitement:focus {
     outline: 3px solid var(--color-text);
@@ -553,4 +577,53 @@ textarea:focus {
     top: 0.5rem;
     left: 0.5rem;
     z-index: 9999;
+    opacity: 1;
+    transform: translateY(0);
+    text-decoration: underline;
+}
+
+.evitement {
+    position: absolute;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.reseaux-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--color-card-bg);
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.reseaux-links a:hover,
+.reseaux-links a:focus {
+  background-color: var(--color-hover-bg);
+  transform: translateY(-2px);
+  outline: 3px solid var(--color-focus-outline);
+  outline-offset: 4px;
+  text-decoration: underline;
+}
+
+a[role="button"] {
+  cursor: pointer;
+  user-select: none;
+}
+
+a[role="button"]:focus {
+  outline: 3px solid var(--color-text);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.1);
+  text-decoration: underline;
+}
+
+a[role="button"]:active {
+  transform: translateY(1px);
+  opacity: 0.9;
 }
