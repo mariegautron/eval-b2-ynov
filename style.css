@@ -1,16 +1,16 @@
 :root {
-  --color-bg: #0e0e0e;
-  --color-text: #bcbcbc;
-  --color-secondary-text: #8a8a8a;
-  --color-accent: #c17dff;
-  --color-accent-light: #d6a3ff;
-  --color-card-bg: #1a1a1a;
-  --color-hover-bg: #292929;
-  --color-focus-outline: #c17dff;
-  --color-bandeau-bg: #c17dff;
-  --color-bandeau-text: #fff;
-  --color-footer-bg: #1a1a1a;
-  --color-svg: #c17dff;
+  --color-bg: #0e0e0e; /* Fond sombre */
+  --color-text: #e0e0e0; /* Texte plus clair pour améliorer le contraste */
+  --color-secondary-text: #a0a0a0; /* Texte secondaire plus visible */
+  --color-accent: #c17dff; /* Couleur d'accent violet */
+  --color-accent-light: #d6a3ff; /* Accent clair */
+  --color-card-bg: #2a2a2a; /* Fond des cartes plus clair */
+  --color-hover-bg: #292929; /* Fond sombre au survol */
+  --color-focus-outline: #c17dff; /* Couleur du contour au focus */
+  --color-bandeau-bg: #9b4dff; /* Bandeau d'appel à l'action avec un accent plus vif */
+  --color-bandeau-text: #fff; /* Texte blanc dans le bandeau */
+  --color-footer-bg: #2a2a2a; /* Fond du footer */
+  --color-svg: #c17dff; /* SVG couleur violet */
   --color-focus-bg: transparent;
 }
 
@@ -55,6 +55,46 @@ h3 {
   font-size: 1.75rem;
 }
 
+/* Liens d'évitement */
+.skip-links {
+  position: absolute;
+  top: -999px; /* Masquer les liens initialement */
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.skip-link {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-accent);
+  color: var(--color-bandeau-text);
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.skip-link:focus,
+.skip-link:hover {
+  background-color: var(--color-accent-light);
+  color: var(--color-bandeau-text);
+  outline: none;
+  transform: translateY(-2px);
+}
+
+.skip-links:focus-within {
+  top: 0; /* Afficher les liens d'évitement au focus */
+}
+
+.skip-link:focus-visible {
+  outline: 3px solid var(--color-focus-outline);
+  outline-offset: 4px;
+  background-color: var(--color-focus-bg);
+}
+
+/* Liens */
 a {
   color: var(--color-text);
   text-decoration: none;
@@ -63,6 +103,7 @@ a {
 
 a:focus,
 a:hover {
+  color: var(--color-accent);
   background-color: var(--color-focus-bg);
 }
 
@@ -72,19 +113,13 @@ a:focus-visible {
   background-color: var(--color-focus-bg);
 }
 
+/* Images */
 img {
   max-width: 100%;
   height: auto;
   display: block;
   border-radius: 0.5rem;
   object-fit: cover;
-}
-
-/* CONTAINER */
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 /* NAVBAR */
@@ -180,7 +215,7 @@ img {
   align-items: center;
   gap: 0.75rem;
   background-color: var(--color-accent);
-  color: var(--color-bandeau-text);
+  color: #000;
   padding: 0.75rem 1.5rem;
   border-radius: 50px;
   font-weight: bold;
@@ -371,135 +406,22 @@ img {
   outline-offset: 4px;
 }
 
+.reseaux-links a:hover i {
+  color: var(--color-accent-light);
+}
+
 /* FOOTER */
-.footer {
+footer {
   background-color: var(--color-footer-bg);
-  padding: 2rem 0;
+  padding: 2.5rem;
   text-align: center;
-  color: var(--color-text);
 }
 
-.footer p {
-  margin-bottom: 0.5rem;
+footer a {
+  color: var(--color-accent);
 }
 
-/* FORMULAIRE */
-
-.form-reservation {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.form-group,
-fieldset.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.form-group label,
-fieldset.form-group legend {
-  font-weight: 600;
-  font-family: "Inter", sans-serif;
-  margin-bottom: 0.25rem;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="number"],
-select,
-textarea {
-  width: 100%;
-  padding: 0.75rem;
-  border-radius: 0.5rem;
-  border: 1px solid #444;
-  background-color: var(--color-card-bg);
-  color: var(--color-text);
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
-}
-
-fieldset.form-group {
-  border: none;
-  padding: 0;
-  margin: 0;
-}
-
-fieldset.form-group div {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-fieldset.form-group input[type="checkbox"] {
-  width: auto;
-  height: auto;
-}
-
-textarea {
-  resize: vertical;
-}
-
-.section-intro input::placeholder,
-.section-intro textarea::placeholder {
+footer p {
   color: var(--color-secondary-text);
-}
-
-.section-intro input:focus,
-.section-intro select:focus,
-.section-intro textarea:focus {
-  outline: none;
-  background-color: var(--color-card-bg);
-}
-
-.section-intro .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-accent);
-  color: var(--color-bandeau-text);
-  padding: 0.75rem;
-  border-radius: 50%;
-  width: 3rem;
-  height: 3rem;
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.section-intro .btn:hover,
-.section-intro .btn:focus {
-  background-color: var(--color-accent);
-  outline: none;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  h2 {
-    font-size: 2rem;
-  }
-
-  .hero-text h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero-image {
-    max-width: 90%;
-  }
-
-  .navbar ul {
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .form-reservation {
-    gap: 1rem;
-  }
-
-  button[type="submit"] {
-    width: 100%;
-    justify-content: center;
-  }
+  margin-top: 1rem;
 }
