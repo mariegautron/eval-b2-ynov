@@ -17,244 +17,274 @@
     />
   </head>
 
-  <body>
-    <div class="navbar">
-      <div class="nav-container">
-        <div>
-          <a href="index.html" class="active" aria-current="page">Accueil</a>
-        </div>
-        <div>
-          <a href="infos.html">Infos & Réservation</a>
-        </div>
-      </div>
-    </div>
+<!-- Modifications sur l'ensemble de la page : Amélioration et mise en place de la hiérarchisation -->
 
-    <main id="contenu">
-      <!-- Section Héros -->
-      <div class="hero" role="banner">
-        <div class="svg-decoration">
-          <svg viewBox="0 0 1440 320" focusable="false">
+  <body>
+    <!-- Création des liens d'évitement vers les éléments importants de la page mise en place d'un aria-label pour le lecteur d'écran dans nav -->
+    <nav aria-label="Liens d’évitement" class="skip-links">
+      <a href="#hero" class="skip-link">Aller à la billeterie</a>
+      <a href="#intro" class="skip-link">Aller à la présentation du spectacle</a>
+      <a href="#reseaux" class="skip-link">Aller aux réseaux sociaux</a>
+    </nav>
+
+    <!-- Ajout de la balise header, mise en place d'un aria-label pour le lecteur d'écran dans nav et de l'aria-current -->
+    <header class="navbar">
+      <nav aria-label="Navigation principale" class="nav-container">
+        <ul>
+          <li>
+            <a href="index.html" class="active" aria-current="Accueil">Accueil</a>
+          </li>
+          <li>
+            <a href="infos.html">Infos & Réservation</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <main>
+      <section id="hero" class="hero" role="banner">
+        <!-- Remplacement de div par figure pour le SVG -->
+        <figure class="svg-decoration">
+          <svg viewBox="0 0 1440 320" focusable="false" aria-hidden="true">
             <path
               fill="#ffb347"
               fill-opacity="0.3"
               d="M0,64L1440,160L1440,0L0,0Z"
             ></path>
           </svg>
-        </div>
-        <div class="hero-content container">
-          <img src="images/moliere.png" class="hero-image" />
-          <div class="hero-text">
-            <h3>Molière, le spectacle musical</h3>
+        </figure>
+
+        <!-- Remplacement de div par section -->
+        <section class="hero-content container">
+          <!-- Ajout de l'attribut alt -->
+          <img src="images/moliere.png" class="hero-image" alt="Portrait stylisé de Molière" />
+
+          <!-- Remplacement de div par section pour contenir le titre principal et la description -->
+          <section class="hero-text">
+            <!-- h1 -->
+            <h1>Molière, le spectacle musical</h1>
             <p>La fabuleuse histoire d'un génie du théâtre français</p>
-            <a href="infos.html#billetterie" class="btn">
-              <i class="fas fa-ticket-alt" alt="Icône billet"></i>
+            <!-- Ajout de l'attribut aria-label pour fournir un texte alternatif pour le lien -->
+            <a href="infos.html#billetterie" class="btn" aria-label="Accéder à la billetterie du spectacle Molière">
+              <!-- Utilisation de aria-hidden="true" pour l'icône afin qu'elle ne soit pas lue par les lecteurs d'écran -->
+              <i class="fas fa-ticket-alt" aria-hidden="true"></i>
               <span>Cliquez ici</span>
             </a>
-          </div>
-        </div>
-      </div>
+          </section>
+        </section>
+      </section>
 
       <!-- Citation -->
-      <div class="bandeau-citation">
-        <h6 id="titre-citation">Citation de Molière</h6>
-        <p>
-          "Le devoir de la comédie est de corriger les hommes en les
-          divertissant." — Molière
-        </p>
-      </div>
+      <!-- Ajout d'aria-labelledby pour la section -->
+      <section class="bandeau-citation" aria-labelledby="titre-citation">
+        <!-- Mise en place du h2 -->
+        <h2 id="titre-citation">Citation de Molière</h2>
+
+        <!-- Utilisation de blockquote pour remplacer le div -->
+        <blockquote>
+          <p>
+            "Le devoir de la comédie est de corriger les hommes en les
+            divertissant."
+          </p>
+          <!-- Utilisation de la balise cite pour remplacer le div -->
+          <cite>— Molière</cite>
+        </blockquote>
+      </section>
 
       <!-- Présentation du spectacle -->
-      <section
-        class="section-intro"
-        role="region"
-        aria-labelledby="titre-intro"
-      >
-        <div class="container grid grid-2">
-          <div>
-            <h2 id="titre-intro">
-              Présentation du spectacle : Molière, rockstar du Grand Siècle
-            </h2>
-            <p>
-              Molière, le spectacle musical – aussi connu comme "Molière,
-              l'opéra urbain" – est une comédie musicale française imaginée par
-              Dove Attia et mise en scène par Ladislas Chollat.
-            </p>
-            <p>
-              Ce spectacle retrace avec fougue et audace le destin de
-              Jean-Baptiste Poquelin, de ses débuts dans l’Illustre Théâtre à sa
-              consécration auprès de Louis XIV.
-            </p>
-            <p>
-              <strong>400 000 spectateurs</strong> en un an,
-              <strong>7 récompenses majeures</strong>,
-              <strong>52 chansons originales</strong>… Un phénomène culturel
-              unique en France.
-            </p>
-          </div>
+      <!-- Ajout d'aria-labelledby pour la section -->
+      <section id="intro" class="section-intro" aria-labelledby="titre-intro">
+        <!-- Utilisation de article pour remplacer div et s'adapter au contexte actuel -->
+        <article>
+          <h2 id="titre-intro">
+            Présentation du spectacle : Molière, rockstar du Grand Siècle
+          </h2>
+          <p>
+            Molière, le spectacle musical – aussi connu comme "Molière,
+            l'opéra urbain" – est une comédie musicale française imaginée par
+            Dove Attia et mise en scène par Ladislas Chollat.
+          </p>
+          <p>
+            Ce spectacle retrace avec fougue et audace le destin de
+            Jean-Baptiste Poquelin, de ses débuts dans l’Illustre Théâtre à sa
+            consécration auprès de Louis XIV.
+          </p>
+          <p>
+            <strong>400 000 spectateurs</strong> en un an,
+            <strong>7 récompenses majeures</strong>,
+            <strong>52 chansons originales</strong>… Un phénomène culturel
+            unique en France.
+          </p>
+        </article>
+
+        <!-- Utilisation de figure car il s'agit d'une image avec une légende et ajout d'aria-hidden car c'est une image décorative -->
+        <figure>
           <img
             src="images/scene1.png"
-            alt="Image d'une belle scène"
+            alt=""
+            aria-hidden="true"
             class="section-image"
           />
-        </div>
+          <!-- Légende de l'image -->
+          <figcaption>Scène du spectacle Molière avec lumière dramatique</figcaption>
+        </figure>
       </section>
 
       <!-- Points forts -->
-      <div
-        class="section-intro alt-bg"
-        role="region"
-        aria-labelledby="titre-points"
-      >
+      <!-- Ajout d'aria-labelledby pour la section -->
+      <section class="section-intro alt-bg" aria-labelledby="titre-points">
         <div class="container">
-          <h4 id="titre-points">Les points forts du spectacle</h4>
-          <p>52 chansons originales mêlant slam, opéra urbain et pop.</p>
-          <p>Une scénographie moderne avec décors mobiles et effets visuels.</p>
-          <p>
-            Un hommage vibrant à Molière, dramaturge rebelle et visionnaire.
-          </p>
-          <p>Une troupe de 30 artistes pluridisciplinaires.</p>
-          <p>Des anachronismes créatifs qui dynamitent les codes classiques.</p>
+          <h2 id="titre-points">Les points forts du spectacle</h2>
+          <ul>
+            <li>52 chansons originales mêlant slam, opéra urbain et pop.</li>
+            <li>Une scénographie moderne avec décors mobiles et effets visuels.</li>
+            <li>Un hommage vibrant à Molière, dramaturge rebelle et visionnaire.</li>
+            <li>Une troupe de 30 artistes pluridisciplinaires.</li>
+            <li>Des anachronismes créatifs qui dynamitent les codes classiques.</li>
+          </ul>
         </div>
-      </div>
+      </section>
 
-      <!-- Chiffres clés -->
-      <section
-        class="section-chiffres"
-        role="region"
-        aria-labelledby="titre-chiffres"
-      >
-        <div class="container">
-          <h3 id="titre-chiffres">Quelques chiffres marquants</h3>
-          <div class="cards">
-            <div class="card">
-              <i class="fas fa-users" alt="Icône utilisateurs"></i>
+        <!-- Chiffres clés -->
+        <!-- Ajout d'aria-labelledby pour la section -->
+      <section class="section-chiffres" aria-labelledby="titre-chiffres">
+        <section class="container">
+          <h2 id="titre-chiffres">Quelques chiffres marquants</h2>
+          <section class="cards">
+            <!-- Remplacement de div par article pour chaque carte et ajout d'aria-hidden pour éviter que le lecteur lise les logos -->
+            <article class="card">
+              <i class="fas fa-users" aria-hidden="true"></i>
               <h3>30 artistes</h3>
               <p>Chanteurs, danseurs, comédiens et musiciens sur scène.</p>
-            </div>
-            <div class="card">
-              <i class="fas fa-mask" alt="Icône masque"></i>
+            </article>
+            <article class="card">
+              <i class="fas fa-mask" aria-hidden="true"></i>
               <h3>52 chansons</h3>
               <p>De "Rêver j’en ai l’habitude" à "On se moque".</p>
-            </div>
-            <div class="card">
+            </article>
+            <article class="card">
               <i class="fas fa-award" aria-hidden="true"></i>
               <h3>7 trophées</h3>
               <p>Dont meilleure comédie musicale et révélation artistique.</p>
-            </div>
-          </div>
-        </div>
+            </article>
+          </section>
+        </section>
       </section>
 
-      <!-- Galerie -->
-      <section
-        class="section-intro"
-        role="region"
-        aria-labelledby="titre-galerie"
-      >
-        <div class="container">
-          <h4 id="titre-galerie">Galerie photos du spectacle</h4>
-          <div class="gallery">
-            <img src="images/scene1.png" />
-            <img src="images/scene2.jpg" alt="Scène illustrative" />
-          </div>
-        </div>
+      <!-- Galerie photos -->
+      <!-- Ajout d'aria-labelledby pour la section -->
+      <section class="section-intro" aria-labelledby="titre-galerie">
+        <h2 id="titre-galerie">Galerie photos du spectacle</h2>
+        <!-- Utilisation de figure pour chaque image avec figcaption et ajout d'aria-hidden pour les images décoratives avec alt vide pour cacher les images du lecteur d'écran-->
+        <figure class="gallery">
+          <img src="images/scene1.png" alt="" aria-hidden="true" />
+          <figcaption>Scène du spectacle avec éclairages rouges</figcaption>
+        </figure>
+        <figure class="gallery">
+          <img src="images/scene2.jpg" alt="" aria-hidden="true" />
+          <figcaption>Chanteurs en pleine représentation</figcaption>
+        </figure>
       </section>
 
       <!-- Distribution -->
-      <section
-        class="section-intro alt-bg"
-        role="region"
-        aria-labelledby="titre-distribution"
-      >
-        <div class="container">
-          <h2 id="titre-distribution">La distribution du spectacle</h2>
-          <div class="cards">
-            <div class="card">
-              <img
-                src="images/petitom.jpg"
-                alt="Portrait de PETiTOM, interprète de Molière"
-              />
-              <h3>PETiTOM</h3>
-              <p>Molière</p>
-            </div>
-            <div class="card">
-              <img
-                src="images/loujean.png"
-                alt="Portrait de Lou Jean, interprète d'Armande Béjart"
-              />
-              <h3>Lou Jean</h3>
-              <p>Armande Béjart</p>
-            </div>
-            <div class="card">
-              <img
-                src="images/shaina.jpeg"
-                alt="Portrait de Shaïna Pronzola, interprète de Marquise"
-              />
-              <h3>Shaïna Pronzola</h3>
-              <p>Marquise</p>
-            </div>
-            <div class="card">
-              <img
-                src="images/abi.jpg"
-                alt="Portrait d’Abi Bernadoth, interprète du Prince de Conti"
-              />
-              <h3>Abi Bernadoth</h3>
-              <p>Prince de Conti</p>
-            </div>
-          </div>
-        </div>
+      <!-- Ajout d'aria-labelledby pour la section, remplacement des divs, cachage des images décoratives -->
+      <section class="section-intro alt-bg" aria-labelledby="titre-distribution">
+        <h2 id="titre-distribution">La distribution du spectacle</h2>
+        <section class="cards">
+          <article class="card">
+            <img
+              src="images/petitom.jpg"
+              alt=""
+              aria-hidden="true"
+            />
+            <h3>PETiTOM</h3>
+            <p>Molière</p>
+          </article>
+          <article class="card">
+            <img
+              src="images/loujean.png"
+              alt=""
+              aria-hidden="true"
+            />
+            <h3>Lou Jean</h3>
+            <p>Armande Béjart</p>
+          </article>
+          <article class="card">
+            <img
+              src="images/shaina.jpeg"
+              alt=""
+              aria-hidden="true"
+            />
+            <h3>Shaïna Pronzola</h3>
+            <p>Marquise</p>
+          </article>
+          <article class="card">
+            <img
+              src="images/abi.jpg"
+              alt=""
+              aria-hidden="true"
+            />
+            <h3>Abi Bernadoth</h3>
+            <p>Prince de Conti</p>
+          </article>
+        </section>
       </section>
 
       <!-- Bandeau storytelling -->
-      <div class="bandeau-citation">
-        <h6 id="titre-story">Esprit du spectacle</h6>
+      <!-- Ajout d'aria-labelledby pour la section, remplacement des divs -->
+      <section class="bandeau-citation" aria-labelledby="titre-story">
+        <h2 id="titre-story">Esprit du spectacle</h2>
         <p>Une œuvre pop et engagée, entre hommage classique et slam urbain.</p>
-      </div>
+      </section>
 
       <!-- Réseaux sociaux -->
-      <section
-        class="section-reseaux"
-        role="region"
-        aria-labelledby="titre-reseaux"
-      >
-        <div class="container">
-          <h3 id="titre-reseaux">Suivez-nous sur les réseaux sociaux</h3>
-          <div class="reseaux-links">
+      <!-- Ajout d'aria-labelledby pour la section, ajout des aria-label pour les liens et remplacement des divs -->
+      <section id="reseaux" class="section-reseaux" aria-labelledby="titre-reseaux">
+        <h2 id="titre-reseaux">Suivez-nous sur les réseaux sociaux</h2>
+        <ul class="reseaux-links">
+          <li>
             <a
               href="https://www.youtube.com/channel/UCc5t5wb25TAO4bCA1d8yMrQ"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Chaîne YouTube officielle du spectacle Molière"
             >
-              <i class="fab fa-youtube" alt="Icône YouTube"></i> YouTube
+              <i class="fab fa-youtube" aria-hidden="true"></i> YouTube
             </a>
+          </li>
+          <li>
             <a
               href="https://www.facebook.com/moliereloperaurbain/?locale=fr_FR"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Page Facebook officielle du spectacle Molière"
             >
-              <i class="fab fa-facebook" alt="Icône Facebook"></i> Facebook
+              <i class="fab fa-facebook" aria-hidden="true"></i> Facebook
             </a>
+          </li>
+          <li>
             <a
               href="https://www.instagram.com/molierelespectaclemusical/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Profil Instagram du spectacle Molière"
             >
-              <i class="fab fa-instagram" alt="Icône Instagram"></i> Instagram
+              <i class="fab fa-instagram" aria-hidden="true"></i> Instagram
             </a>
-          </div>
-        </div>
-      </section>
+          </li>
+        </ul>
+      </section>      
     </main>
 
-    <div class="footer">
-      <div class="container">
+    <!-- Footer -->
+    <!-- Remplacement des divs -->
+    <footer class="footer">
+      <section class="container">
         <p>
           &copy; 2025 – Molière, le spectacle musical. Tous droits réservés.
         </p>
-      </div>
-    </div>
+      </section>
+    </footer>
   </body>
 </html>
