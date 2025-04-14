@@ -46,7 +46,7 @@
         role="region"
         aria-labelledby="titre-infos"
       >
-        <div class="container">
+        <div class="container" tabindex="0">
           <h2 id="titre-infos">Informations pratiques pour votre venue</h2>
           <ul class="list-points">
             <li>
@@ -137,27 +137,31 @@
 
             <fieldset class="form-group">
               <legend>Besoin d'un aménagement particulier ?</legend>
-              <div>
-                <input
-                  type="checkbox"
-                  id="pmr"
-                  name="accessibilite[]"
-                  value="pmr"
-                  aria-describedby="pmr-help"
-                />
-                <label for="pmr">Accès PMR (Personne à Mobilité Réduite)</label>
-                <span id="pmr-help" class="help-text">Nous adapterons votre réservation pour un accès PMR</span>
-              </div>
-              <div>
-                <input
-                  type="checkbox"
-                  id="malentendant"
-                  name="accessibilite[]"
-                  value="malentendant"
-                  aria-describedby="malentendant-help"
-                />
-                <label for="malentendant">Aide pour malentendants</label>
-                <span id="malentendant-help" class="help-text">Nous adapterons votre réservation pour un accès malentendant</span>
+              <div class="checkbox-group">
+                <div class="checkbox-item">
+                  <input
+                    type="checkbox"
+                    id="pmr"
+                    name="accessibilite[]"
+                    value="pmr"
+                    aria-describedby="pmr-help"
+                    tabindex="0"
+                  />
+                  <label for="pmr">Accès PMR (Personne à Mobilité Réduite)</label>
+                  <span id="pmr-help" class="help-text">Nous adapterons votre réservation pour un accès PMR</span>
+                </div>
+                <div class="checkbox-item">
+                  <input
+                    type="checkbox"
+                    id="malentendant"
+                    name="accessibilite[]"
+                    value="malentendant"
+                    aria-describedby="malentendant-help"
+                    tabindex="0"
+                  />
+                  <label for="malentendant">Aide pour malentendants</label>
+                  <span id="malentendant-help" class="help-text">Nous adapterons votre réservation pour un accès malentendant</span>
+                </div>
               </div>
             </fieldset>
 
