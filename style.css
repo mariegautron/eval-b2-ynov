@@ -1,17 +1,35 @@
 :root {
   --color-bg: #0e0e0e;
-  --color-text: #bcbcbc;
-  --color-secondary-text: #8a8a8a;
-  --color-accent: #c17dff;
-  --color-accent-light: #d6a3ff;
+  --color-text: #ffffff; 
+  --color-secondary-text: #d0d0d0; 
+  --color-accent: #e09fff; 
+  --color-accent-light: #ecc6ff;
   --color-card-bg: #1a1a1a;
   --color-hover-bg: #292929;
-  --color-focus-outline: #c17dff;
-  --color-bandeau-bg: #c17dff;
-  --color-bandeau-text: #fff;
+  --color-focus-outline: #e09fff;
+  --color-bandeau-bg: #e09fff;
+  --color-bandeau-text: #000; 
   --color-footer-bg: #1a1a1a;
-  --color-svg: #c17dff;
+  --color-svg: #e09fff;
   --color-focus-bg: transparent;
+}
+
+/* Lien d'évitement */
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: 0;
+  background: var(--color-accent);
+  color: hsl(0, 0%, 100%); 
+  padding: 8px;
+  z-index: 1001;
+  transition: top 0.3s;
+  font-weight: bold; 
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--color-focus-outline);
 }
 
 /* RESET + BASE */
@@ -56,7 +74,7 @@ h3 {
 }
 
 a {
-  color: var(--color-text);
+  color: var(--color-accent-light); 
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -107,6 +125,7 @@ img {
   font-size: 1.125rem;
   font-weight: 600;
   position: relative;
+  color: var(--color-text); 
 }
 
 .navbar a::after {
@@ -180,7 +199,7 @@ img {
   align-items: center;
   gap: 0.75rem;
   background-color: var(--color-accent);
-  color: var(--color-bandeau-text);
+  color: #000000; 
   padding: 0.75rem 1.5rem;
   border-radius: 50px;
   font-weight: bold;
@@ -192,7 +211,7 @@ img {
 .btn:hover,
 .btn:focus {
   background-color: var(--color-accent-light);
-  color: var(--color-bandeau-text);
+  color: #000000; 
   outline: none;
   outline-offset: 0;
 }
@@ -313,7 +332,7 @@ img {
 }
 
 .card p {
-  color: var(--color-secondary-text);
+  color: var(--color-text); 
   font-family: "Inter", sans-serif;
 }
 
@@ -357,10 +376,11 @@ img {
   border-radius: 50px;
   font-weight: bold;
   transition: background 0.3s ease, transform 0.3s ease;
+  color: var(--color-text); 
 }
 
 .reseaux-links a i {
-  color: var(--color-accent);
+  color: var(--color-accent-light); 
 }
 
 .reseaux-links a:hover,
@@ -473,6 +493,16 @@ textarea {
 .section-intro .btn:focus {
   background-color: var(--color-accent);
   outline: none;
+}
+
+/* Amélioration du focus pour les éléments interactifs */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-focus-outline);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px var(--color-bg);
 }
 
 /* Responsive */
