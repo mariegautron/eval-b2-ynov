@@ -8,7 +8,7 @@
   --color-hover-bg: #292929;
   --color-focus-outline: #c17dff;
   --color-bandeau-bg: #c17dff;
-  --color-bandeau-text: #fff;
+  --color-bandeau-text: #000000; /* Changé de #fff à #000000 pour un meilleur contraste */
   --color-footer-bg: #1a1a1a;
   --color-svg: #c17dff;
   --color-focus-bg: transparent;
@@ -171,7 +171,7 @@ img {
 
 .hero-text p {
   font-size: 1.25rem;
-  color: var(--color-accent);
+  color: #000000; /* Changé de var(--color-accent) à #000000 pour un meilleur contraste */
 }
 
 /* BOUTONS */
@@ -201,7 +201,7 @@ img {
 .bandeau-citation,
 .bandeau-story {
   background-color: var(--color-bandeau-bg);
-  color: var(--color-bandeau-text);
+  color: #000000; /* Changé de var(--color-bandeau-text) à #000000 pour un meilleur contraste */
   text-align: center;
   padding: 2.5rem;
   font-weight: bold;
