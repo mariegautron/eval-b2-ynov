@@ -415,6 +415,34 @@ fieldset.form-group legend {
   margin-bottom: 0.25rem;
 }
 
+/* Styles pour les champs obligatoires */
+.required {
+  color: #ff6b6b;
+  margin-left: 0.25rem;
+}
+
+.required-fields {
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  color: var(--color-secondary-text);
+}
+
+/* Indications supplémentaires */
+.field-hint {
+  font-size: 0.9rem;
+  color: var(--color-secondary-text);
+  margin-top: 0.25rem;
+}
+
+/* Groupe de cases à cocher */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Styles pour les champs */
 input[type="text"],
 input[type="email"],
 input[type="number"],
@@ -430,16 +458,16 @@ textarea {
   font-size: 1rem;
 }
 
+/* Styles pour les champs invalides */
+input:invalid,
+select:invalid {
+  border-color: #ff6b6b;
+}
+
 fieldset.form-group {
   border: none;
   padding: 0;
   margin: 0;
-}
-
-fieldset.form-group div {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
 }
 
 fieldset.form-group input[type="checkbox"] {
@@ -449,61 +477,34 @@ fieldset.form-group input[type="checkbox"] {
 
 textarea {
   resize: vertical;
+  min-height: 100px;
 }
 
-.section-intro input::placeholder,
-.section-intro textarea::placeholder {
+input::placeholder,
+textarea::placeholder {
   color: #cccccc;
 }
 
-.section-intro input:focus,
-.section-intro select:focus,
-.section-intro textarea:focus {
+input:focus,
+select:focus,
+textarea:focus {
   outline: 2px solid var(--color-text);
   outline-offset: 2px;
   background-color: #444444;
 }
 
-.section-intro .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #333333;
-  color: var(--color-text);
-  padding: 0.75rem;
-  border-radius: 50%;
-  width: 3rem;
-  height: 3rem;
-  border: 2px solid var(--color-text);
-  cursor: pointer;
-  transition: background 0.3s ease;
+/* Actions du formulaire */
+.form-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
-.section-intro .btn:hover,
-.section-intro .btn:focus {
-  background-color: var(--color-text);
-  color: #000000;
-  outline: 2px solid var(--color-text);
-  outline-offset: 2px;
-}
-
-/* Styles pour la navigation au clavier */
-:focus {
-    outline: 3px solid var(--color-text);
-    outline-offset: 3px;
-}
-
-/* Focus spécifique pour le skip link */
-.evitement:focus {
-    outline: 3px solid var(--color-text);
-    outline-offset: 3px;
-    background-color: #333333;
-    color: var(--color-text);
-    padding: 0.5rem 1rem;
-    position: fixed;
-    top: 0.5rem;
-    left: 0.5rem;
-    z-index: 9999;
+.form-actions .btn {
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
 }
 
 /* Responsive */
@@ -533,4 +534,23 @@ textarea {
     width: 100%;
     justify-content: center;
   }
+}
+
+/* Styles pour la navigation au clavier */
+:focus {
+    outline: 3px solid var(--color-text);
+    outline-offset: 3px;
+}
+
+/* Focus spécifique pour le skip link */
+.evitement:focus {
+    outline: 3px solid var(--color-text);
+    outline-offset: 3px;
+    background-color: #333333;
+    color: var(--color-text);
+    padding: 0.5rem 1rem;
+    position: fixed;
+    top: 0.5rem;
+    left: 0.5rem;
+    z-index: 9999;
 }
