@@ -21,9 +21,12 @@
 
     <!-- Lien d'évitement ajouté en premier élément -->
     <a href="#contenu" class="skip-link">Aller au contenu principal</a>
+    <a href="#presentation" class="skip-link">Aller a la presentation du spéctacle</a>
+    <a href="#points-forts" class="skip-link">Aller au points forts du spéctacle</a>
+    <a href="#distribution" class="skip-link">Aller a la distribution du spéctacle</a>
 
     <!-- Correction sémantique : remplacement div par nav -->
-    <nav class="navbar" aria-label="Navigation principale">
+    <nav class="navbar" aria-label="Navigation principale" role="banner">
       <div class="nav-container">
         <div>
           <a href="index.html" class="active" aria-current="page">Accueil</a>
@@ -73,6 +76,7 @@
         class="section-intro"
         role="region"
         aria-labelledby="titre-intro"
+        id="presentation"
       >
         <div class="container grid grid-2">
           <div>
@@ -109,6 +113,7 @@
         class="section-intro alt-bg"
         role="region"
         aria-labelledby="titre-points"
+        id="points-forts"
       >
         <div class="container">
           <h3 id="titre-points">Les points forts du spectacle</h3> <!-- correction de la hiérarchie des titres -->
@@ -155,6 +160,7 @@
         class="section-intro"
         role="region"
         aria-labelledby="titre-galerie"
+        role="region"
       >
         <div class="container">
           <h4 id="titre-galerie">Galerie photos du spectacle</h4>
@@ -170,6 +176,7 @@
         class="section-intro alt-bg"
         role="region"
         aria-labelledby="titre-distribution"
+        id="distribution"
       >
         <div class="container">
           <h2 id="titre-distribution">La distribution du spectacle</h2>
