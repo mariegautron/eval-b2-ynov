@@ -75,12 +75,27 @@ a:focus-visible {
 
 a.skip-link {
   position: absolute;
-  left: -99999px;
-}
-a.skip-link:focus {
-  position: static;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
+a.skip-link:focus {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: auto;
+  height: auto;
+  padding: 1rem;
+  background-color: var(--color-accent);
+  color: #fff;
+  z-index: 10000;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 0.5rem;
+}
 img {
   max-width: 100%;
   height: auto;
