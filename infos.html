@@ -18,18 +18,19 @@
     />
   </head>
   <body>
-    <div class="navbar">
-      <div class="nav-container">
-        <div>
-          <a href="index.html">Accueil</a>
-        </div>
-        <div>
-          <a href="infos.html" class="active" aria-current="page"
-            >Infos & Réservation</a
-          >
+    <a href="#contenu" class="skip-link">Aller au contenu principal</a>
+    <header>
+      <div class="navbar">
+        <div class="nav-container">
+          <div>
+            <a href="index.html">Accueil</a>
+          </div>
+          <div>
+            <a href="infos.html" class="active" aria-current="page">Infos & Réservation</a>
+          </div>
         </div>
       </div>
-    </div>
+    </header>
 
     <main id="contenu">
       <!-- En-tête -->
@@ -96,42 +97,43 @@
         <div class="container">
           <h2>Réservez vos places</h2>
 
-          <div>
+          <form>
             <div class="form-group">
-              <label>Prénom</label>
-              <input type="text" name="prenom" />
+              <label for="prenom">Prénom (Obligatoire)</label>
+              <input type="text" name="prenom" id="prenom" aria-required="true" />
             </div>
-
+          
             <div class="form-group">
-              <label>Nom</label>
-              <input type="text" name="nom" />
+              <label for="nom">Nom (Obligatoire)</label>
+              <input type="text" name="nom" id="nom" aria-required="true" />
             </div>
-
+          
             <div class="form-group">
-              <label>Email</label>
-              <input type="email" name="email" />
+              <label for="email">Email (Obligatoire)</label>
+              <input type="email" name="email" id="email" aria-required="true" />
             </div>
-
+          
             <div class="form-group">
-              <label>Nombre de places</label>
-              <input type="number" name="places" />
+              <label for="places">Nombre de places (Obligatoire)</label>
+              <input type="number" name="places" id="places" min="1" aria-required="true" />
             </div>
-
+          
             <div class="form-group">
-              <label>Date de la représentation</label>
-              <select name="date">
-                <option>Sélectionnez une date</option>
-                <option>12 avril 2025 - Nantes</option>
-                <option>19 avril 2025 - Dijon</option>
-                <option>26 avril 2025 - Floirac</option>
-                <option>17 mai 2025 - Toulouse</option>
-                <option>23-25 mai 2025 - Lille</option>
-                <option>21-22 juin 2025 - Caen</option>
+              <label for="date">Date de la représentation (Obligatoire)</label>
+              <select name="date" id="date" aria-required="true">
+                <option value="" disabled selected>Sélectionnez une date</option>
+                <option value="2025-04-12-nantes">12 avril 2025 - Nantes</option>
+                <option value="2025-04-19-dijon">19 avril 2025 - Dijon</option>
+                <option value="2025-04-26-floirac">26 avril 2025 - Floirac</option>
+                <option value="2025-05-17-toulouse">17 mai 2025 - Toulouse</option>
+                <option value="2025-05-23-25-lille">23-25 mai 2025 - Lille</option>
+                <option value="2025-06-21-22-caen">21-22 juin 2025 - Caen</option>
               </select>
             </div>
-
+          
             <fieldset class="form-group">
               <legend>Besoin d'un aménagement particulier ?</legend>
+          
               <div>
                 <input
                   type="checkbox"
@@ -141,6 +143,7 @@
                 />
                 <label for="pmr">Accès PMR (Personne à Mobilité Réduite)</label>
               </div>
+          
               <div>
                 <input
                   type="checkbox"
@@ -151,15 +154,19 @@
                 <label for="malentendant">Aide pour malentendants</label>
               </div>
             </fieldset>
-
+          
             <div class="form-group">
-              <textarea name="message" placeholder="Votre message"></textarea>
+              <label for="message" >Votre message</label>
+              <textarea name="message" id="message" placeholder="Votre message"></textarea>
             </div>
-
-            <button class="btn">
-              <i class="fas fa-paper-plane"></i>
+          
+            <button class="btn-submit-fomulaire" type="submit" aria-label="Envoyer le formulaire">
+              <!-- <i class="fas fa-paper-plane" aria-hidden="true"></i> -->
+              <span>Envoyer le formulaire</span>
             </button>
-          </div>
+          </form>
+          
+          
         </div>
       </div>
     </main>

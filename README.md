@@ -153,3 +153,32 @@ Au-delà de cette date, la merge request ne sera plus prise en compte.
 ## 📩 Questions ?
 
 En cas de doute, vous pouvez poser vos questions directement sur Discord.
+
+
+
+
+
+
+
+
+
+
+
+CSS rajouté en bas du fichier styles.css
+
+Ajout du lien d'évitement pour les 2 pages
+Ajout de la balise "header" sur les 2 pages
+Ajout de la balise "h1" à la place du "h3" sur la page index
+Ajout de "alt" sur la premiere image page index
+Ajout d'une balise "buton" pour ajouter avec le lien vers la reservation pas index
+Modification de "  --color-bandeau-text: #000000;"
+Citation de molier passé de h6 a h2
+Dans quelque chiffre midification des icons avec " alt="" aria-hidden="true" "
+Modification   --color-secondary-text: #bcbcbc;
+Galerie passé de h4 a h2
+Ajout alt="Scène de fin de présentation" dans galerie
+Esprit du spéctacle passé de h6 a h2
+
+
+Modifivation du formulaire page info
+Modification du btn du formulaire pour plus de lisibilité

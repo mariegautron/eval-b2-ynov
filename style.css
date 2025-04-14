@@ -1,14 +1,14 @@
 :root {
   --color-bg: #0e0e0e;
   --color-text: #bcbcbc;
-  --color-secondary-text: #8a8a8a;
+  --color-secondary-text: #bcbcbc;
   --color-accent: #c17dff;
   --color-accent-light: #d6a3ff;
   --color-card-bg: #1a1a1a;
   --color-hover-bg: #292929;
   --color-focus-outline: #c17dff;
   --color-bandeau-bg: #c17dff;
-  --color-bandeau-text: #fff;
+  --color-bandeau-text: #000000;
   --color-footer-bg: #1a1a1a;
   --color-svg: #c17dff;
   --color-focus-bg: transparent;
@@ -475,6 +475,7 @@ textarea {
   outline: none;
 }
 
+
 /* Responsive */
 @media (max-width: 768px) {
   h2 {
@@ -502,4 +503,90 @@ textarea {
     width: 100%;
     justify-content: center;
   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-reservation{
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+
+.btn-submit-fomulaire{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--color-accent);
+  color: var(--color-bandeau-text);
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  font-family: "Inter", sans-serif;
+  margin: 20px;
+}
+
+.btn-submit-fomulaire:hover,
+.btn-submit-fomulaire:focus {
+  background-color: var(--color-accent-light);
+  color: var(--color-bandeau-text);
+  outline: none;
+  outline-offset: 0;
+}
+
+
+
+
+
+/* lien d'évitement */
+/* .skip-link {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  background: rgb(255, 0, 0);
+  color: white;
+  padding: 8px;
+  z-index: -100;
+  transition: top 0.3s;
+  font-size: 30px;
+}
+
+.skip-link:focus {
+  top: 0;
+  z-index: 1000;
+
+} */
+
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--color-accent);
+  color: #ffffff; 
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.3s;
+  font-weight: bold; 
+}
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--color-focus-outline);
 }
