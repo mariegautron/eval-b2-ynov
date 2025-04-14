@@ -393,7 +393,7 @@ fieldset.form-group {
   display: flex;
   flex-direction: column;
   gap: 0.75rem; /* Augmentation de l'espacement entre les éléments */
-  margin-bottom: 2rem; /* Ajout d'une marge inférieure pour espacer les champs */
+  margin-bottom: 2.5rem; /* Augmentation de l'espacement entre les champs */
 }
 
 /* Champs de formulaire */
@@ -417,20 +417,21 @@ textarea {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-accent);
-  color: var(--color-bandeau-text);
-  padding: 0.75rem 2rem; /* Augmentation de la largeur et de la hauteur du bouton */
-  border-radius: 50px; /* Forme plus arrondie */
+  background-color: #e67e22; /* Couleur plus foncée pour un meilleur contraste */
+  color: #ffffff; /* Texte blanc pour un contraste suffisant */
+  padding: 1rem 2.5rem; /* Augmentation de la taille intérieure */
+  border-radius: 50px; /* Forme arrondie */
   border: none;
   cursor: pointer;
-  font-size: 1rem; /* Taille de texte augmentée */
+  font-size: 1.125rem; /* Taille de texte augmentée */
   font-weight: bold;
+  gap: 0.5rem; /* Ajout d'un espace entre l'icône et le texte */
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .section-intro .btn:hover,
 .section-intro .btn:focus {
-  background-color: var(--color-accent-light);
+  background-color: #d35400; /* Couleur encore plus foncée au survol */
   transform: scale(1.05); /* Légère mise en avant au survol */
   outline: none;
 }
