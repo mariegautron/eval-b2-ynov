@@ -18,22 +18,28 @@
     />
   </head>
   <body>
-    <div class="navbar">
-      <div class="nav-container">
-        <div>
-          <a href="index.html">Accueil</a>
-        </div>
-        <div>
-          <a href="infos.html" class="active" aria-current="page"
-            >Infos & Réservation</a
-          >
-        </div>
-      </div>
-    </div>
+    <!-- Ajout du lien d'évitement -->
+    <a href="#contenu" class="skip-link">Aller au contenu principal</a>
 
-    <main id="contenu">
+    <!-- Modification: Remplacé div.navbar par nav avec une structure de liste -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <ul>
+          <li>
+            <a href="index.html">Accueil</a>
+          </li>
+          <li>
+            <a href="infos.html" class="active" aria-current="page"
+              >Infos & Réservation</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main id="contenu" tabindex="-1">
       <!-- En-tête -->
-      <header class="hero" role="banner">
+      <header class="hero">
         <div class="hero-content container">
           <h1>Infos pratiques & Réservations</h1>
           <p>Réservez vos places pour le spectacle musical de l'année !</p>
@@ -41,11 +47,7 @@
       </header>
 
       <!-- Section Infos pratiques -->
-      <section
-        class="section-intro"
-        role="region"
-        aria-labelledby="titre-infos"
-      >
+      <section class="section-intro" aria-labelledby="titre-infos">
         <div class="container">
           <h2 id="titre-infos">Informations pratiques pour votre venue</h2>
           <ul class="list-points">
@@ -71,11 +73,7 @@
       </section>
 
       <!-- Carte d'accès -->
-      <section
-        class="section-intro alt-bg"
-        role="region"
-        aria-labelledby="titre-carte"
-      >
+      <section class="section-intro alt-bg" aria-labelledby="titre-carte">
         <div class="container">
           <h2 id="titre-carte">Plan d'accès au Zénith de Paris</h2>
           <iframe
@@ -86,53 +84,119 @@
             allowfullscreen
             loading="lazy"
             title="Carte du Zénith de Paris"
-            tabindex="-1"
           ></iframe>
         </div>
       </section>
 
       <!-- Formulaire de réservation -->
-      <div class="section-intro">
+      <!-- Modification: Remplacé div par section et ajouté une balise form avec attributs appropriés -->
+      <section class="section-intro" id="billetterie">
         <div class="container">
           <h2>Réservez vos places</h2>
 
-          <div>
+          <form action="#" method="post" class="reservation-form" novalidate>
+            
+            <!-- Ajout d'instructions générales pour le formulaire -->
+            <p id="form-instructions" class="form-instructions">
+              Tous les champs marqués d'un astérisque (*) sont obligatoires.
+            </p>
+      
             <div class="form-group">
-              <label>Prénom</label>
-              <input type="text" name="prenom" />
+              <label for="prenom" id="prenom-label">Prénom *</label>
+              <input 
+                type="text" 
+                name="prenom" 
+                id="prenom" 
+                required 
+                aria-required="true"
+                aria-labelledby="prenom-label" 
+                aria-describedby="prenom-error"
+              />
+              <div id="prenom-error" class="error-message" aria-live="polite"></div>
             </div>
-
+      
             <div class="form-group">
-              <label>Nom</label>
-              <input type="text" name="nom" />
+              <label for="nom" id="nom-label">Nom *</label>
+              <input 
+                type="text" 
+                name="nom" 
+                id="nom" 
+                required
+                aria-required="true" 
+                aria-labelledby="nom-label"
+                aria-describedby="nom-error"
+              />
+              <div id="nom-error" class="error-message" aria-live="polite"></div>
             </div>
-
+      
             <div class="form-group">
-              <label>Email</label>
-              <input type="email" name="email" />
+              <label for="email" id="email-label">Email *</label>
+              <input 
+                type="email" 
+                name="email" 
+                id="email" 
+                required
+                aria-required="true"
+                autocomplete="email"
+                aria-labelledby="email-label"
+                aria-describedby="email-error email-description"
+              />
+              <div id="email-description" class="field-description">
+                Format attendu : exemple@domaine.com
+              </div>
+              <div id="email-error" class="error-message" aria-live="polite"></div>
             </div>
-
+      
             <div class="form-group">
-              <label>Nombre de places</label>
-              <input type="number" name="places" />
+              <label for="places" id="places-label">Nombre de places *</label>
+              <input 
+                type="number" 
+                name="places" 
+                id="places" 
+                min="1" 
+                max="10"
+                step="1"
+                required
+                aria-required="true"
+                aria-labelledby="places-label"
+                aria-describedby="places-error places-description"
+              />
+              <div id="places-description" class="field-description">
+                Maximum 10 places par réservation
+              </div>
+              <div id="places-error" class="error-message" aria-live="polite"></div>
             </div>
-
+      
             <div class="form-group">
-              <label>Date de la représentation</label>
-              <select name="date">
-                <option>Sélectionnez une date</option>
-                <option>12 avril 2025 - Nantes</option>
-                <option>19 avril 2025 - Dijon</option>
-                <option>26 avril 2025 - Floirac</option>
-                <option>17 mai 2025 - Toulouse</option>
-                <option>23-25 mai 2025 - Lille</option>
-                <option>21-22 juin 2025 - Caen</option>
+              <label for="date" id="date-label">Date de la représentation *</label>
+              <select 
+                name="date" 
+                id="date" 
+                required
+                aria-required="true"
+                aria-labelledby="date-label"
+                aria-describedby="date-error"
+              >
+                <option value="">Veuillez sélectionner une date</option>
+                <optgroup label="Avril 2025">
+                  <option value="nantes-12-04">12 avril 2025 - Nantes</option>
+                  <option value="dijon-19-04">19 avril 2025 - Dijon</option>
+                  <option value="floirac-26-04">26 avril 2025 - Floirac</option>
+                </optgroup>
+                <optgroup label="Mai 2025">
+                  <option value="toulouse-17-05">17 mai 2025 - Toulouse</option>
+                  <option value="lille-23-25-05">23-25 mai 2025 - Lille</option>
+                </optgroup>
+                <optgroup label="Juin 2025">
+                  <option value="caen-21-22-06">21-22 juin 2025 - Caen</option>
+                </optgroup>
               </select>
+              <div id="date-error" class="error-message" aria-live="polite"></div>
             </div>
-
+      
             <fieldset class="form-group">
               <legend>Besoin d'un aménagement particulier ?</legend>
-              <div>
+              <div class="checkbox-group">
                 <input
                   type="checkbox"
                   id="pmr"
@@ -141,7 +205,7 @@
                 />
                 <label for="pmr">Accès PMR (Personne à Mobilité Réduite)</label>
               </div>
-              <div>
+              <div class="checkbox-group">
                 <input
                   type="checkbox"
                   id="malentendant"
@@ -150,26 +214,53 @@
                 />
                 <label for="malentendant">Aide pour malentendants</label>
               </div>
+              <div class="checkbox-group">
+                <input
+                  type="checkbox"
+                  id="autre-amenagement"
+                  name="accessibilite[]"
+                  value="autre"
+                  aria-describedby="autre-instructions"
+                />
+                <label for="autre-amenagement">Autre aménagement</label>
+                <p id="autre-instructions" class="field-description">
+                  Si vous sélectionnez "Autre aménagement", veuillez préciser vos besoins dans le champ message ci-dessous.
+                </p>
+              </div>
             </fieldset>
-
+      
             <div class="form-group">
-              <textarea name="message" placeholder="Votre message"></textarea>
+              <label for="message" id="message-label">Message complémentaire</label>
+              <textarea 
+                name="message" 
+                id="message" 
+                placeholder="Précisez ici toute information complémentaire concernant votre réservation"
+                rows="4"
+                aria-labelledby="message-label"
+              ></textarea>
             </div>
-
-            <button class="btn">
-              <i class="fas fa-paper-plane"></i>
-            </button>
-          </div>
+      
+            <div class="form-controls">
+              <button type="submit" class="btn">
+                <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                <span>Envoyer ma demande</span>
+              </button>
+            </div>
+      
+            <!-- Ajout d'un retour visuel de soumission -->
+            <div class="submission-feedback" aria-live="assertive"></div>
+          </form>
         </div>
-      </div>
+      </section>
     </main>
 
-    <div class="footer">
+    <!-- Modification: Remplacé div.footer par footer -->
+    <footer class="footer">
       <div class="container">
         <p>
           &copy; 2025 – Molière, le spectacle musical. Tous droits réservés.
         </p>
       </div>
-    </div>
+    </footer>
   </body>
 </html>
