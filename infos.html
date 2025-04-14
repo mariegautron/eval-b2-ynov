@@ -97,9 +97,10 @@
           <h2>Réservez vos places</h2>
 
           <div>
+            <!-- Rajouts des attributs d'accessibilitée pour le champ Prénom -->
             <div class="form-group">
-              <label>Prénom</label>
-              <input type="text" name="prenom" />
+              <label for="prenom">Prénom</label>
+              <input type="text" name="prenom" id="prenom" required aria-required="true" aria-label="Votre prenom" />
             </div>
 
             <div class="form-group">
@@ -155,9 +156,9 @@
             <div class="form-group">
               <textarea name="message" placeholder="Votre message"></textarea>
             </div>
-
-            <button class="btn">
-              <i class="fas fa-paper-plane"></i>
+            <!-- Rajouts des attributs d'accessibilitée pour le bouton d'envoi-->
+            <button class="btn" aria-label="Envoyer la réservation">
+              <i class="fas fa-paper-plane"  aria-hidden="true"></i>
             </button>
           </div>
         </div>
