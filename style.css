@@ -53,11 +53,12 @@ textarea:focus-visible {
   top: -60px;
   left: 0;
   background: var(--color-accent);
-  color: var(--color-bandeau-text);
+  color: #000;
   padding: 1rem;
   text-decoration: none;
   transition: top 0.3s ease;
   z-index: 1001;
+  font-weight: bold;
 }
 
 .skip-link:focus-visible {
@@ -204,28 +205,35 @@ img {
   align-items: center;
   gap: 0.75rem;
   background-color: var(--color-accent);
-  color: var(--color-bandeau-text);
+  color: #000;
   padding: 0.75rem 1.5rem;
   border-radius: 50px;
   font-weight: bold;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
   font-family: "Inter", sans-serif;
   margin: 20px;
+  border: 2px solid transparent;
+  position: relative;
 }
 
 .btn:hover,
 .btn:focus {
   background-color: var(--color-accent-light);
-  color: var(--color-bandeau-text);
-  outline: none;
-  outline-offset: 0;
+  transform: scale(1.05);
+}
+
+.btn:focus-visible {
+  outline: 3px solid #000;
+  outline-offset: 2px;
+  border-color: #000;
+  box-shadow: 0 0 0 4px var(--color-accent-light);
 }
 
 /* BANDEAUX */
 .bandeau-citation,
 .bandeau-story {
   background-color: var(--color-bandeau-bg);
-  color: var(--color-bandeau-text);
+  color: #000;
   text-align: center;
   padding: 2.5rem;
   font-weight: bold;
