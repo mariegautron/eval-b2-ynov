@@ -18,7 +18,7 @@
     />
   </head>
   <body>
-    <div class="navbar">
+    <nav class="navbar" aria-label="Navigation principale">
       <div class="nav-container">
         <div>
           <a href="index.html">Accueil</a>
@@ -29,7 +29,7 @@
           >
         </div>
       </div>
-    </div>
+    </nav>
 
     <main id="contenu">
       <!-- En-tête -->
@@ -92,11 +92,11 @@
       </section>
 
       <!-- Formulaire de réservation -->
-      <div class="section-intro">
+      <section class="section-intro">
         <div class="container">
           <h2>Réservez vos places</h2>
 
-          <div>
+          <form>
             <div class="form-group">
               <label for="prenom">Prénom *</label>
               <input type="text" id="prenom" name="prenom" required aria-required="true" aria-describedby="prenom-help" />
@@ -167,21 +167,50 @@
               <span id="message-help" class="help-text">Vous pouvez ajouter ici toute information complémentaire concernant votre réservation</span>
             </div>
 
-            <button type="submit" class="btn">
+            <button type="submit" class="btn" aria-label="Envoyer la réservation">
               <i class="fas fa-paper-plane" aria-hidden="true"></i>
               <span>Envoyer la réservation</span>
             </button>
-          </div>
+          </form>
         </div>
-      </div>
+      </section>
     </main>
 
-    <div class="footer">
+    <footer class="footer">
       <div class="container">
         <p>
           &copy; 2025 – Molière, le spectacle musical. Tous droits réservés.
         </p>
+        <nav class="reseaux-links" aria-label="Réseaux sociaux">
+          <a
+            href="https://www.youtube.com/channel/UCc5t5wb25TAO4bCA1d8yMrQ"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Chaîne YouTube officielle du spectacle Molière (nouvelle fenêtre)"
+          >
+            <i class="fab fa-youtube" aria-hidden="true"></i>
+            <span>YouTube</span>
+          </a>
+          <a
+            href="https://www.facebook.com/moliereloperaurbain/?locale=fr_FR"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Page Facebook officielle du spectacle Molière (nouvelle fenêtre)"
+          >
+            <i class="fab fa-facebook" aria-hidden="true"></i>
+            <span>Facebook</span>
+          </a>
+          <a
+            href="https://www.instagram.com/molierelespectaclemusical/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Profil Instagram du spectacle Molière (nouvelle fenêtre)"
+          >
+            <i class="fab fa-instagram" aria-hidden="true"></i>
+            <span>Instagram</span>
+          </a>
+        </nav>
       </div>
-    </div>
+    </footer>
   </body>
 </html>

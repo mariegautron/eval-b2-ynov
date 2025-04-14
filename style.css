@@ -1,4 +1,3 @@
-
 :root {
   --color-bg: #0e0e0e;
   --color-text: #ffffff;  /* Changement de la couleur du texte vers un blanc qui tranche plus avec le fond pour une meilleure lisibilité */
@@ -352,15 +351,20 @@ img {
 .reseaux-links a {
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
-  background-color: var(--color-card-bg);
+  gap: 0.5rem;
   padding: 0.75rem 1.5rem;
+  background-color: var(--color-card-bg);
+  color: var(--color-text);
   border-radius: 50px;
-  font-weight: bold;
-  transition: background 0.3s ease, transform 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.reseaux-links a span {
+  display: inline-block;
 }
 
 .reseaux-links a i {
+  font-size: 1.2rem;
   color: var(--color-accent);
 }
 
@@ -461,13 +465,22 @@ textarea {
   justify-content: center;
   background-color: var(--color-accent);
   color: var(--color-bandeau-text);
-  padding: 0.75rem;
-  border-radius: 50%;
-  width: 3rem;
-  height: 3rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  width: auto;
+  height: auto;
   border: none;
   cursor: pointer;
   transition: background 0.3s ease;
+  gap: 0.5rem;
+}
+
+.section-intro .btn span {
+  display: inline-block;
+}
+
+.section-intro .btn i {
+  font-size: 1.2rem;
 }
 
 .section-intro .btn:hover,

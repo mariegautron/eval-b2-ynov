@@ -35,7 +35,7 @@
     <main id="contenu">
       <!-- Section Héros -->
       <div class="hero" role="banner">
-        <div class="svg-decoration">
+        <div class="svg-decoration" aria-hidden="true">
           <svg viewBox="0 0 1440 320" focusable="false">
             <path
               fill="#ffb347"
@@ -45,11 +45,11 @@
           </svg>
         </div>
         <div class="hero-content container">
-          <img src="images/moliere.png" class="hero-image" alt="Affiche du spectacle Molière, La fabuleuse histoire d'un génie" /> <!-- Ajout d'un alt pour l'image -->
+          <img src="images/moliere.png" tabindex="0" class="hero-image" alt="Affiche du spectacle Molière, La fabuleuse histoire d'un génie" /> <!-- Ajout d'un alt pour l'image -->
           <div class="hero-text">
             <h1>Molière, le spectacle musical</h1>
             <p>La fabuleuse histoire d'un génie du théâtre français</p>
-            <a href="infos.html#billetterie" class="btn">
+            <a href="infos.html#billetterie" class="btn" tabindex="0">
               <i class="fas fa-ticket-alt" aria-hidden="true"></i>
               <span>Cliquez ici</span>
             </a>
@@ -58,7 +58,7 @@
       </div>
 
       <!-- Citation -->
-      <div class="bandeau-citation">
+      <div class="bandeau-citation" tabindex="0">
         <h2 id="titre-citation">Citation de Molière</h2>
         <p>
           "Le devoir de la comédie est de corriger les hommes en les
@@ -73,7 +73,7 @@
         aria-labelledby="titre-intro"
       >
         <div class="container grid grid-2">
-          <div>
+          <div tabindex="0">
             <h2 id="titre-intro">
               Présentation du spectacle : Molière, rockstar du Grand Siècle
             </h2>
@@ -94,7 +94,7 @@
               unique en France.
             </p>
           </div>
-          <img src="images/scene1.png" alt="Scène du spectacle Molière avec les artistes en costume"  class="section-image"/> <!-- Ajout d'un alt pour l'image -->
+          <img src="images/scene1.png" tabindex="0" alt="Scène du spectacle Molière avec les artistes en costume"  class="section-image"/> <!-- Ajout d'un alt pour l'image -->
         </div>
       </section>
 
@@ -104,15 +104,15 @@
         role="region"
         aria-labelledby="titre-points"
       >
-        <div class="container">
+        <div class="container" tabindex="0">
           <h2 id="titre-points">Les points forts du spectacle</h2>
-          <p>52 chansons originales mêlant slam, opéra urbain et pop.</p>
-          <p>Une scénographie moderne avec décors mobiles et effets visuels.</p>
-          <p>
-            Un hommage vibrant à Molière, dramaturge rebelle et visionnaire.
-          </p>
-          <p>Une troupe de 30 artistes pluridisciplinaires.</p>
-          <p>Des anachronismes créatifs qui dynamitent les codes classiques.</p>
+          <ul>
+            <li>52 chansons originales mêlant slam, opéra urbain et pop.</li>
+            <li>Une scénographie moderne avec décors mobiles et effets visuels.</li>
+            <li>Un hommage vibrant à Molière, dramaturge rebelle et visionnaire.</li>
+            <li>Une troupe de 30 artistes pluridisciplinaires.</li>
+            <li>Des anachronismes créatifs qui dynamitent les codes classiques.</li>
+          </ul>
         </div>
       </div>
 
@@ -125,18 +125,21 @@
         <div class="container">
           <h2 id="titre-chiffres">Quelques chiffres marquants</h2>
           <div class="cards">
-            <div class="card">
-              <i class="fas fa-users" aria-hidden="true"></i> <!-- Ajout d'un aria-hidden pour l'icône qui est selon moi pas pertinante -->
+            <div class="card" tabindex="0">
+              <!-- Ajout d'un aria-hidden pour l'icône qui est selon moi pas pertinante -->
+              <i class="fas fa-users" aria-hidden="true"></i> 
               <h3>30 artistes</h3>
               <p>Chanteurs, danseurs, comédiens et musiciens sur scène.</p>
             </div>
-            <div class="card">
-              <i class="fas fa-mask" aria-hidden="true"></i> <!-- Ajout d'un aria-hidden pour l'icône qui est selon moi pas pertinante -->
+            <div class="card" tabindex="0">
+              <!-- Ajout d'un aria-hidden pour l'icône qui est selon moi pas pertinante -->
+              <i class="fas fa-mask" aria-hidden="true"></i>
               <h3>52 chansons</h3>
               <p>De "Rêver j'en ai l'habitude" à "On se moque".</p>
             </div>
-            <div class="card">
-              <i class="fas fa-award" aria-hidden="true"></i> <!-- Ajout d'un aria-hidden pour l'icône qui est selon moi pas pertinante -->
+            <div class="card" tabindex="0">
+              <!-- Ajout d'un aria-hidden pour l'icône qui est selon moi pas pertinante -->
+              <i class="fas fa-award" aria-hidden="true"></i>
               <h3>7 trophées</h3>
               <p>Dont meilleure comédie musicale et révélation artistique.</p>
             </div>
@@ -153,8 +156,8 @@
         <div class="container">
           <h2 id="titre-galerie">Galerie photos du spectacle</h2>
           <div class="gallery">
-            <img src="images/scene1.png" />
-            <img src="images/scene2.jpg" alt="Scène illustrative" />
+            <img src="images/scene1.png" alt="Première scène du spectacle" tabindex="0" />
+            <img src="images/scene2.jpg" alt="Deuxième scène du spectacle" tabindex="0" />
           </div>
         </div>
       </section>
@@ -168,7 +171,7 @@
         <div class="container">
           <h2 id="titre-distribution">La distribution du spectacle</h2>
           <div class="cards">
-            <div class="card">
+            <div class="card" tabindex="0">
               <img
                 src="images/petitom.jpg"
                 alt="Portrait de PETiTOM, interprète de Molière"
@@ -176,7 +179,7 @@
               <h3>PETiTOM</h3>
               <p>Molière</p>
             </div>
-            <div class="card">
+            <div class="card" tabindex="0">
               <img
                 src="images/loujean.png"
                 alt="Portrait de Lou Jean, interprète d'Armande Béjart"
@@ -184,7 +187,7 @@
               <h3>Lou Jean</h3>
               <p>Armande Béjart</p>
             </div>
-            <div class="card">
+            <div class="card" tabindex="0">
               <img
                 src="images/shaina.jpeg"
                 alt="Portrait de Shaïna Pronzola, interprète de Marquise"
@@ -192,7 +195,7 @@
               <h3>Shaïna Pronzola</h3>
               <p>Marquise</p>
             </div>
-            <div class="card">
+            <div class="card" tabindex="0">
               <img
                 src="images/abi.jpg"
                 alt="Portrait d'Abi Bernadoth, interprète du Prince de Conti"
@@ -205,7 +208,7 @@
       </section>
 
       <!-- Bandeau storytelling -->
-      <div class="bandeau-citation">
+      <div class="bandeau-citation" tabindex="0">
         <h2 id="titre-story">Esprit du spectacle</h2>
         <p>Une œuvre pop et engagée, entre hommage classique et slam urbain.</p>
       </div>
