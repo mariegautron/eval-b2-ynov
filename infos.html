@@ -4,18 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Infos & Réservation – Molière, le spectacle musical</title>
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
-      rel="stylesheet"
-    />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"/>
     <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" referrerpolicy="no-referrer"/>
   </head>
   <body>
     <div class="navbar">
@@ -24,9 +15,7 @@
           <a href="index.html">Accueil</a>
         </div>
         <div>
-          <a href="infos.html" class="active" aria-current="page"
-            >Infos & Réservation</a
-          >
+          <a href="infos.html" class="active" aria-current="page">Infos & Réservation</a>
         </div>
       </div>
     </div>
@@ -98,28 +87,31 @@
 
           <div>
             <div class="form-group">
-              <label>Prénom</label>
-              <input type="text" name="prenom" />
+              <h3>Vos informations personnelles</h3>
+              <label for="prenom">Prénom</label>
+              <input type="text" id="prenom" name="prenom" />
             </div>
 
             <div class="form-group">
-              <label>Nom</label>
-              <input type="text" name="nom" />
+              <label for="nom">Nom</label>
+              <input type="text" id="nom" name="nom" />
             </div>
 
             <div class="form-group">
-              <label>Email</label>
-              <input type="email" name="email" />
+              <label for="email">Email (obligatoire)</label>
+              <input type="email" id="email" name="email" required autocomplete="email" />
+              <small>ex : monadresse@mail.com</small><br />
+            </div>
+            <div aria-live="polite" style="color:red;">Le champ email est requis.</div><br />
+
+            <div class="form-group">
+              <label for="places">Nombre de places</label>
+              <input type="number" id="places" name="places" />
             </div>
 
             <div class="form-group">
-              <label>Nombre de places</label>
-              <input type="number" name="places" />
-            </div>
-
-            <div class="form-group">
-              <label>Date de la représentation</label>
-              <select name="date">
+              <label for="date">Date de la représentation</label>
+              <select id="date" name="date">
                 <option>Sélectionnez une date</option>
                 <option>12 avril 2025 - Nantes</option>
                 <option>19 avril 2025 - Dijon</option>
@@ -133,31 +125,23 @@
             <fieldset class="form-group">
               <legend>Besoin d'un aménagement particulier ?</legend>
               <div>
-                <input
-                  type="checkbox"
-                  id="pmr"
-                  name="accessibilite[]"
-                  value="pmr"
-                />
+                <input type="checkbox" id="pmr" name="accessibilite[]" value="pmr" />
                 <label for="pmr">Accès PMR (Personne à Mobilité Réduite)</label>
               </div>
               <div>
-                <input
-                  type="checkbox"
-                  id="malentendant"
-                  name="accessibilite[]"
-                  value="malentendant"
-                />
+                <input type="checkbox" id="malentendant" name="accessibilite[]" value="malentendant" />
                 <label for="malentendant">Aide pour malentendants</label>
               </div>
             </fieldset>
 
             <div class="form-group">
-              <textarea name="message" placeholder="Votre message"></textarea>
+              <h3>Votre message</h3>
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Votre message"></textarea>
             </div>
-
-            <button class="btn">
-              <i class="fas fa-paper-plane"></i>
+            <button type="submit" class="btn" aria-labelledby="send-instruction">
+              <i class="fas fa-paper-plane" aria-hidden="true"></i>
+              <span>Envoyer</span>
             </button>
           </div>
         </div>
