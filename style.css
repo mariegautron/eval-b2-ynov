@@ -431,6 +431,12 @@ img {
   font-weight: 600;
 }
 
+.form-group .required {
+  color: var(--color-accent);
+  font-size: 0.9em;
+  font-weight: normal;
+}
+
 input[type="text"],
 input[type="email"],
 input[type="number"],
