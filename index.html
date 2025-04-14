@@ -18,8 +18,8 @@
   </head>
 
   <body>
-    <a href="#contenu" class="evitement" tabindex="0">Aller au contenu principal</a>
-    <nav class="navbar" role="navigation">
+    <a href="#contenu" class="evitement" tabindex="0" aria-label="Aller au contenu principal">Aller au contenu principal</a>
+    <nav class="navbar" role="navigation" aria-label="Navigation principale">
       <div class="nav-container">
         <div>
           <a href="index.html" class="active" aria-current="page">Accueil</a>
@@ -32,7 +32,7 @@
 
     <main id="contenu" role="main">
       <!-- Section Héros -->
-      <header class="hero" role="banner">
+      <header class="hero" role="banner" aria-labelledby="titre-principal">
         <div class="svg-decoration">
           <svg viewBox="0 0 1440 320" focusable="false">
             <path
@@ -45,7 +45,7 @@
         <div class="hero-content container">
           <img src="images/moliere.png" class="hero-image" alt="Affiche du spectacle musical Molière" />
           <div class="hero-text">
-            <h1>Molière, le spectacle musical</h1>
+            <h1 id="titre-principal">Molière, le spectacle musical</h1>
             <p>La fabuleuse histoire d'un génie du théâtre français</p>
             <a href="infos.html#billetterie" class="btn">
               <i class="fas fa-ticket-alt" aria-hidden="true"></i>
@@ -56,7 +56,7 @@
       </header>
 
       <!-- Citation -->
-      <div class="bandeau-citation">
+      <div class="bandeau-citation" aria-labelledby="titre-citation">
         <h2 id="titre-citation">Citation de Molière</h2>
         <p>
           "Le devoir de la comédie est de corriger les hommes en les
@@ -154,7 +154,7 @@
       >
         <div class="container">
           <h2 id="titre-galerie">Galerie photos du spectacle</h2>
-          <div class="gallery">
+          <div class="gallery" aria-label="Galerie de photos du spectacle">
             <img src="images/scene1.png" alt="Scène du spectacle musical Molière avec les acteurs sur scène" />
             <img src="images/scene2.jpg" alt="Scène illustrative du spectacle avec les danseurs et musiciens" />
           </div>
@@ -169,7 +169,7 @@
       >
         <div class="container">
           <h2 id="titre-distribution">La distribution du spectacle</h2>
-          <div class="cards">
+          <div class="cards" aria-label="Liste des acteurs principaux">
             <div class="card">
               <img
                 src="images/petitom.jpg"
@@ -207,7 +207,7 @@
       </section>
 
       <!-- Bandeau storytelling -->
-      <div class="bandeau-citation">
+      <div class="bandeau-citation" aria-labelledby="titre-story">
         <h2 id="titre-story">Esprit du spectacle</h2>
         <p>Une œuvre pop et engagée, entre hommage classique et slam urbain.</p>
       </div>
@@ -220,7 +220,7 @@
       >
         <div class="container">
           <h2 id="titre-reseaux">Suivez-nous sur les réseaux sociaux</h2>
-          <div class="reseaux-links">
+          <div class="reseaux-links" aria-label="Liens vers nos réseaux sociaux">
             <a
               href="https://www.youtube.com/channel/UCc5t5wb25TAO4bCA1d8yMrQ"
               target="_blank"
@@ -250,7 +250,7 @@
       </section>
     </main>
 
-    <footer class="footer" role="contentinfo">
+    <footer class="footer" role="contentinfo" aria-label="Informations légales et copyright">
       <div class="container">
         <p>&copy; 2025 – Molière, le spectacle musical. Tous droits réservés.</p>
       </div>

@@ -19,7 +19,7 @@
   </head>
   <body>
     <a href="#contenu" class="evitement" tabindex="0">Aller au contenu principal</a>
-    <nav class="navbar" role="navigation">
+    <nav class="navbar" role="navigation" aria-label="Navigation principale">
       <div class="nav-container">
         <div>
           <a href="index.html">Accueil</a>
@@ -32,9 +32,9 @@
 
     <main id="contenu" role="main">
       <!-- En-tête -->
-      <header class="hero" role="banner">
+      <header class="hero" role="banner" aria-labelledby="titre-principal">
         <div class="hero-content container">
-          <h1>Infos pratiques & Réservations</h1>
+          <h1 id="titre-principal">Infos pratiques & Réservations</h1>
           <p>Réservez vos places pour le spectacle musical de l'année !</p>
         </div>
       </header>
@@ -47,7 +47,7 @@
       >
         <div class="container">
           <h2 id="titre-infos">Informations pratiques pour votre venue</h2>
-          <ul class="list-points">
+          <ul class="list-points" aria-label="Informations importantes pour votre venue">
             <li>
               <strong>Lieu :</strong> Zénith de Paris, 211 Avenue Jean Jaurès,
               75019 Paris
@@ -91,7 +91,7 @@
       </section>
 
       <!-- Formulaire de réservation -->
-      <section class="section-intro">
+      <section class="section-intro" role="region" aria-labelledby="billetterie">
         <div class="container">
           <h2 id="billetterie">Réservez vos places</h2>
 
@@ -130,7 +130,7 @@
               </select>
             </div>
 
-            <fieldset class="form-group">
+            <fieldset class="form-group" aria-label="Options d'accessibilité">
               <legend>Besoin d'un aménagement particulier ?</legend>
               <div class="checkbox-group">
                 <input
@@ -158,7 +158,7 @@
             </div>
 
             <div class="form-actions">
-              <button type="submit" class="btn">
+              <button type="submit" class="btn" aria-label="Envoyer le formulaire de réservation">
                 <i class="fas fa-paper-plane" aria-hidden="true"></i>
                 <span>Envoyer ma réservation</span>
               </button>
@@ -169,7 +169,7 @@
       </section>
     </main>
 
-    <footer class="footer" role="contentinfo">
+    <footer class="footer" role="contentinfo" aria-label="Informations légales et copyright">
       <div class="container">
         <p>&copy; 2025 – Molière, le spectacle musical. Tous droits réservés.</p>
       </div>
