@@ -13,7 +13,7 @@ Ce projet est hébergé ici :
 
 ➡️ **https://github.com/mariegautron/eval-b2-ynov**
 
-> ⚠️ **Attention : NE RIEN PUSHER SUR `main` !!**
+> ⚠️ **Attention : NE RIEN PUSHER SUR `jb` !!**
 >
 > Vous devez créer **votre branche personnelle** pour travailler proprement (voir étapes plus bas).
 

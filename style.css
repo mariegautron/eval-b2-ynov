@@ -1,15 +1,16 @@
 :root {
   --color-bg: #0e0e0e;
-  --color-text: #bcbcbc;
-  --color-secondary-text: #8a8a8a;
-  --color-accent: #c17dff;
-  --color-accent-light: #d6a3ff;
+  --color-text: #f0f0f0; /* renforcé */
+  --color-secondary-text: #c0c0c0; /* renforcé */
+  --color-accent: #7a2bff;
+  --color-accent-light: #b57eff;
+  --color-active: #b57eff;
   --color-card-bg: #1a1a1a;
   --color-hover-bg: #292929;
-  --color-focus-outline: #c17dff;
-  --color-bandeau-bg: #c17dff;
-  --color-bandeau-text: #fff;
-  --color-footer-bg: #1a1a1a;
+  --color-focus-outline: #ffd700; /* visibilité focus */
+  --color-bandeau-bg: #9a40ff;
+  --color-bandeau-text: #ffffff;
+  --color-footer-bg: #141414;
   --color-svg: #c17dff;
   --color-focus-bg: transparent;
 }
@@ -126,7 +127,7 @@ img {
 }
 
 .navbar a.active {
-  color: var(--color-accent);
+  color: var(--color-active);
 }
 
 /* HERO */
@@ -298,7 +299,8 @@ img {
 .card i {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: var(--color-accent);
+  color: var(--color-accent-light);
+  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.7));
 }
 
 .card:hover,
@@ -360,7 +362,8 @@ img {
 }
 
 .reseaux-links a i {
-  color: var(--color-accent);
+  color: var(--color-accent-light);
+  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.7));
 }
 
 .reseaux-links a:hover,
@@ -502,4 +505,47 @@ textarea {
     width: 100%;
     justify-content: center;
   }
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-focus-outline);
+  outline-offset: 4px;
+}
+
+::placeholder {
+  color: var(--color-secondary-text);
+  opacity: 0.9;
+}
+
+a:hover,
+a:focus {
+  color: var(--color-accent-light);
+  text-decoration: underline;
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--color-focus-outline);
+  outline-offset: 4px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+  Color:#FFF;
+  background-color: transparent;
+}
+
+:focus-visible {
+  outline-color: #ffd700 !important;
 }
