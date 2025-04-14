@@ -1,24 +1,27 @@
 :root {
   --color-bg: #0e0e0e;
-  --color-text: #bcbcbc;
-  --color-secondary-text: #8a8a8a;
+  --color-text: #e0e0e0;
+  --color-secondary-text: #b0b0b0;
   --color-accent: #c17dff;
   --color-accent-light: #d6a3ff;
   --color-card-bg: #1a1a1a;
   --color-hover-bg: #292929;
   --color-focus-outline: #c17dff;
   --color-bandeau-bg: #c17dff;
-  --color-bandeau-text: #fff;
+  --color-bandeau-text: #000000;
   --color-footer-bg: #1a1a1a;
   --color-svg: #c17dff;
   --color-focus-bg: transparent;
 }
 
+/* Changement de couleur, le texte est plus clair */
+/* Les textes sur fond violet sont maintenant noir pour un meilleur contraste */
+
 /* RESET + BASE */
 *,
 *::before,
 *::after {
-  margin: 0;
+  margin:0;
   padding: 0;
   box-sizing: border-box;
 }
@@ -34,6 +37,24 @@ body {
   font-family: "Inter", Arial, sans-serif;
   line-height: 1.6;
   font-size: 1.125rem;
+  margin: 0;
+}
+
+/* Lien d'accès rapide pour l'accessibilité */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-bandeau-text);
+  color: #fff;
+  padding: 8px;
+  z-index: 2000;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--color-focus-outline);
 }
 
 /* Typo titres */
@@ -45,6 +66,7 @@ h3 {
   margin-bottom: 1rem;
   font-family: "Playfair Display", serif;
   font-weight: 700;
+  color: #fff; /* Meilleur contraste pour les titres */
 }
 
 h2 {
@@ -55,6 +77,7 @@ h3 {
   font-size: 1.75rem;
 }
 
+/* Liens et focus */
 a {
   color: var(--color-text);
   text-decoration: none;
@@ -70,6 +93,14 @@ a:focus-visible {
   outline: 3px solid var(--color-focus-outline);
   outline-offset: 4px;
   background-color: var(--color-focus-bg);
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-focus-outline);
+  outline-offset: 2px;
 }
 
 img {
@@ -107,6 +138,7 @@ img {
   font-size: 1.125rem;
   font-weight: 600;
   position: relative;
+  color: #fff; /* Amélioration du contraste */
 }
 
 .navbar a::after {
@@ -167,6 +199,7 @@ img {
 
 .hero-text h1 {
   font-size: 3rem;
+  color: #fff;
 }
 
 .hero-text p {
@@ -193,13 +226,16 @@ img {
 .btn:focus {
   background-color: var(--color-accent-light);
   color: var(--color-bandeau-text);
-  outline: none;
-  outline-offset: 0;
+  text-decoration: none;
+}
+
+.btn:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
 }
 
 /* BANDEAUX */
-.bandeau-citation,
-.bandeau-story {
+.bandeau-citation {
   background-color: var(--color-bandeau-bg);
   color: var(--color-bandeau-text);
   text-align: center;
@@ -208,8 +244,13 @@ img {
   font-size: 1.2rem;
 }
 
-.bandeau-citation p,
-.bandeau-story p {
+.bandeau-citation h2 {
+  font-size: 1.5rem;
+  color: var(--color-bandeau-text);
+  margin-bottom: 1rem;
+}
+
+.bandeau-citation p {
   text-align: center;
 }
 
@@ -249,7 +290,7 @@ img {
 }
 
 /* LISTES */
-.list-points {
+.list-points, .list-unstyled {
   list-style: none;
   padding: 0;
 }
@@ -262,6 +303,19 @@ img {
 
 .list-points li::before {
   content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+}
+
+.list-unstyled li {
+  position: relative;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.list-unstyled li::before {
+  content: "•";
   position: absolute;
   left: 0;
   color: var(--color-accent);
@@ -310,6 +364,7 @@ img {
 .card h3 {
   margin-bottom: 0.5rem;
   font-family: "Playfair Display", serif;
+  color: #fff;
 }
 
 .card p {
@@ -337,7 +392,7 @@ img {
   padding: 4rem 0;
 }
 
-.section-reseaux h3 {
+.section-reseaux h2 {
   text-align: center;
 }
 
@@ -346,6 +401,7 @@ img {
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
+  margin-top: 2rem;
 }
 
 .reseaux-links a {
@@ -357,6 +413,7 @@ img {
   border-radius: 50px;
   font-weight: bold;
   transition: background 0.3s ease, transform 0.3s ease;
+  color: #fff; /* Amélioration du contraste */
 }
 
 .reseaux-links a i {
@@ -367,8 +424,12 @@ img {
 .reseaux-links a:focus {
   background-color: var(--color-hover-bg);
   transform: translateY(-2px);
+}
+
+.reseaux-links a:focus-visible {
   outline: 3px solid var(--color-focus-outline);
   outline-offset: 4px;
+  text-decoration: none;
 }
 
 /* FOOTER */
@@ -384,8 +445,7 @@ img {
 }
 
 /* FORMULAIRE */
-
-.form-reservation {
+form {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -438,68 +498,46 @@ fieldset.form-group input[type="checkbox"] {
   height: auto;
 }
 
-textarea {
-  resize: vertical;
+/* Style amélioré pour les cases à cocher */
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
 }
 
-.section-intro input::placeholder,
-.section-intro textarea::placeholder {
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+input::placeholder,
+textarea::placeholder {
   color: var(--color-secondary-text);
 }
 
-.section-intro input:focus,
-.section-intro select:focus,
-.section-intro textarea:focus {
-  outline: none;
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--color-focus-outline);
   background-color: var(--color-card-bg);
 }
 
-.section-intro .btn {
+button[type="submit"] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   background-color: var(--color-accent);
   color: var(--color-bandeau-text);
-  padding: 0.75rem;
-  border-radius: 50%;
-  width: 3rem;
-  height: 3rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
   border: none;
   cursor: pointer;
   transition: background 0.3s ease;
+  font-weight: bold;
+  font-size: 1rem;
 }
 
-.section-intro .btn:hover,
-.section-intro .btn:focus {
-  background-color: var(--color-accent);
-  outline: none;
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+  background-color: var(--color-accent-light);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  h2 {
-    font-size: 2rem;
-  }
-
-  .hero-text h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero-image {
-    max-width: 90%;
-  }
-
-  .navbar ul {
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .form-reservation {
-    gap: 1rem;
-  }
-
-  button[type="submit"] {
-    width: 100%;
-    justify-content: center;
-  }
-}
