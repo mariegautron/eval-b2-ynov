@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Infos & Réservation – Molière, le spectacle musical</title>
 
+    <!-- Chargement des polices -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
       rel="stylesheet"
     />
 
+    <!-- Fichiers CSS -->
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -18,34 +20,29 @@
     />
   </head>
   <body>
-    <div class="navbar">
-      <div class="nav-container">
-        <div>
-          <a href="index.html">Accueil</a>
-        </div>
-        <div>
-          <a href="infos.html" class="active" aria-current="page"
-            >Infos & Réservation</a
-          >
-        </div>
-      </div>
-    </div>
+    <!-- Lien d'évitement -->
+    <a href="#contenu" class="skip-link">Aller au contenu principal</a>
 
+    <!-- En-tête -->
+    <header class="navbar">
+      <nav class="nav-container">
+        <a href="index.html">Accueil</a>
+        <a href="infos.html" class="active" aria-current="page">Infos & Réservation</a>
+      </nav>
+    </header>
+
+    <!-- Contenu principal -->
     <main id="contenu">
-      <!-- En-tête -->
-      <header class="hero" role="banner">
+      <!-- Section Héros -->
+      <header class="hero">
         <div class="hero-content container">
           <h1>Infos pratiques & Réservations</h1>
           <p>Réservez vos places pour le spectacle musical de l'année !</p>
         </div>
-      </header>
+      </section>
 
       <!-- Section Infos pratiques -->
-      <section
-        class="section-intro"
-        role="region"
-        aria-labelledby="titre-infos"
-      >
+      <section class="section-intro" aria-labelledby="titre-infos">
         <div class="container">
           <h2 id="titre-infos">Informations pratiques pour votre venue</h2>
           <ul class="list-points">
@@ -71,11 +68,7 @@
       </section>
 
       <!-- Carte d'accès -->
-      <section
-        class="section-intro alt-bg"
-        role="region"
-        aria-labelledby="titre-carte"
-      >
+      <section class="section-intro alt-bg" aria-labelledby="titre-carte">
         <div class="container">
           <h2 id="titre-carte">Plan d'accès au Zénith de Paris</h2>
           <iframe
@@ -86,41 +79,87 @@
             allowfullscreen
             loading="lazy"
             title="Carte du Zénith de Paris"
-            tabindex="-1"
           ></iframe>
         </div>
       </section>
 
       <!-- Formulaire de réservation -->
-      <div class="section-intro">
+      <section class="section-intro" aria-labelledby="titre-reservation">
         <div class="container">
-          <h2>Réservez vos places</h2>
-
-          <div>
-            <div class="form-group">
-              <label>Prénom</label>
-              <input type="text" name="prenom" />
+          <h2 id="titre-reservation">Réservez vos places</h2>
+          <form>
+            <!-- Prénom -->
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+              <label for="prenom">Prénom <span aria-hidden="true">*</span></label>
+              <input
+                type="text"
+                id="prenom"
+                name="prenom"
+                placeholder="Exemple : Jean"
+                required
+                aria-required="true"
+                aria-describedby="prenom-desc"
+              />
+              <small id="prenom-desc" class="form-hint">Entrez votre prénom.</small>
             </div>
 
-            <div class="form-group">
-              <label>Nom</label>
-              <input type="text" name="nom" />
+            <!-- Nom -->
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+              <label for="nom">Nom <span aria-hidden="true">*</span></label>
+              <input
+                type="text"
+                id="nom"
+                name="nom"
+                placeholder="Exemple : Dupont"
+                required
+                aria-required="true"
+                aria-describedby="nom-desc"
+              />
+              <small id="nom-desc" class="form-hint">Entrez votre nom.</small>
             </div>
 
-            <div class="form-group">
-              <label>Email</label>
-              <input type="email" name="email" />
+            <!-- Email -->
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+              <label for="email">Email <span aria-hidden="true">*</span></label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Exemple : jean.dupont@email.com"
+                required
+                aria-required="true"
+                aria-describedby="email-desc"
+              />
+              <small id="email-desc" class="form-hint">Entrez une adresse email valide.</small>
             </div>
 
-            <div class="form-group">
-              <label>Nombre de places</label>
-              <input type="number" name="places" />
+            <!-- Nombre de places -->
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+              <label for="places">Nombre de places <span aria-hidden="true">*</span></label>
+              <input
+                type="number"
+                id="places"
+                name="places"
+                min="1"
+                placeholder="Exemple : 2"
+                required
+                aria-required="true"
+                aria-describedby="places-desc"
+              />
+              <small id="places-desc" class="form-hint">Indiquez le nombre de places souhaitées.</small>
             </div>
 
-            <div class="form-group">
-              <label>Date de la représentation</label>
-              <select name="date">
-                <option>Sélectionnez une date</option>
+            <!-- Date de la représentation -->
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+              <label for="date">Date de la représentation <span aria-hidden="true">*</span></label>
+              <select
+                id="date"
+                name="date"
+                required
+                aria-required="true"
+                aria-describedby="date-desc"
+              >
+                <option value="" disabled selected>Sélectionnez une date</option>
                 <option>12 avril 2025 - Nantes</option>
                 <option>19 avril 2025 - Dijon</option>
                 <option>26 avril 2025 - Floirac</option>
@@ -128,9 +167,11 @@
                 <option>23-25 mai 2025 - Lille</option>
                 <option>21-22 juin 2025 - Caen</option>
               </select>
+              <small id="date-desc" class="form-hint">Choisissez une date parmi les options disponibles.</small>
             </div>
 
-            <fieldset class="form-group">
+            <!-- Aménagements particuliers -->
+            <fieldset class="form-group" style="margin-bottom: 1.5rem;">
               <legend>Besoin d'un aménagement particulier ?</legend>
               <div>
                 <input
@@ -152,24 +193,37 @@
               </div>
             </fieldset>
 
-            <div class="form-group">
-              <textarea name="message" placeholder="Votre message"></textarea>
+            <!-- Message -->
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+              <label for="message">Votre message</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Ajoutez des informations supplémentaires si nécessaire"
+                aria-describedby="message-desc"
+              ></textarea>
+              <small id="message-desc" class="form-hint">Ajoutez des informations supplémentaires si nécessaire.</small>
             </div>
 
-            <button class="btn">
-              <i class="fas fa-paper-plane"></i>
-            </button>
-          </div>
+            <!-- Bouton de soumission -->
+            <div style="text-align: center; margin-top: 2rem;">
+              <button type="submit" class="btn">
+                <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                <span>Envoyer</span>
+              </button>
+            </div>
+          </form>
         </div>
-      </div>
+      </section>
     </main>
 
-    <div class="footer">
+    <!-- Pied de page -->
+    <footer class="footer">
       <div class="container">
         <p>
           &copy; 2025 – Molière, le spectacle musical. Tous droits réservés.
         </p>
       </div>
-    </div>
+    </footer>
   </body>
 </html>

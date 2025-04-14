@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accueil – Molière, le spectacle musical</title>
 
+    <!-- Chargement des polices -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
       rel="stylesheet"
     />
 
+    <!-- Fichiers CSS -->
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -18,22 +20,24 @@
   </head>
 
   <body>
-    <div class="navbar">
-      <div class="nav-container">
-        <div>
-          <a href="index.html" class="active" aria-current="page">Accueil</a>
-        </div>
-        <div>
-          <a href="infos.html">Infos & Réservation</a>
-        </div>
-      </div>
-    </div>
+    <!-- Lien d'évitement pour améliorer l'accessibilité clavier -->
+    <a href="#contenu" class="skip-link">Aller au contenu principal</a>
 
+    <!-- En-tête avec balises sémantiques -->
+    <header class="navbar">
+      <nav class="nav-container">
+        <!-- Utilisation de `aria-current` pour indiquer la page active -->
+        <a href="index.html" class="active" aria-current="page">Accueil</a>
+        <a href="infos.html">Infos & Réservation</a>
+      </nav>
+    </header>
+
+    <!-- Contenu principal -->
     <main id="contenu">
       <!-- Section Héros -->
-      <div class="hero" role="banner">
+      <header class="hero">
         <div class="svg-decoration">
-          <svg viewBox="0 0 1440 320" focusable="false">
+          <svg viewBox="0 0 1440 320" focusable="false"> <!-- Permet d'ajuster le focus -->
             <path
               fill="#ffb347"
               fill-opacity="0.3"
@@ -42,31 +46,36 @@
           </svg>
         </div>
         <div class="hero-content container">
-          <img src="images/moliere.png" class="hero-image" />
+          <!-- Ajout d'un texte alternatif descriptif pour l'image -->
+          <img
+            src="images/moliere.png"
+            class="hero-image"
+            alt="Illustration de Molière"
+          />
           <div class="hero-text">
-            <h3>Molière, le spectacle musical</h3>
+            <h1>Molière, le spectacle musical</h1>
             <p>La fabuleuse histoire d'un génie du théâtre français</p>
+            <!-- Icône avec `aria-hidden` pour indiquer qu'elle est décorative -->
             <a href="infos.html#billetterie" class="btn">
-              <i class="fas fa-ticket-alt" alt="Icône billet"></i>
+              <i class="fas fa-ticket-alt" aria-hidden="true"></i>
               <span>Cliquez ici</span>
             </a>
           </div>
         </div>
-      </div>
+      </section>
 
       <!-- Citation -->
-      <div class="bandeau-citation">
-        <h6 id="titre-citation">Citation de Molière</h6>
+      <blockquote class="bandeau-citation">
+        <h2 id="titre-citation">Citation de Molière</h2>
         <p>
           "Le devoir de la comédie est de corriger les hommes en les
           divertissant." — Molière
         </p>
-      </div>
+      </blockquote>
 
       <!-- Présentation du spectacle -->
       <section
         class="section-intro"
-        role="region"
         aria-labelledby="titre-intro"
       >
         <div class="container grid grid-2">
@@ -91,48 +100,49 @@
               unique en France.
             </p>
           </div>
+          <!-- Ajout d'un texte alternatif descriptif pour l'image -->
           <img
             src="images/scene1.png"
-            alt="Image d'une belle scène"
+            alt="Une scène du spectacle"
             class="section-image"
           />
         </div>
       </section>
 
       <!-- Points forts -->
-      <div
+      <section
         class="section-intro alt-bg"
-        role="region"
         aria-labelledby="titre-points"
       >
         <div class="container">
-          <h4 id="titre-points">Les points forts du spectacle</h4>
-          <p>52 chansons originales mêlant slam, opéra urbain et pop.</p>
-          <p>Une scénographie moderne avec décors mobiles et effets visuels.</p>
-          <p>
-            Un hommage vibrant à Molière, dramaturge rebelle et visionnaire.
-          </p>
-          <p>Une troupe de 30 artistes pluridisciplinaires.</p>
-          <p>Des anachronismes créatifs qui dynamitent les codes classiques.</p>
+          <h2 id="titre-points">Les points forts du spectacle</h2>
+          <ul>
+            <li>52 chansons originales mêlant slam, opéra urbain et pop.</li>
+            <li>Une scénographie moderne avec décors mobiles et effets visuels.</li>
+            <li>
+              Un hommage vibrant à Molière, dramaturge rebelle et visionnaire.
+            </li>
+            <li>Une troupe de 30 artistes pluridisciplinaires.</li>
+            <li>Des anachronismes créatifs qui dynamitent les codes classiques.</li>
+          </ul>
         </div>
-      </div>
+      </section>
 
       <!-- Chiffres clés -->
       <section
         class="section-chiffres"
-        role="region"
         aria-labelledby="titre-chiffres"
       >
         <div class="container">
           <h3 id="titre-chiffres">Quelques chiffres marquants</h3>
           <div class="cards">
             <div class="card">
-              <i class="fas fa-users" alt="Icône utilisateurs"></i>
+              <i class="fas fa-users" aria-hidden="true"></i>
               <h3>30 artistes</h3>
               <p>Chanteurs, danseurs, comédiens et musiciens sur scène.</p>
             </div>
             <div class="card">
-              <i class="fas fa-mask" alt="Icône masque"></i>
+              <i class="fas fa-mask" aria-hidden="true"></i>
               <h3>52 chansons</h3>
               <p>De "Rêver j’en ai l’habitude" à "On se moque".</p>
             </div>
@@ -148,14 +158,13 @@
       <!-- Galerie -->
       <section
         class="section-intro"
-        role="region"
         aria-labelledby="titre-galerie"
       >
         <div class="container">
-          <h4 id="titre-galerie">Galerie photos du spectacle</h4>
+          <h3 id="titre-galerie">Galerie photos du spectacle</h3>
           <div class="gallery">
-            <img src="images/scene1.png" />
-            <img src="images/scene2.jpg" alt="Scène illustrative" />
+            <img src="images/scene1.png" alt="Scène du spectacle avec des acteurs en costume" />
+            <img src="images/scene2.jpg" alt="Scène illustrative avec des danseurs" />
           </div>
         </div>
       </section>
@@ -163,7 +172,6 @@
       <!-- Distribution -->
       <section
         class="section-intro alt-bg"
-        role="region"
         aria-labelledby="titre-distribution"
       >
         <div class="container">
@@ -207,26 +215,26 @@
 
       <!-- Bandeau storytelling -->
       <div class="bandeau-citation">
-        <h6 id="titre-story">Esprit du spectacle</h6>
+        <h2 id="titre-story">Esprit du spectacle</h2>
         <p>Une œuvre pop et engagée, entre hommage classique et slam urbain.</p>
       </div>
 
       <!-- Réseaux sociaux -->
       <section
         class="section-reseaux"
-        role="region"
         aria-labelledby="titre-reseaux"
       >
         <div class="container">
           <h3 id="titre-reseaux">Suivez-nous sur les réseaux sociaux</h3>
           <div class="reseaux-links">
+            <!-- Suppression de `alt` sur les icônes et ajout de `aria-hidden` -->
             <a
               href="https://www.youtube.com/channel/UCc5t5wb25TAO4bCA1d8yMrQ"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Chaîne YouTube officielle du spectacle Molière"
             >
-              <i class="fab fa-youtube" alt="Icône YouTube"></i> YouTube
+              <i class="fab fa-youtube" aria-hidden="true"></i> YouTube
             </a>
             <a
               href="https://www.facebook.com/moliereloperaurbain/?locale=fr_FR"
@@ -234,7 +242,7 @@
               rel="noopener noreferrer"
               aria-label="Page Facebook officielle du spectacle Molière"
             >
-              <i class="fab fa-facebook" alt="Icône Facebook"></i> Facebook
+              <i class="fab fa-facebook" aria-hidden="true"></i> Facebook
             </a>
             <a
               href="https://www.instagram.com/molierelespectaclemusical/"
@@ -242,19 +250,20 @@
               rel="noopener noreferrer"
               aria-label="Profil Instagram du spectacle Molière"
             >
-              <i class="fab fa-instagram" alt="Icône Instagram"></i> Instagram
+              <i class="fab fa-instagram" aria-hidden="true"></i> Instagram
             </a>
           </div>
         </div>
       </section>
     </main>
 
-    <div class="footer">
+    <!-- Pied de page -->
+    <footer class="footer">
       <div class="container">
         <p>
           &copy; 2025 – Molière, le spectacle musical. Tous droits réservés.
         </p>
       </div>
-    </div>
+    </footer>
   </body>
 </html>
