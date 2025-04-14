@@ -161,6 +161,7 @@ img {
   color: var(--color-accent);
 }
 
+
 /* HERO */
 .hero {
   background: linear-gradient(135deg, var(--color-card-bg), var(--color-bg));
@@ -264,6 +265,7 @@ img {
   margin: 0 auto;
   display: block;
 }
+
 
 /* GRID SYSTEM */
 .grid-2 {
@@ -451,7 +453,12 @@ textarea {
   color: var(--color-text);
   font-family: "Inter", sans-serif;
   font-size: 1rem;
+  outline: 3px solid var(--color-focus-outline); 
+  outline-offset: 2px;
+  background-color: var(--color-card-bg); 
 }
+
+
 
 
 
