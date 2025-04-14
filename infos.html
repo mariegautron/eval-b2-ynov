@@ -94,34 +94,34 @@
       </section>
 
       <!-- Formulaire de réservation -->
-      <div class="section-intro">
+      <form class="section-intro">
         <div class="container">
-          <h2>Réservez vos places</h2>
+          <h2>Réservez vos places</h2>  
 
           <div>
             <div class="form-group">
-              <label>Prénom</label>
-              <input type="text" name="prenom" />
+              <label for="Prénom">Prénom</label> <!-- add "for" and "id"-->
+              <input type="text" name="prenom" id="prenom" />
             </div>
 
             <div class="form-group">
-              <label>Nom</label>
-              <input type="text" name="nom" />
+              <label for="Nom">Nom</label> <!-- add "for" and "id"-->
+              <input type="text" name="nom" id="nom"/>
             </div>
 
             <div class="form-group">
-              <label>Email</label>
-              <input type="email" name="email" />
+              <label for="Email">Email</label> <!-- add "for" and "id"-->
+              <input type="email" name="email" id="email"/>
             </div>
 
             <div class="form-group">
-              <label>Nombre de places</label>
-              <input type="number" name="places" />
+              <label for="Nombre de places">Nombre de places</label> <!-- add "for" and "id"-->
+              <input type="number" name="places" id="places"/>
             </div>
 
             <div class="form-group">
-              <label>Date de la représentation</label>
-              <select name="date">
+              <label for="Date de la représentation">Date de la représentation</label> <!-- add "for" and "id"-->
+              <select name="date" id="representation-date">
                 <option>Sélectionnez une date</option>
                 <option>12 avril 2025 - Nantes</option>
                 <option>19 avril 2025 - Dijon</option>
@@ -158,13 +158,13 @@
               <textarea name="message" placeholder="Votre message"></textarea>
             </div>
 
-            <button class="btn">
-              <i class="fas fa-paper-plane"></i>
+            <button type="submit" class="btn">
+              <i class="fas fa-paper-plane" aria-hidden="true"></i>
               <span> Envoyer Votre demande de réservation </span>
             </button>
           </div>
         </div>
-      </div>
+      </form>
     </main>
 
     <div class="footer">

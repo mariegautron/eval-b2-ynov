@@ -57,7 +57,7 @@ Ce projet est hébergé ici :
 - ✅ Vérifier les contrastes de couleurs // Done
 - ✅ Vérifier les textes de remplacement (alt) sur toutes les images et icônes // Done
 - ✅ Corriger le focus visible pour tous les éléments interactifs
-- ✅ Corriger le formulaire
+- ✅ Corriger le formulaire // Done
 - ✅ Faire des commits clairs et précis
 - ✅ Documenter dans la merge request vos choix et corrections
 
