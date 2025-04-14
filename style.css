@@ -1,7 +1,7 @@
 :root {
   --color-bg: #0e0e0e;
-  --color-text: #bcbcbc;
-  --color-secondary-text: #8a8a8a;
+  --color-text: #ffffff;
+  --color-secondary-text: #ffffff;
   --color-accent: #c17dff;
   --color-accent-light: #d6a3ff;
   --color-card-bg: #1a1a1a;
@@ -205,19 +205,32 @@ img {
   align-items: center;
   gap: 0.75rem;
   background-color: var(--color-accent);
-  color: var(--color-bandeau-text);
+  color: #000;
   padding: 0.75rem 1.5rem;
   border-radius: 50px;
   font-weight: bold;
   transition: background 0.3s ease;
   font-family: "Inter", sans-serif;
   margin: 20px;
+  span{
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: var(--color-accent);
+    color: #000;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    font-family: "Inter", sans-serif;
+    margin: 20px;
+  }
 }
 
 .btn:hover,
 .btn:focus {
   background-color: var(--color-accent-light);
-  color: var(--color-bandeau-text);
+  color: #000;
   outline: none;
   outline-offset: 0;
 }
@@ -226,7 +239,7 @@ img {
 .bandeau-citation,
 .bandeau-story {
   background-color: var(--color-bandeau-bg);
-  color: var(--color-bandeau-text);
+  color: #000;
   text-align: center;
   padding: 2.5rem;
   font-weight: bold;
