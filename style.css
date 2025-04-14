@@ -8,7 +8,7 @@
   --color-hover-bg: #292929;
   --color-focus-outline: #c17dff;
   --color-bandeau-bg: #c17dff;
-  --color-bandeau-text: #fff;
+  --color-bandeau-text: #0e0e0e;
   --color-footer-bg: #1a1a1a;
   --color-svg: #c17dff;
   --color-focus-bg: transparent;
@@ -191,8 +191,8 @@ img {
 
 .btn:hover,
 .btn:focus {
-  background-color: var(--color-accent-light);
-  color: var(--color-bandeau-text);
+  background-color: #000000;
+  color:#FFFFFF;
   outline: none;
   outline-offset: 0;
 }
@@ -404,6 +404,11 @@ fieldset.form-group legend {
   font-weight: 600;
   font-family: "Inter", sans-serif;
   margin-bottom: 0.25rem;
+}
+
+.form-group label.exemples {
+  font-style: italic;
+  font-weight: 400;
 }
 
 input[type="text"],

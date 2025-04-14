@@ -18,7 +18,7 @@
   </head>
 
   <body>
-    <div class="navbar">
+    <nav class="navbar">
       <div class="nav-container">
         <div>
           <a href="index.html" class="active" aria-current="page">Accueil</a>
@@ -27,7 +27,22 @@
           <a href="infos.html">Infos & Réservation</a>
         </div>
       </div>
-    </div>
+    </nav>
+
+    <!-- Liens d'évitement -->
+    <nav aria-label="Liens d'évitement" >
+      <div class="nav-container">
+        <div>
+          <a href="#titre-citation">Présentation du spectacle</a>
+        </div>
+        <div>
+          <a href="#titre-chiffres">Chiffres clés</a>
+        </div>
+        <div>
+          <a href="#titre-galerie">Galerie photos</a>
+        </div>
+      </div>
+    </nav>
 
     <main id="contenu">
       <!-- Section Héros -->
@@ -42,9 +57,16 @@
           </svg>
         </div>
         <div class="hero-content container">
-          <img src="images/moliere.png" class="hero-image" />
+          <img src="images/moliere.png" class="hero-image" 
+          alt="affiche du spectacle, texte de l'affiche : 
+          La fabuleuse histoire d'un génie.
+          M
+          Molière
+          En tournée à partir du 2 mars 2024
+          dans toute la france, en belgique et en suisse
+          Création : Dove Attia | Mise en scéne : Ladeslas Chollat | Chorégraphie : Romain R.S" />
           <div class="hero-text">
-            <h3>Molière, le spectacle musical</h3>
+            <h1>Molière, le spectacle musical</h1>
             <p>La fabuleuse histoire d'un génie du théâtre français</p>
             <a href="infos.html#billetterie" class="btn">
               <i class="fas fa-ticket-alt" alt="Icône billet"></i>
@@ -56,7 +78,6 @@
 
       <!-- Citation -->
       <div class="bandeau-citation">
-        <h6 id="titre-citation">Citation de Molière</h6>
         <p>
           "Le devoir de la comédie est de corriger les hommes en les
           divertissant." — Molière
@@ -93,7 +114,7 @@
           </div>
           <img
             src="images/scene1.png"
-            alt="Image d'une belle scène"
+            alt="Image d'une scène du spectacle"
             class="section-image"
           />
         </div>
@@ -106,7 +127,7 @@
         aria-labelledby="titre-points"
       >
         <div class="container">
-          <h4 id="titre-points">Les points forts du spectacle</h4>
+          <h3 id="titre-points">Les points forts du spectacle</h3>
           <p>52 chansons originales mêlant slam, opéra urbain et pop.</p>
           <p>Une scénographie moderne avec décors mobiles et effets visuels.</p>
           <p>
@@ -207,7 +228,7 @@
 
       <!-- Bandeau storytelling -->
       <div class="bandeau-citation">
-        <h6 id="titre-story">Esprit du spectacle</h6>
+        <h3 id="titre-story">Esprit du spectacle</h3>
         <p>Une œuvre pop et engagée, entre hommage classique et slam urbain.</p>
       </div>
 

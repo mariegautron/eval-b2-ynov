@@ -31,6 +31,20 @@
       </div>
     </div>
 
+    <!-- Liens d'évitement -->
+    <div aria-label="Liens d'évitement" >
+      <div class="nav-container">
+        <div>
+          <a href="#infos">Informations</a>
+        </div>
+        <div>
+          <a href="#Map">Map</a>
+        </div>
+        <div>
+          <a href="#Réservations">Réservations</a>
+        </div>
+    </div>
+
     <main id="contenu">
       <!-- En-tête -->
       <header class="hero" role="banner">
@@ -42,6 +56,7 @@
 
       <!-- Section Infos pratiques -->
       <section
+        id = "infos"
         class="section-intro"
         role="region"
         aria-labelledby="titre-infos"
@@ -72,6 +87,7 @@
 
       <!-- Carte d'accès -->
       <section
+        id="Map"
         class="section-intro alt-bg"
         role="region"
         aria-labelledby="titre-carte"
@@ -92,29 +108,33 @@
       </section>
 
       <!-- Formulaire de réservation -->
-      <div class="section-intro">
+      <div class="section-intro" id="Réservations">
         <div class="container">
           <h2>Réservez vos places</h2>
 
           <div>
             <div class="form-group">
-              <label>Prénom</label>
+              <label>Prénom (obligatoire)</label>
               <input type="text" name="prenom" />
+              <label class="exemples">Ex : John</label>
             </div>
 
             <div class="form-group">
-              <label>Nom</label>
+              <label>Nom (obligatoire)</label>
               <input type="text" name="nom" />
+              <label class="exemples">Ex : Doe</label>
             </div>
 
             <div class="form-group">
-              <label>Email</label>
+              <label>Email (obligatoire)</label>
               <input type="email" name="email" />
+              <label class="exemples">Ex : JohnDoe@exemple.com</label>
             </div>
 
             <div class="form-group">
-              <label>Nombre de places</label>
+              <label>Nombre de places (obligatoire)</label>
               <input type="number" name="places" />
+              <label class="exemples">Ex : 4</label>
             </div>
 
             <div class="form-group">
