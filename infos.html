@@ -90,32 +90,71 @@
           <form>
             <!-- Prénom -->
             <div class="form-group">
-              <label for="prenom">Prénom</label>
-              <input type="text" id="prenom" name="prenom" required />
+              <label for="prenom">Prénom <span aria-hidden="true">*</span></label>
+              <input
+                type="text"
+                id="prenom"
+                name="prenom"
+                required
+                aria-required="true"
+                aria-describedby="prenom-desc"
+              />
+              <small id="prenom-desc" class="form-hint">Entrez votre prénom.</small>
             </div>
 
             <!-- Nom -->
             <div class="form-group">
-              <label for="nom">Nom</label>
-              <input type="text" id="nom" name="nom" required />
+              <label for="nom">Nom <span aria-hidden="true">*</span></label>
+              <input
+                type="text"
+                id="nom"
+                name="nom"
+                required
+                aria-required="true"
+                aria-describedby="nom-desc"
+              />
+              <small id="nom-desc" class="form-hint">Entrez votre nom.</small>
             </div>
 
             <!-- Email -->
             <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required />
+              <label for="email">Email <span aria-hidden="true">*</span></label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                aria-required="true"
+                aria-describedby="email-desc"
+              />
+              <small id="email-desc" class="form-hint">Entrez une adresse email valide.</small>
             </div>
 
             <!-- Nombre de places -->
             <div class="form-group">
-              <label for="places">Nombre de places</label>
-              <input type="number" id="places" name="places" min="1" required />
+              <label for="places">Nombre de places <span aria-hidden="true">*</span></label>
+              <input
+                type="number"
+                id="places"
+                name="places"
+                min="1"
+                required
+                aria-required="true"
+                aria-describedby="places-desc"
+              />
+              <small id="places-desc" class="form-hint">Indiquez le nombre de places souhaitées.</small>
             </div>
 
             <!-- Date de la représentation -->
             <div class="form-group">
-              <label for="date">Date de la représentation</label>
-              <select id="date" name="date" required>
+              <label for="date">Date de la représentation <span aria-hidden="true">*</span></label>
+              <select
+                id="date"
+                name="date"
+                required
+                aria-required="true"
+                aria-describedby="date-desc"
+              >
                 <option value="" disabled selected>Sélectionnez une date</option>
                 <option>12 avril 2025 - Nantes</option>
                 <option>19 avril 2025 - Dijon</option>
@@ -124,6 +163,7 @@
                 <option>23-25 mai 2025 - Lille</option>
                 <option>21-22 juin 2025 - Caen</option>
               </select>
+              <small id="date-desc" class="form-hint">Choisissez une date parmi les options disponibles.</small>
             </div>
 
             <!-- Aménagements particuliers -->
@@ -152,13 +192,19 @@
             <!-- Message -->
             <div class="form-group">
               <label for="message">Votre message</label>
-              <textarea id="message" name="message" placeholder="Votre message"></textarea>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Votre message"
+                aria-describedby="message-desc"
+              ></textarea>
+              <small id="message-desc" class="form-hint">Ajoutez des informations supplémentaires si nécessaire.</small>
             </div>
 
             <!-- Bouton de soumission -->
             <button type="submit" class="btn">
               <i class="fas fa-paper-plane" aria-hidden="true"></i>
-              Envoyer
+              <span>Envoyer</span>
             </button>
           </form>
         </div>
