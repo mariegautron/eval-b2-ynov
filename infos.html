@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Infos & Réservation – Molière, le spectacle musical</title>
+    <!-- Ajout de la description pour améliorer le référencement et l'accessibilité -->
+    <meta name="description" content="Informations pratiques et réservation pour le spectacle musical Molière. Dates, lieux et formulaire de réservation." />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
@@ -18,25 +20,29 @@
     />
   </head>
   <body>
-    <div class="navbar">
+    <!-- Ajout d'un lien d'évitement pour l'accessibilité -->
+    <a href="#contenu" class="skip-link">Aller au contenu principal</a>
+    
+    <!-- Amélioration de la structure de navigation pour l'accessibilité -->
+    <nav class="navbar" role="navigation" aria-label="Navigation principale">
       <div class="nav-container">
-        <div>
-          <a href="index.html">Accueil</a>
-        </div>
-        <div>
-          <a href="infos.html" class="active" aria-current="page"
-            >Infos & Réservation</a
-          >
-        </div>
+        <ul class="nav-list">
+          <li>
+            <a href="index.html">Accueil</a>
+          </li>
+          <li>
+            <a href="infos.html" class="active" aria-current="page">Infos & Réservation</a>
+          </li>
+        </ul>
       </div>
-    </div>
+    </nav>
 
-    <main id="contenu">
+    <main id="contenu" tabindex="-1">
       <!-- En-tête -->
       <header class="hero" role="banner">
         <div class="hero-content container">
           <h1>Infos pratiques & Réservations</h1>
-          <p>Réservez vos places pour le spectacle musical de l'année !</p>
+          <p tabindex="0">Réservez vos places pour le spectacle musical de l'année !</p>
         </div>
       </header>
 
@@ -49,20 +55,20 @@
         <div class="container">
           <h2 id="titre-infos">Informations pratiques pour votre venue</h2>
           <ul class="list-points">
-            <li>
+            <li tabindex="0">
               <strong>Lieu :</strong> Zénith de Paris, 211 Avenue Jean Jaurès,
               75019 Paris
             </li>
-            <li><strong>Dates :</strong> du 12 avril au 25 mai 2025</li>
-            <li>
+            <li tabindex="0"><strong>Dates :</strong> du 12 avril au 25 mai 2025</li>
+            <li tabindex="0">
               <strong>Horaires :</strong> ouverture des portes à 19h00, début du
               spectacle à 20h00
             </li>
-            <li>
+            <li tabindex="0">
               <strong>Accès :</strong> métro Porte de la Villette (ligne 7),
               parking à proximité
             </li>
-            <li>
+            <li tabindex="0">
               <strong>Accessibilité :</strong> Spectacle accessible aux
               personnes à mobilité réduite
             </li>
@@ -86,47 +92,93 @@
             allowfullscreen
             loading="lazy"
             title="Carte du Zénith de Paris"
-            tabindex="-1"
+            aria-describedby="map-description"
           ></iframe>
+          <!-- Ajout d'une description pour la carte -->
+          <p id="map-description" class="sr-only" tabindex="0">Carte montrant l'emplacement du Zénith de Paris au 211 Avenue Jean Jaurès, 75019 Paris</p>
         </div>
       </section>
 
       <!-- Formulaire de réservation -->
-      <div class="section-intro">
+      <section 
+        class="section-intro" 
+        role="region" 
+        aria-labelledby="titre-reservation"
+        id="billetterie"
+      >
         <div class="container">
-          <h2>Réservez vos places</h2>
+          <h2 id="titre-reservation">Réservez vos places</h2>
+          
+          <!-- Ajout d'une note sur les champs obligatoires -->
+          <p class="form-note" tabindex="0">Les champs marqués d'un astérisque (*) sont obligatoires.</p>
 
-          <div>
+          <form class="form-reservation">
             <div class="form-group">
-              <label>Prénom</label>
-              <input type="text" name="prenom" />
+              <!-- Ajout de l'astérisque pour indiquer que le champ est obligatoire -->
+              <label for="prenom">Prénom *</label>
+              <input 
+                type="text" 
+                id="prenom" 
+                name="prenom" 
+                required 
+                aria-required="true" 
+                placeholder="Votre prénom" 
+              />
             </div>
 
             <div class="form-group">
-              <label>Nom</label>
-              <input type="text" name="nom" />
+              <label for="nom">Nom *</label>
+              <input 
+                type="text" 
+                id="nom" 
+                name="nom" 
+                required 
+                aria-required="true" 
+                placeholder="Votre nom de famille" 
+              />
             </div>
 
             <div class="form-group">
-              <label>Email</label>
-              <input type="email" name="email" />
+              <label for="email">Email *</label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                required 
+                aria-required="true" 
+                placeholder="exemple@email.com" 
+              />
             </div>
 
             <div class="form-group">
-              <label>Nombre de places</label>
-              <input type="number" name="places" />
+              <label for="places">Nombre de places *</label>
+              <input 
+                type="number" 
+                id="places" 
+                name="places" 
+                min="1" 
+                max="10" 
+                required 
+                aria-required="true" 
+                placeholder="Entre 1 et 10 places" 
+              />
             </div>
 
             <div class="form-group">
-              <label>Date de la représentation</label>
-              <select name="date">
-                <option>Sélectionnez une date</option>
-                <option>12 avril 2025 - Nantes</option>
-                <option>19 avril 2025 - Dijon</option>
-                <option>26 avril 2025 - Floirac</option>
-                <option>17 mai 2025 - Toulouse</option>
-                <option>23-25 mai 2025 - Lille</option>
-                <option>21-22 juin 2025 - Caen</option>
+              <label for="date">Date de la représentation *</label>
+              <select 
+                id="date" 
+                name="date" 
+                required 
+                aria-required="true"
+              >
+                <option value="">Sélectionnez une date</option>
+                <option value="12-04-2025">12 avril 2025 - Nantes</option>
+                <option value="19-04-2025">19 avril 2025 - Dijon</option>
+                <option value="26-04-2025">26 avril 2025 - Floirac</option>
+                <option value="17-05-2025">17 mai 2025 - Toulouse</option>
+                <option value="23-05-2025">23-25 mai 2025 - Lille</option>
+                <option value="21-06-2025">21-22 juin 2025 - Caen</option>
               </select>
             </div>
 
@@ -153,23 +205,29 @@
             </fieldset>
 
             <div class="form-group">
-              <textarea name="message" placeholder="Votre message"></textarea>
+              <label for="message">Message (optionnel)</label>
+              <textarea 
+                id="message" 
+                name="message" 
+                placeholder="Précisez ici toute information complémentaire concernant votre réservation"
+              ></textarea>
             </div>
 
-            <button class="btn">
-              <i class="fas fa-paper-plane"></i>
+            <button type="submit" class="btn btn-submit">
+              <i class="fas fa-paper-plane" aria-hidden="true"></i>
+              <span>Envoyer ma demande</span>
             </button>
-          </div>
+          </form>
         </div>
-      </div>
+      </section>
     </main>
 
-    <div class="footer">
+    <footer class="footer" role="contentinfo">
       <div class="container">
-        <p>
+        <p tabindex="0">
           &copy; 2025 – Molière, le spectacle musical. Tous droits réservés.
         </p>
       </div>
-    </div>
+    </footer>
   </body>
 </html>

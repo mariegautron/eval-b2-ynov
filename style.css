@@ -1,17 +1,17 @@
 :root {
   --color-bg: #0e0e0e;
-  --color-text: #bcbcbc;
-  --color-secondary-text: #8a8a8a;
+  --color-text: #e0e0e0; /* Amélioré pour un meilleur contraste */
+  --color-secondary-text: #b0b0b0; /* Amélioré pour un meilleur contraste */
   --color-accent: #c17dff;
   --color-accent-light: #d6a3ff;
   --color-card-bg: #1a1a1a;
   --color-hover-bg: #292929;
-  --color-focus-outline: #c17dff;
+  --color-focus-outline: #ffffff; /* Amélioré pour une meilleure visibilité */
   --color-bandeau-bg: #c17dff;
-  --color-bandeau-text: #fff;
+  --color-bandeau-text: #000000; /* Amélioré pour un meilleur contraste */
   --color-footer-bg: #1a1a1a;
   --color-svg: #c17dff;
-  --color-focus-bg: transparent;
+  --color-focus-bg: rgba(255, 255, 255, 0.1); /* Ajout d'un fond visible pour les éléments focalisés */
 }
 
 /* RESET + BASE */
@@ -36,6 +36,37 @@ body {
   font-size: 1.125rem;
 }
 
+/* Lien d'évitement pour l'accessibilité */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-accent);
+  color: #000000;
+  padding: 8px;
+  z-index: 9999;
+  transition: top 0.3s;
+  font-weight: bold;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--color-focus-outline);
+}
+
+/* Classe pour les éléments visibles uniquement par les lecteurs d'écran */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 /* Typo titres */
 h1,
 h2,
@@ -58,18 +89,25 @@ h3 {
 a {
   color: var(--color-text);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 a:focus,
 a:hover {
   background-color: var(--color-focus-bg);
+  text-decoration: underline; /* Ajout pour améliorer la visibilité des liens */
 }
 
 a:focus-visible {
   outline: 3px solid var(--color-focus-outline);
   outline-offset: 4px;
   background-color: var(--color-focus-bg);
+}
+
+/* Amélioration de la navigation au clavier */
+[tabindex="0"]:focus {
+  outline: 3px solid var(--color-focus-outline);
+  outline-offset: 2px;
 }
 
 img {
@@ -101,6 +139,14 @@ img {
   display: flex;
   justify-content: center;
   gap: 2rem;
+}
+
+/* Ajout d'une liste de navigation pour l'accessibilité */
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  justify-content: center;
 }
 
 .navbar a {
@@ -180,21 +226,36 @@ img {
   align-items: center;
   gap: 0.75rem;
   background-color: var(--color-accent);
-  color: var(--color-bandeau-text);
+  color: #000000; /* Amélioré pour un meilleur contraste */
   padding: 0.75rem 1.5rem;
   border-radius: 50px;
   font-weight: bold;
   transition: background 0.3s ease;
   font-family: "Inter", sans-serif;
   margin: 20px;
+  border: none; /* Ajout pour les boutons de formulaire */
+  cursor: pointer; /* Ajout pour les boutons de formulaire */
 }
 
 .btn:hover,
 .btn:focus {
   background-color: var(--color-accent-light);
-  color: var(--color-bandeau-text);
-  outline: none;
-  outline-offset: 0;
+  color: #000000; /* Amélioré pour un meilleur contraste */
+  outline: 3px solid var(--color-focus-outline);
+  outline-offset: 2px;
+  text-decoration: none;
+}
+
+/* Ajout d'un style spécifique pour le bouton de soumission */
+.btn-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  width: auto;
+  height: auto;
 }
 
 /* BANDEAUX */
@@ -249,18 +310,18 @@ img {
 }
 
 /* LISTES */
-.list-points {
+.list-points, .points-list {
   list-style: none;
   padding: 0;
 }
 
-.list-points li {
+.list-points li, .points-list li {
   position: relative;
   padding-left: 1.5rem;
   margin-bottom: 1rem;
 }
 
-.list-points li::before {
+.list-points li::before, .points-list li::before {
   content: "✔";
   position: absolute;
   left: 0;
@@ -392,6 +453,13 @@ img {
   margin-top: 2rem;
 }
 
+/* Ajout d'un style pour la note sur les champs obligatoires */
+.form-note {
+  margin-bottom: 1rem;
+  font-style: italic;
+  color: var(--color-secondary-text);
+}
+
 .form-group,
 fieldset.form-group {
   display: flex;
@@ -419,6 +487,14 @@ textarea {
   color: var(--color-text);
   font-family: "Inter", sans-serif;
   font-size: 1rem;
+}
+
+/* Amélioration de l'accessibilité des champs de formulaire */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--color-focus-outline);
+  outline-offset: 0;
 }
 
 fieldset.form-group {
@@ -450,29 +526,8 @@ textarea {
 .section-intro input:focus,
 .section-intro select:focus,
 .section-intro textarea:focus {
-  outline: none;
+  outline: 3px solid var(--color-focus-outline);
   background-color: var(--color-card-bg);
-}
-
-.section-intro .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-accent);
-  color: var(--color-bandeau-text);
-  padding: 0.75rem;
-  border-radius: 50%;
-  width: 3rem;
-  height: 3rem;
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.section-intro .btn:hover,
-.section-intro .btn:focus {
-  background-color: var(--color-accent);
-  outline: none;
 }
 
 /* Responsive */
