@@ -503,3 +503,56 @@ textarea {
     justify-content: center;
   }
 }
+
+/* ✅ Lien d’évitement pour accessibilité clavier */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background-color: var(--color-accent);
+  color: var(--color-bandeau-text);
+  padding: 0.75rem 1.25rem;
+  z-index: 10000;
+  transition: top 0.3s ease;
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ✅ Focus clavier plus visible */
+:focus-visible {
+  outline: 3px solid var(--color-focus-outline);
+  outline-offset: 4px;
+  background-color: var(--color-focus-bg);
+}
+
+/* ✅ Ajout de styles pour balises HTML5 sémantiques */
+main, header, nav, footer, section, article {
+  display: block;
+}
+
+/* ✅ Accessibilité des icônes (si toujours utilisées) */
+i[aria-hidden="true"] {
+  pointer-events: none;
+}
+
+/* ✅ Accessibilité améliorée pour contraste (à adapter selon audit) */
+.btn:focus-visible,
+.navbar a:focus-visible,
+.reseaux-links a:focus-visible {
+  outline: 3px solid var(--color-focus-outline);
+  outline-offset: 4px;
+  background-color: var(--color-focus-bg);
+}
+
+/* ✅ Contraste renforcé au focus dans les formulaires */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}

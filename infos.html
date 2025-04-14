@@ -92,35 +92,35 @@
       </section>
 
       <!-- Formulaire de réservation -->
-      <div class="section-intro">
+      <section class="section-intro" role="region" aria-labelledby="form-titre">
         <div class="container">
-          <h2>Réservez vos places</h2>
-
-          <div>
+          <h2 id="form-titre">Réservez vos places</h2>
+      
+          <form class="form-reservation" action="traitement-reservation.php" method="post">
             <div class="form-group">
-              <label>Prénom</label>
-              <input type="text" name="prenom" />
+              <label for="prenom">Prénom</label>
+              <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required />
             </div>
-
+      
             <div class="form-group">
-              <label>Nom</label>
-              <input type="text" name="nom" />
+              <label for="nom">Nom</label>
+              <input type="text" id="nom" name="nom" placeholder="Votre nom" required />
             </div>
-
+      
             <div class="form-group">
-              <label>Email</label>
-              <input type="email" name="email" />
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="exemple@mail.com" required />
             </div>
-
+      
             <div class="form-group">
-              <label>Nombre de places</label>
-              <input type="number" name="places" />
+              <label for="places">Nombre de places</label>
+              <input type="number" id="places" name="places" min="1" required />
             </div>
-
+      
             <div class="form-group">
-              <label>Date de la représentation</label>
-              <select name="date">
-                <option>Sélectionnez une date</option>
+              <label for="date">Date de la représentation</label>
+              <select id="date" name="date" required>
+                <option value="">Sélectionnez une date</option>
                 <option>12 avril 2025 - Nantes</option>
                 <option>19 avril 2025 - Dijon</option>
                 <option>26 avril 2025 - Floirac</option>
@@ -129,39 +129,30 @@
                 <option>21-22 juin 2025 - Caen</option>
               </select>
             </div>
-
+      
             <fieldset class="form-group">
               <legend>Besoin d'un aménagement particulier ?</legend>
               <div>
-                <input
-                  type="checkbox"
-                  id="pmr"
-                  name="accessibilite[]"
-                  value="pmr"
-                />
+                <input type="checkbox" id="pmr" name="accessibilite[]" value="pmr" />
                 <label for="pmr">Accès PMR (Personne à Mobilité Réduite)</label>
               </div>
               <div>
-                <input
-                  type="checkbox"
-                  id="malentendant"
-                  name="accessibilite[]"
-                  value="malentendant"
-                />
+                <input type="checkbox" id="malentendant" name="accessibilite[]" value="malentendant" />
                 <label for="malentendant">Aide pour malentendants</label>
               </div>
             </fieldset>
-
+      
             <div class="form-group">
-              <textarea name="message" placeholder="Votre message"></textarea>
+              <label for="message">Votre message (optionnel)</label>
+              <textarea id="message" name="message" rows="4" placeholder="Laissez un message..."></textarea>
             </div>
-
-            <button class="btn">
+      
+            <button type="submit" class="btn" aria-label="Envoyer la réservation">
               <i class="fas fa-paper-plane"></i>
             </button>
-          </div>
+          </form>
         </div>
-      </div>
+      </section>
     </main>
 
     <div class="footer">
