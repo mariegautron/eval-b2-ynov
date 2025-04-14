@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accueil – Molière, le spectacle musical</title>
 
+    <!-- Preconnect pour les ressources externes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
       rel="stylesheet"
@@ -18,6 +23,8 @@
   </head>
 
   <body>
+    <a href="#contenu" class="skip-link">Aller au contenu principal</a>
+    
     <div class="navbar">
       <div class="nav-container">
         <div>
@@ -33,7 +40,7 @@
       <!-- Section Héros -->
       <div class="hero" role="banner">
         <div class="svg-decoration">
-          <svg viewBox="0 0 1440 320" focusable="false">
+          <svg viewBox="0 0 1440 320" focusable="false" aria-hidden="true">
             <path
               fill="#ffb347"
               fill-opacity="0.3"
@@ -42,13 +49,13 @@
           </svg>
         </div>
         <div class="hero-content container">
-          <img src="images/moliere.png" class="hero-image" />
+          <img src="images/optimized/moliere.webp" class="hero-image" alt="Portrait de Molière" />
           <div class="hero-text">
-            <h3>Molière, le spectacle musical</h3>
+            <h1>Molière, le spectacle musical</h1>
             <p>La fabuleuse histoire d'un génie du théâtre français</p>
             <a href="infos.html#billetterie" class="btn">
-              <i class="fas fa-ticket-alt" alt="Icône billet"></i>
-              <span>Cliquez ici</span>
+              <i class="fas fa-ticket-alt" aria-hidden="true"></i>
+              <span>Réserver vos places</span>
             </a>
           </div>
         </div>
@@ -56,7 +63,7 @@
 
       <!-- Citation -->
       <div class="bandeau-citation">
-        <h6 id="titre-citation">Citation de Molière</h6>
+        <h2 id="titre-citation">Citation de Molière</h2>
         <p>
           "Le devoir de la comédie est de corriger les hommes en les
           divertissant." — Molière
@@ -81,7 +88,7 @@
             </p>
             <p>
               Ce spectacle retrace avec fougue et audace le destin de
-              Jean-Baptiste Poquelin, de ses débuts dans l’Illustre Théâtre à sa
+              Jean-Baptiste Poquelin, de ses débuts dans l'Illustre Théâtre à sa
               consécration auprès de Louis XIV.
             </p>
             <p>
@@ -92,7 +99,7 @@
             </p>
           </div>
           <img
-            src="images/scene1.png"
+            src="images/optimized/scene1.webp"
             alt="Image d'une belle scène"
             class="section-image"
           />
@@ -100,22 +107,22 @@
       </section>
 
       <!-- Points forts -->
-      <div
+      <section
         class="section-intro alt-bg"
         role="region"
         aria-labelledby="titre-points"
       >
         <div class="container">
-          <h4 id="titre-points">Les points forts du spectacle</h4>
-          <p>52 chansons originales mêlant slam, opéra urbain et pop.</p>
-          <p>Une scénographie moderne avec décors mobiles et effets visuels.</p>
-          <p>
-            Un hommage vibrant à Molière, dramaturge rebelle et visionnaire.
-          </p>
-          <p>Une troupe de 30 artistes pluridisciplinaires.</p>
-          <p>Des anachronismes créatifs qui dynamitent les codes classiques.</p>
+          <h2 id="titre-points">Les points forts du spectacle</h2>
+          <ul class="list-points">
+            <li>52 chansons originales mêlant slam, opéra urbain et pop.</li>
+            <li>Une scénographie moderne avec décors mobiles et effets visuels.</li>
+            <li>Un hommage vibrant à Molière, dramaturge rebelle et visionnaire.</li>
+            <li>Une troupe de 30 artistes pluridisciplinaires.</li>
+            <li>Des anachronismes créatifs qui dynamitent les codes classiques.</li>
+          </ul>
         </div>
-      </div>
+      </section>
 
       <!-- Chiffres clés -->
       <section
@@ -124,23 +131,23 @@
         aria-labelledby="titre-chiffres"
       >
         <div class="container">
-          <h3 id="titre-chiffres">Quelques chiffres marquants</h3>
-          <div class="cards">
-            <div class="card">
-              <i class="fas fa-users" alt="Icône utilisateurs"></i>
+          <h2 id="titre-chiffres">Quelques chiffres marquants</h2>
+          <div class="cards" role="list">
+            <article class="card" tabindex="0" role="listitem">
+              <i class="fas fa-users" aria-hidden="true"></i>
               <h3>30 artistes</h3>
               <p>Chanteurs, danseurs, comédiens et musiciens sur scène.</p>
-            </div>
-            <div class="card">
-              <i class="fas fa-mask" alt="Icône masque"></i>
+            </article>
+            <article class="card" tabindex="0" role="listitem">
+              <i class="fas fa-mask" aria-hidden="true"></i>
               <h3>52 chansons</h3>
-              <p>De "Rêver j’en ai l’habitude" à "On se moque".</p>
-            </div>
-            <div class="card">
+              <p>De "Rêver j'en ai l'habitude" à "On se moque".</p>
+            </article>
+            <article class="card" tabindex="0" role="listitem">
               <i class="fas fa-award" aria-hidden="true"></i>
               <h3>7 trophées</h3>
               <p>Dont meilleure comédie musicale et révélation artistique.</p>
-            </div>
+            </article>
           </div>
         </div>
       </section>
@@ -152,10 +159,16 @@
         aria-labelledby="titre-galerie"
       >
         <div class="container">
-          <h4 id="titre-galerie">Galerie photos du spectacle</h4>
-          <div class="gallery">
-            <img src="images/scene1.png" />
-            <img src="images/scene2.jpg" alt="Scène illustrative" />
+          <h2 id="titre-galerie">Galerie photos du spectacle</h2>
+          <div class="gallery" role="list">
+            <figure role="listitem">
+              <img src="images/optimized/scene1.webp" alt="Scène du spectacle Molière" />
+              <figcaption>Scène du spectacle Molière</figcaption>
+            </figure>
+            <figure role="listitem">
+              <img src="images/optimized/scene2.webp" alt="Scène du spectacle Molière" />
+              <figcaption>Scène du spectacle Molière</figcaption>
+            </figure>
           </div>
         </div>
       </section>
@@ -168,46 +181,46 @@
       >
         <div class="container">
           <h2 id="titre-distribution">La distribution du spectacle</h2>
-          <div class="cards">
-            <div class="card">
+          <div class="cards" role="list">
+            <article class="card" tabindex="0" role="listitem">
               <img
-                src="images/petitom.jpg"
+                src="images/optimized/petitom.webp"
                 alt="Portrait de PETiTOM, interprète de Molière"
               />
               <h3>PETiTOM</h3>
               <p>Molière</p>
-            </div>
-            <div class="card">
+            </article>
+            <article class="card" tabindex="0" role="listitem">
               <img
-                src="images/loujean.png"
+                src="images/optimized/loujean.webp"
                 alt="Portrait de Lou Jean, interprète d'Armande Béjart"
               />
               <h3>Lou Jean</h3>
               <p>Armande Béjart</p>
-            </div>
-            <div class="card">
+            </article>
+            <article class="card" tabindex="0" role="listitem">
               <img
-                src="images/shaina.jpeg"
+                src="images/optimized/shaina.webp"
                 alt="Portrait de Shaïna Pronzola, interprète de Marquise"
               />
               <h3>Shaïna Pronzola</h3>
               <p>Marquise</p>
-            </div>
-            <div class="card">
+            </article>
+            <article class="card" tabindex="0" role="listitem">
               <img
-                src="images/abi.jpg"
-                alt="Portrait d’Abi Bernadoth, interprète du Prince de Conti"
+                src="images/optimized/abi.webp"
+                alt="Portrait d'Abi Bernadoth, interprète du Prince de Conti"
               />
               <h3>Abi Bernadoth</h3>
               <p>Prince de Conti</p>
-            </div>
+            </article>
           </div>
         </div>
       </section>
 
       <!-- Bandeau storytelling -->
       <div class="bandeau-citation">
-        <h6 id="titre-story">Esprit du spectacle</h6>
+        <h2 id="titre-story">Esprit du spectacle</h2>
         <p>Une œuvre pop et engagée, entre hommage classique et slam urbain.</p>
       </div>
 
