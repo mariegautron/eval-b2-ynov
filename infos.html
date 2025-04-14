@@ -98,35 +98,35 @@
 
           <div>
             <div class="form-group">
-              <label>Prénom</label>
-              <input type="text" name="prenom" />
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom" aria-label="Entrée votre prénom" />
             </div>
 
             <div class="form-group">
-              <label>Nom</label>
-              <input type="text" name="nom" />
+              <label for="nom">Nom</label>
+              <input type="text" id="nom" name="nom" aria-label="Entrez votre nom" />
             </div>
 
             <div class="form-group">
-              <label>Email</label>
-              <input type="email" name="email" />
+              <label for="email">Adresse email</label>
+              <input type="email" id="email" name="email" aria-label="Entrez votre adresse email" />
             </div>
 
             <div class="form-group">
-              <label>Nombre de places</label>
-              <input type="number" name="places" />
+              <label for="places">Nombre de places</label>
+              <input type="number" id="places" name="places" aria-label="Entrez le nombre de places souhaitées" />
             </div>
 
             <div class="form-group">
-              <label>Date de la représentation</label>
-              <select name="date">
-                <option>Sélectionnez une date</option>
-                <option>12 avril 2025 - Nantes</option>
-                <option>19 avril 2025 - Dijon</option>
-                <option>26 avril 2025 - Floirac</option>
-                <option>17 mai 2025 - Toulouse</option>
-                <option>23-25 mai 2025 - Lille</option>
-                <option>21-22 juin 2025 - Caen</option>
+              <label for="date">Date de la représentation</label>
+              <select id="date" name="date" aria-label="Sélectionnez la date de la représentation">
+              <option>Sélectionnez une date</option>
+              <option>12 avril 2025 - Nantes</option>
+              <option>19 avril 2025 - Dijon</option>
+              <option>26 avril 2025 - Floirac</option>
+              <option>17 mai 2025 - Toulouse</option>
+              <option>23-25 mai 2025 - Lille</option>
+              <option>21-22 juin 2025 - Caen</option>
               </select>
             </div>
 
@@ -153,11 +153,11 @@
             </fieldset>
 
             <div class="form-group">
-              <textarea name="message" placeholder="Votre message"></textarea>
+              <textarea name="message" placeholder="Votre message" aria-label="Entrée votre message"> </textarea>
             </div>
 
             <button class="btn">
-              <i class="fas fa-paper-plane"></i>
+              <i class="fas fa-paper-plane" aria-hidden="true"></i> Envoyer
             </button>
           </div>
         </div>
