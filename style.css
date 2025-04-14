@@ -1,13 +1,13 @@
 :root {
   --color-bg: #0e0e0e;
-  --color-text: #bcbcbc;
-  --color-secondary-text: #8a8a8a;
+  --color-text: #e0e0e0;  /* Modification: Éclairci de #bcbcbc à #e0e0e0 pour meilleur contraste */
+  --color-secondary-text: #b0b0b0;  /* Modification: Éclairci de #8a8a8a à #b0b0b0 pour meilleur contraste */
   --color-accent: #c17dff;
   --color-accent-light: #d6a3ff;
   --color-card-bg: #1a1a1a;
   --color-hover-bg: #292929;
   --color-focus-outline: #c17dff;
-  --color-bandeau-bg: #c17dff;
+  --color-bandeau-bg: #9656c4;  /* Modification: Assombri de #c17dff à #9656c4 pour meilleur contraste avec texte blanc */
   --color-bandeau-text: #fff;
   --color-footer-bg: #1a1a1a;
   --color-svg: #c17dff;
@@ -61,7 +61,7 @@ h3 {
 }
 
 a {
-  color: var(--color-text);
+  color: var(--color-accent-light);  /* Éclaircissement pour meilleur contraste */
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -120,6 +120,7 @@ img {
   font-size: 1.125rem;
   font-weight: 600;
   position: relative;
+  color: var(--color-text);  /* Couleur claire pour meilleur contraste */
 }
 
 .navbar a::after {
@@ -139,7 +140,7 @@ img {
 }
 
 .navbar a.active {
-  color: var(--color-accent);
+  color: var(--color-accent-light);  /* Éclaircissement pour meilleur contraste */
 }
 
 /* HERO - adapté pour header */
@@ -185,7 +186,7 @@ img {
 
 .hero-text p {
   font-size: 1.25rem;
-  color: var(--color-accent);
+  color: var(--color-accent-light);  /* Éclaircissement pour meilleur contraste */
 }
 
 /* BOUTONS */
@@ -194,7 +195,7 @@ img {
   align-items: center;
   gap: 0.75rem;
   background-color: var(--color-accent);
-  color: var(--color-bandeau-text);
+  color: #ffffff;  /* Définition explicite pour garantir le contraste */
   padding: 0.75rem 1.5rem;
   border-radius: 50px;
   font-weight: bold;
@@ -208,7 +209,7 @@ img {
 .btn:hover,
 .btn:focus {
   background-color: var(--color-accent-light);
-  color: var(--color-bandeau-text);
+  color: #000000;  /* Texte noir sur fond clair pour meilleur contraste */
   outline: none;
   outline-offset: 0;
 }
@@ -270,7 +271,7 @@ aside.bandeau-citation h2 {
   position: absolute;
   top: -40px;
   left: 0;
-  background: var(--color-accent);
+  background: var(--color-bandeau-bg);  /* Assombri pour meilleur contraste */
   color: white;
   padding: 8px;
   z-index: 1001;
@@ -338,7 +339,7 @@ input[type="checkbox"]:focus-visible + label {
   content: "✔";
   position: absolute;
   left: 0;
-  color: var(--color-accent);
+  color: var(--color-accent-light);  /* Éclaircissement pour meilleur contraste */
 }
 
 /* Modification: Style pour la liste à puces des points forts */
@@ -357,7 +358,7 @@ section ul:not(.list-points) li::before {
   content: "•";
   position: absolute;
   left: 0;
-  color: var(--color-accent);
+  color: var(--color-accent-light);  /* Éclaircissement pour meilleur contraste */
   font-size: 1.5rem;
   line-height: 1;
 }
@@ -393,7 +394,7 @@ section ul:not(.list-points) li::before {
 .card i {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: var(--color-accent);
+  color: var(--color-accent-light);  /* Éclaircissement pour meilleur contraste */
 }
 
 .card:hover,
@@ -408,7 +409,7 @@ section ul:not(.list-points) li::before {
 }
 
 .card p {
-  color: var(--color-secondary-text);
+  color: var(--color-text);  /* Éclaircissement pour meilleur contraste - changé de secondary-text à text */
   font-family: "Inter", sans-serif;
 }
 
@@ -435,7 +436,7 @@ section ul:not(.list-points) li::before {
 /* Modification: Style pour figcaption */
 .gallery figcaption {
   font-size: 0.9rem;
-  color: var(--color-secondary-text);
+  color: var(--color-text);  /* Éclaircissement pour meilleur contraste - changé de secondary-text à text */
   text-align: center;
   padding: 0.5rem 0;
 }
@@ -466,10 +467,11 @@ section ul:not(.list-points) li::before {
   border-radius: 50px;
   font-weight: bold;
   transition: background 0.3s ease, transform 0.3s ease;
+  color: var(--color-accent-light);  /* Éclaircissement pour meilleur contraste */
 }
 
 .reseaux-links a i {
-  color: var(--color-accent);
+  color: var(--color-accent-light);  /* Éclaircissement pour meilleur contraste */
 }
 
 .reseaux-links a:hover,
@@ -524,7 +526,7 @@ textarea {
   width: 100%;
   padding: 0.75rem;
   border-radius: 0.5rem;
-  border: 1px solid #444;
+  border: 1px solid #666;  /* Bordure plus claire pour meilleur contraste */
   background-color: var(--color-card-bg);
   color: var(--color-text);
   font-family: "Inter", sans-serif;
@@ -555,7 +557,7 @@ textarea {
 
 .section-intro input::placeholder,
 .section-intro textarea::placeholder {
-  color: var(--color-secondary-text);
+  color: #a0a0a0;  /* Éclaircissement pour meilleur contraste */
 }
 
 .section-intro input:focus,
@@ -571,8 +573,8 @@ textarea {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-accent);
-  color: var(--color-bandeau-text);
+  background-color: var(--color-bandeau-bg);  /* Assombri pour meilleur contraste avec texte blanc */
+  color: #ffffff;  /* Blanc explicite pour garantir le contraste */
   padding: 0.75rem 1.5rem;
   border-radius: 50px; /* Changé de 50% à 50px pour accommoder le texte */
   width: auto; /* Modifié pour s'adapter au contenu */
@@ -589,8 +591,21 @@ textarea {
 
 .section-intro .btn:hover,
 .section-intro .btn:focus {
-  background-color: var(--color-accent-light);
+  background-color: var(--color-accent);
+  color: #ffffff;  /* Garantir texte blanc sur le bouton */
   outline: none;
+}
+
+/* Ajout: Styles pour les messages d'erreur et descriptions de champs */
+.error-message {
+  color: #ff6b6b;  /* Rouge plus vif pour meilleur contraste */
+  font-size: 0.85rem;
+}
+
+.field-description {
+  color: var(--color-text);  /* Utilisation de la couleur principale pour garantir la lisibilité */
+  font-size: 0.85rem;
+  font-style: italic;
 }
 
 /* Responsive */
