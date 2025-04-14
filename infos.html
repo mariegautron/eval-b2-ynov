@@ -76,30 +76,35 @@
           <h2 id="reservation">Réservez vos places</h2>
 
           <form>
-            <fieldset class="form-group">
-              <label for="prenom">Prénom (obligatoire)</label>
-              <input type="text" name="prenom" id="prenom" required/>
+            <fieldset class="form-group" aria-labelledby="legend-prenom label-prenom">
+              <legend id="legend-prenom">Prénom</legend>
+              <label id="label-prenom" for="prenom">Prénom (obligatoire)</label>
+              <input type="text" name="prenom" id="prenom" required />
             </fieldset>
-
-            <fieldset class="form-group">
-              <label for="nom">Nom (obligatoire)</label>
-              <input type="text" name="nom" id="nom" required/>
+          
+            <fieldset class="form-group" aria-labelledby="legend-nom label-nom">
+              <legend id="legend-nom">Nom</legend>
+              <label id="label-nom" for="nom">Nom (obligatoire)</label>
+              <input type="text" name="nom" id="nom" required />
             </fieldset>
-
-            <fieldset class="form-group">
-              <label for="email">Email (obligatoire)</label>
-              <input type="email" name="email" id="email" required/>
+          
+            <fieldset class="form-group" aria-labelledby="legend-email label-email">
+              <legend id="legend-email">Adresse email</legend>
+              <label id="label-email" for="email">Email (obligatoire)</label>
+              <input type="email" name="email" id="email" required />
             </fieldset>
-
-            <fieldset class="form-group">
-              <label for="places">Nombre de places (obligatoire)</label>
-              <input type="number" name="places" id="places" min="1" max="10" required/>
+          
+            <fieldset class="form-group" aria-labelledby="legend-places label-places">
+              <legend id="legend-places">Nombre de places</legend>
+              <label id="label-places" for="places">Nombre de places (obligatoire)</label>
+              <input type="number" name="places" id="places" min="1" max="10" required />
             </fieldset>
-
-            <fieldset class="form-group">
-              <label for="date">Date de la représentation (obligatoire)</label>
-              <select name="date" id="date">
-                <option>Sélectionnez une date</option>
+          
+            <fieldset class="form-group" aria-labelledby="legend-date label-date">
+              <legend id="legend-date">Date de représentation</legend>
+              <label id="label-date" for="date">Date de la représentation (obligatoire)</label>
+              <select name="date" id="date" required>
+                <option value="">Sélectionnez une date</option>
                 <option>12 avril 2025 - Nantes</option>
                 <option>19 avril 2025 - Dijon</option>
                 <option>26 avril 2025 - Floirac</option>
@@ -108,9 +113,9 @@
                 <option>21-22 juin 2025 - Caen</option>
               </select>
             </fieldset>
-
-            <fieldset class="form-group">
-              <legend>Besoin d'un aménagement particulier ?</legend>
+          
+            <fieldset class="form-group" aria-labelledby="legend-accessibilite">
+              <legend id="legend-accessibilite">Besoin d'un aménagement particulier ?</legend>
               <div>
                 <input type="checkbox" id="pmr" name="accessibilite[]" value="pmr" />
                 <label for="pmr">Accès PMR (Personne à Mobilité Réduite)</label>
@@ -120,17 +125,19 @@
                 <label for="malentendant">Aide pour malentendants</label>
               </div>
             </fieldset>
-
-            <fieldset class="form-group">
-              <label for="message">Message</label>
+          
+            <fieldset class="form-group" aria-labelledby="legend-message label-message">
+              <legend id="legend-message">Message complémentaire</legend>
+              <label id="label-message" for="message">Message</label>
               <textarea id="message" name="message" placeholder="Votre message"></textarea>
             </fieldset>
-
+          
             <button type="submit" class="btn">
               <i class="fas fa-paper-plane" aria-hidden="true"></i>
               <span>Envoyer</span>
             </button>
           </form>
+          
         </section>
       </section>
     </main>
