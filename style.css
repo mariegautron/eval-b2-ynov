@@ -182,7 +182,7 @@ img {
 
 /* BOUTONS */
 .btn {
-  background-color: #d35400; /* Couleur plus foncée pour un meilleur contraste */
+  background-color: #c44d00; /* Couleur plus foncée pour un meilleur contraste */
   color: #ffffff; /* Texte blanc pour un contraste suffisant */
   padding: 0.75rem 1.5rem;
   border-radius: 50px;
@@ -191,11 +191,12 @@ img {
   text-align: center;
   display: inline-block;
   transition: background-color 0.3s ease;
+  margin-bottom: 2rem; /* Ajout d'une marge pour éviter que le bouton touche la section suivante */
 }
 
 .btn:hover,
 .btn:focus {
-  background-color: #b84300; /* Couleur encore plus foncée au survol */
+  background-color: #a63e00; /* Couleur encore plus foncée au survol */
 }
 
 /* BANDEAUX */
@@ -480,7 +481,7 @@ textarea {
 h2#titre-citation,
 h2#titre-story {
   color: #ffffff; /* Texte blanc pour un contraste suffisant */
-  background-color: #d35400; /* Fond plus foncé pour un meilleur contraste */
+  background-color: #c44d00; /* Fond plus foncé pour un meilleur contraste */
   padding: 1rem;
   border-radius: 5px;
   text-align: center;
@@ -488,7 +489,7 @@ h2#titre-story {
 
 /* Bloc de citation */
 blockquote.bandeau-citation {
-  background-color: #d35400; /* Couleur plus foncée pour le fond */
+  background-color: #c44d00; /* Couleur plus foncée pour le fond */
   color: #ffffff; /* Texte blanc pour un contraste suffisant */
   padding: 2rem;
   border-radius: 5px;
@@ -501,7 +502,7 @@ blockquote.bandeau-citation p {
 
 /* Bandeau storytelling */
 div.bandeau-citation {
-  background-color: #d35400; /* Couleur plus foncée pour le fond */
+  background-color: #c44d00; /* Couleur plus foncée pour le fond */
   color: #ffffff; /* Texte blanc pour un contraste suffisant */
   padding: 2rem;
   border-radius: 5px;
