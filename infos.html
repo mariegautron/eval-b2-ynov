@@ -18,7 +18,7 @@
     />
   </head>
   <body>
-    <div class="navbar">
+    <nav class="navbar">
       <div class="nav-container">
         <div>
           <a href="index.html">Accueil</a>
@@ -29,7 +29,7 @@
           >
         </div>
       </div>
-    </div>
+    </nav>
 
     <main id="contenu">
       <!-- En-tête -->
@@ -96,30 +96,30 @@
         <div class="container">
           <h2>Réservez vos places</h2>
 
-          <div>
+          <form>
             <div class="form-group">
-              <label>Prénom</label>
-              <input type="text" name="prenom" />
+              <label for="prenom">Prénom</label>
+              <input type="text" name="prenom" required />
             </div>
 
             <div class="form-group">
-              <label>Nom</label>
-              <input type="text" name="nom" />
+              <label for="nom">Nom</label>
+              <input type="text" name="nom" required />
             </div>
 
             <div class="form-group">
-              <label>Email</label>
-              <input type="email" name="email" />
+              <label for="email">Email</label>
+              <input type="email" name="email" required />
             </div>
 
             <div class="form-group">
-              <label>Nombre de places</label>
-              <input type="number" name="places" />
+              <label for="places">Nombre de places</label>
+              <input type="number" name="places" min="1" required />
             </div>
 
             <div class="form-group">
-              <label>Date de la représentation</label>
-              <select name="date">
+              <label for="date">Date de la représentation</label>
+              <select name="date" required>
                 <option>Sélectionnez une date</option>
                 <option>12 avril 2025 - Nantes</option>
                 <option>19 avril 2025 - Dijon</option>
@@ -156,10 +156,14 @@
               <textarea name="message" placeholder="Votre message"></textarea>
             </div>
 
-            <button class="btn">
-              <i class="fas fa-paper-plane"></i>
+            <button
+              type="submit"
+              class="btn"
+              aria-label="Envoyer le formulaire"
+            >
+              <i class="fas fa-paper-plane" aria-hidden="true"></i>
             </button>
-          </div>
+          </form>
         </div>
       </div>
     </main>

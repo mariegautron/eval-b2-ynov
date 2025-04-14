@@ -18,7 +18,7 @@
   </head>
 
   <body>
-    <div class="navbar">
+    <nav class="navbar">
       <div class="nav-container">
         <div>
           <a href="index.html" class="active" aria-current="page">Accueil</a>
@@ -27,7 +27,7 @@
           <a href="infos.html">Infos & Réservation</a>
         </div>
       </div>
-    </div>
+    </nav>
 
     <main id="contenu">
       <!-- Section Héros -->
@@ -42,13 +42,17 @@
           </svg>
         </div>
         <div class="hero-content container">
-          <img src="images/moliere.png" class="hero-image" />
+          <img
+            src="images/moliere.png"
+            class="hero-image"
+            alt="Affiche du spectacle de Molière"
+          />
           <div class="hero-text">
             <h3>Molière, le spectacle musical</h3>
             <p>La fabuleuse histoire d'un génie du théâtre français</p>
             <a href="infos.html#billetterie" class="btn">
-              <i class="fas fa-ticket-alt" alt="Icône billet"></i>
-              <span>Cliquez ici</span>
+              <i class="fas fa-ticket-alt" aria-hidden="true"></i>
+              <span>Réservez ici</span>
             </a>
           </div>
         </div>
@@ -93,7 +97,8 @@
           </div>
           <img
             src="images/scene1.png"
-            alt="Image d'une belle scène"
+            alt=""
+            aria-hidden="true"
             class="section-image"
           />
         </div>
@@ -127,12 +132,12 @@
           <h3 id="titre-chiffres">Quelques chiffres marquants</h3>
           <div class="cards">
             <div class="card">
-              <i class="fas fa-users" alt="Icône utilisateurs"></i>
+              <i class="fas fa-users" aria-hidden="true"></i>
               <h3>30 artistes</h3>
               <p>Chanteurs, danseurs, comédiens et musiciens sur scène.</p>
             </div>
             <div class="card">
-              <i class="fas fa-mask" alt="Icône masque"></i>
+              <i class="fas fa-mask" aria-hidden="true"></i>
               <h3>52 chansons</h3>
               <p>De "Rêver j’en ai l’habitude" à "On se moque".</p>
             </div>
@@ -154,8 +159,8 @@
         <div class="container">
           <h4 id="titre-galerie">Galerie photos du spectacle</h4>
           <div class="gallery">
-            <img src="images/scene1.png" />
-            <img src="images/scene2.jpg" alt="Scène illustrative" />
+            <img src="images/scene1.png" alt="" aria-hidden="true" />
+            <img src="images/scene2.jpg" alt="" aria-hidden="true" />
           </div>
         </div>
       </section>
@@ -226,7 +231,7 @@
               rel="noopener noreferrer"
               aria-label="Chaîne YouTube officielle du spectacle Molière"
             >
-              <i class="fab fa-youtube" alt="Icône YouTube"></i> YouTube
+              <i class="fab fa-youtube"></i> YouTube
             </a>
             <a
               href="https://www.facebook.com/moliereloperaurbain/?locale=fr_FR"
@@ -234,7 +239,7 @@
               rel="noopener noreferrer"
               aria-label="Page Facebook officielle du spectacle Molière"
             >
-              <i class="fab fa-facebook" alt="Icône Facebook"></i> Facebook
+              <i class="fab fa-facebook"></i> Facebook
             </a>
             <a
               href="https://www.instagram.com/molierelespectaclemusical/"
@@ -242,7 +247,7 @@
               rel="noopener noreferrer"
               aria-label="Profil Instagram du spectacle Molière"
             >
-              <i class="fab fa-instagram" alt="Icône Instagram"></i> Instagram
+              <i class="fab fa-instagram"></i> Instagram
             </a>
           </div>
         </div>
