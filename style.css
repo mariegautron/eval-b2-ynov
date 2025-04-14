@@ -1,17 +1,17 @@
 :root {
   --color-bg: #0e0e0e;
-  --color-text: #bcbcbc;
-  --color-secondary-text: #8a8a8a;
+  --color-text: #e0e0e0; /* Changement de la couleur du texte */
+  --color-secondary-text: #b0b0b0; /* Changement de la couleur secondaire du texte */
   --color-accent: #c17dff;
-  --color-accent-light: #d6a3ff;
+  --color-accent-light: #d6a3ff; 
   --color-card-bg: #1a1a1a;
   --color-hover-bg: #292929;
-  --color-focus-outline: #c17dff;
+  --color-focus-outline: #ffffff; /* Couleur de l'outline au focus */
   --color-bandeau-bg: #c17dff;
-  --color-bandeau-text: #fff;
+  --color-bandeau-text: #000000; /* Couleur du texte dans le bandeau */
   --color-footer-bg: #1a1a1a;
   --color-svg: #c17dff;
-  --color-focus-bg: transparent;
+  --color-focus-bg: rgba(255, 255, 255, 0.1); /* Couleur de fond au focus */
 }
 
 /* RESET + BASE */
@@ -34,6 +34,23 @@ body {
   font-family: "Inter", Arial, sans-serif;
   line-height: 1.6;
   font-size: 1.125rem;
+}
+
+/* Skip link pour accessibilité */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-bg);;
+  color: var(--color-text);
+  padding: 8px;
+  z-index: 1500;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--color-focus-outline);
 }
 
 /* Typo titres */
@@ -285,6 +302,15 @@ img {
   flex-direction: column;
   align-items: center;
   height: 100%;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.card:hover,
+.card:focus {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  outline: 3px solid var(--color-focus-outline);
 }
 
 .card img {

@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Infos & Réservation – Molière, le spectacle musical</title>
+    <!-- Ajout d'une balise meta pour decrire la page web-->
+    <meta name="description" content="Informations pratiques et réservation de billets pour le spectacle musical Molière" />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
@@ -18,7 +20,9 @@
     />
   </head>
   <body>
-    <div class="navbar">
+    <!-- ajout d'un skiplink pour aller au contenu, changement de la balise div en nav avec un aria-label -->
+    <a href="#contenu" class="skip-link">Aller au contenu principal</a>
+    <nav class="navbar" aria-label="Navigation principale">
       <div class="nav-container">
         <div>
           <a href="index.html">Accueil</a>
@@ -29,7 +33,7 @@
           >
         </div>
       </div>
-    </div>
+    </nav>
 
     <main id="contenu">
       <!-- En-tête -->
@@ -43,7 +47,6 @@
       <!-- Section Infos pratiques -->
       <section
         class="section-intro"
-        role="region"
         aria-labelledby="titre-infos"
       >
         <div class="container">
@@ -73,9 +76,9 @@
       <!-- Carte d'accès -->
       <section
         class="section-intro alt-bg"
-        role="region"
         aria-labelledby="titre-carte"
       >
+        <!-- Changement du tab index pour permettre la navigation clavier et ajout d'un label aria-->
         <div class="container">
           <h2 id="titre-carte">Plan d'accès au Zénith de Paris</h2>
           <iframe
@@ -86,47 +89,54 @@
             allowfullscreen
             loading="lazy"
             title="Carte du Zénith de Paris"
-            tabindex="-1"
+            tabindex="0"
+            aria-label="Plan d'accès interactif au Zénith de Paris"
           ></iframe>
         </div>
       </section>
 
       <!-- Formulaire de réservation -->
-      <div class="section-intro">
+       <!-- changement de la balise div en balise section ajout d'un aria-labelledby et d'un id -->
+       <section class="section-intro" aria-labelledby="titre-reservation" id="billetterie">
         <div class="container">
-          <h2>Réservez vos places</h2>
+          <!-- Ajout d'un id pour le h2-->
+          <h2 id="titre-reservation">Réservez vos places</h2>
 
-          <div>
+          <!-- Creation d'une balise form pour créer un formulaire correct-->
+          <!-- ajout de plus de description sur le fait de ce qu'il faut remplir et de required pour obliger les gens a remplir -->
+          <form class="form-reservation" action="#" method="post" novalidate>
             <div class="form-group">
-              <label>Prénom</label>
-              <input type="text" name="prenom" />
+              <label for="prenom">Prénom</label>
+              <input type="text" id="prenom" name="prenom" required placeholder="Entrez votre prénom" aria-required="true" /  >
             </div>
 
             <div class="form-group">
-              <label>Nom</label>
-              <input type="text" name="nom" />
+              <label for="nom">Nom</label>
+              <input type="text" id="nom" name="nom" required placeholder="Entrez votre nom" aria-required="true" />
             </div>
 
             <div class="form-group">
-              <label>Email</label>
-              <input type="email" name="email" />
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="Entrez votre adresse email" aria-required="true" />
             </div>
 
             <div class="form-group">
-              <label>Nombre de places</label>
-              <input type="number" name="places" />
+              <label for="places">Nombre de places</label>
+              <!-- Ajout d'un d'un min et max pour pas pouvoir choisir des nombres negatif ou même des lettres-->
+              <input type="number" id="places" name="places" placeholder="1 à 10 places" min="1" max="10" required aria-required="true" />
             </div>
 
             <div class="form-group">
-              <label>Date de la représentation</label>
-              <select name="date">
-                <option>Sélectionnez une date</option>
-                <option>12 avril 2025 - Nantes</option>
-                <option>19 avril 2025 - Dijon</option>
-                <option>26 avril 2025 - Floirac</option>
-                <option>17 mai 2025 - Toulouse</option>
-                <option>23-25 mai 2025 - Lille</option>
-                <option>21-22 juin 2025 - Caen</option>
+              <!-- description des value pour plus de clarté-->
+              <label for="date">Date de la représentation</label>
+              <select id="date" name="date" required aria-required="true">
+                <option value="">Sélectionnez une date</option>
+                <option value="nantes-12-04">12 avril 2025 - Nantes</option>
+                <option value="dijon-19-04">19 avril 2025 - Dijon</option>
+                <option value="floirac-26-04">26 avril 2025 - Floirac</option>
+                <option value="toulouse-17-05">17 mai 2025 - Toulouse</option>
+                <option value="lille-23-25-05">23-25 mai 2025 - Lille</option>
+                <option value="caen-21-22-06">21-22 juin 2025 - Caen</option>
               </select>
             </div>
 
@@ -151,25 +161,30 @@
                 <label for="malentendant">Aide pour malentendants</label>
               </div>
             </fieldset>
-
+            
+            <!-- ajout d'une balise label pour decrire que c'est une message facultatif et d'un placeholder + précis dans la demande-->
             <div class="form-group">
-              <textarea name="message" placeholder="Votre message"></textarea>
+              <label for="message">Message (facultatif)</label>
+              <textarea id="message" name="message" placeholder="Votre message ou demande particulière"></textarea>
             </div>
 
-            <button class="btn">
-              <i class="fas fa-paper-plane"></i>
+            <!-- ajout d'un span pour decrire le bouton et d'un aria hidden pour les liseuses -->
+            <button type="submit" class="btn">
+              <i class="fas fa-paper-plane" aria-hidden="true"></i>
+              <span>Envoyer ma demande de réservation</span>
             </button>
-          </div>
+          </form>
         </div>
-      </div>
+      </section>
     </main>
 
-    <div class="footer">
+    <!-- changement de la div en balise footer --> 
+    <footer class="footer">
       <div class="container">
         <p>
           &copy; 2025 – Molière, le spectacle musical. Tous droits réservés.
         </p>
       </div>
-    </div>
+    </footer>
   </body>
 </html>
