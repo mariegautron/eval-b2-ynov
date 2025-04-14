@@ -1,16 +1,16 @@
 :root {
   --color-bg: #0e0e0e;
   --color-text: #bcbcbc;
-  --color-secondary-text: #8a8a8a;
-  --color-accent: #c17dff;
+  --color-secondary-text: #d0d0d0; /* Amélioration du contraste texte/fond */
+  --color-accent: #aa6ee1;
   --color-accent-light: #d6a3ff;
   --color-card-bg: #1a1a1a;
   --color-hover-bg: #292929;
-  --color-focus-outline: #c17dff;
-  --color-bandeau-bg: #c17dff;
-  --color-bandeau-text: #fff;
+  --color-focus-outline: #aa6ee1;
+  --color-bandeau-bg: #8545c2; /* Assombrissement de la couleur d'accent afin de crée de meilleurs contrastes */
+  --color-bandeau-text: #ffffff;
   --color-footer-bg: #1a1a1a;
-  --color-svg: #c17dff;
+  --color-svg: #aa6ee1;
   --color-focus-bg: transparent;
 }
 
@@ -78,6 +78,12 @@ img {
   display: block;
   border-radius: 0.5rem;
   object-fit: cover;
+}
+
+/* Remplacement des balises h6 par une balise p qui a une taille reduite */
+#titre-citation,
+#titre-story{
+  font-size: 0.8rem;
 }
 
 /* Styles lien d'évitement */
@@ -198,7 +204,7 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  background-color: var(--color-accent);
+  background-color: var(--color-bandeau-bg); 
   color: var(--color-bandeau-text);
   padding: 0.75rem 1.5rem;
   border-radius: 50px;
@@ -469,8 +475,8 @@ textarea {
 .section-intro input:focus,
 .section-intro select:focus,
 .section-intro textarea:focus {
-  outline: none;
-  background-color: var(--color-card-bg);
+  outline: 3px solid var(--color-focus-outline); /* Focus plus visible pour champs */
+  outline-offset: 3px;
 }
 
 .section-intro .btn {
