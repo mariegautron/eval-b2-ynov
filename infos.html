@@ -23,26 +23,25 @@
     <!-- Ajout d'un lien d'évitement pour l'accessibilité -->
     <a href="#contenu" class="skip-link">Aller au contenu principal</a>
     
-    <!-- Amélioration de la structure de navigation pour l'accessibilité -->
-    <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="navbar" role="navigation">
       <div class="nav-container">
-        <ul class="nav-list">
-          <li>
-            <a href="index.html">Accueil</a>
-          </li>
-          <li>
-            <a href="infos.html" class="active" aria-current="page">Infos & Réservation</a>
-          </li>
-        </ul>
+        <div>
+          <a href="index.html">Accueil</a>
+        </div>
+        <div>
+          <a href="infos.html" class="active" aria-current="page"
+            >Infos & Réservation</a
+          >
+        </div>
       </div>
-    </nav>
+    </div>
 
-    <main id="contenu" tabindex="-1">
+    <main id="contenu">
       <!-- En-tête -->
       <header class="hero" role="banner">
         <div class="hero-content container">
           <h1>Infos pratiques & Réservations</h1>
-          <p tabindex="0">Réservez vos places pour le spectacle musical de l'année !</p>
+          <p>Réservez vos places pour le spectacle musical de l'année !</p>
         </div>
       </header>
 
@@ -55,20 +54,20 @@
         <div class="container">
           <h2 id="titre-infos">Informations pratiques pour votre venue</h2>
           <ul class="list-points">
-            <li tabindex="0">
+            <li>
               <strong>Lieu :</strong> Zénith de Paris, 211 Avenue Jean Jaurès,
               75019 Paris
             </li>
-            <li tabindex="0"><strong>Dates :</strong> du 12 avril au 25 mai 2025</li>
-            <li tabindex="0">
+            <li><strong>Dates :</strong> du 12 avril au 25 mai 2025</li>
+            <li>
               <strong>Horaires :</strong> ouverture des portes à 19h00, début du
               spectacle à 20h00
             </li>
-            <li tabindex="0">
+            <li>
               <strong>Accès :</strong> métro Porte de la Villette (ligne 7),
               parking à proximité
             </li>
-            <li tabindex="0">
+            <li>
               <strong>Accessibilité :</strong> Spectacle accessible aux
               personnes à mobilité réduite
             </li>
@@ -95,7 +94,7 @@
             aria-describedby="map-description"
           ></iframe>
           <!-- Ajout d'une description pour la carte -->
-          <p id="map-description" class="sr-only" tabindex="0">Carte montrant l'emplacement du Zénith de Paris au 211 Avenue Jean Jaurès, 75019 Paris</p>
+          <p id="map-description" class="sr-only">Carte montrant l'emplacement du Zénith de Paris au 211 Avenue Jean Jaurès, 75019 Paris</p>
         </div>
       </section>
 
@@ -110,7 +109,7 @@
           <h2 id="titre-reservation">Réservez vos places</h2>
           
           <!-- Ajout d'une note sur les champs obligatoires -->
-          <p class="form-note" tabindex="0">Les champs marqués d'un astérisque (*) sont obligatoires.</p>
+          <p class="form-note">Les champs marqués d'un astérisque (*) sont obligatoires.</p>
 
           <form class="form-reservation">
             <div class="form-group">
@@ -222,12 +221,12 @@
       </section>
     </main>
 
-    <footer class="footer" role="contentinfo">
+    <div class="footer" role="contentinfo">
       <div class="container">
-        <p tabindex="0">
+        <p>
           &copy; 2025 – Molière, le spectacle musical. Tous droits réservés.
         </p>
       </div>
-    </footer>
+    </div>
   </body>
 </html>
