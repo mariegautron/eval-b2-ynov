@@ -18,7 +18,13 @@
     />
   </head>
   <body>
-    <div class="navbar">
+
+    <!-- Lien d'évitement ajouté en premier élément -->
+    <a href="#contenu" class="skip-link">Aller au contenu principal</a>
+    <a href="#form" class="skip-link">Aller au formulaire de réservation</a>
+
+    <!-- Correction sémantique : remplacement div par nav -->
+    <nav class="navbar">
       <div class="nav-container">
         <div>
           <a href="index.html">Accueil</a>
@@ -29,7 +35,7 @@
           >
         </div>
       </div>
-    </div>
+    </nav>
 
     <main id="contenu">
       <!-- En-tête -->
@@ -92,34 +98,37 @@
       </section>
 
       <!-- Formulaire de réservation -->
-      <div class="section-intro">
+      <div class="section-intro" id="form">
         <div class="container">
           <h2>Réservez vos places</h2>
 
-          <div>
+          <!-- Ajout de la balise form avec action (modifiable) -->
+          <form action="#" method="post">
+
+            <!-- Ajout d'id avec association label/for et précision des champs obligatoires-->
             <div class="form-group">
-              <label>Prénom</label>
-              <input type="text" name="prenom" />
+              <label for="prenom">Prénom (Obligatoire)</label>
+              <input type="text" name="prenom" id="prenom" required />
             </div>
 
             <div class="form-group">
-              <label>Nom</label>
-              <input type="text" name="nom" />
+              <label for="nom">Nom (Obligatoire)</label>
+              <input type="text" name="nom" id="nom" required />
             </div>
 
             <div class="form-group">
-              <label>Email</label>
-              <input type="email" name="email" />
+              <label for="email">Email (Obligatoire)</label>
+              <input type="email" name="email" id="email" required placeholder="ex : email@gmail.com"/>
             </div>
 
             <div class="form-group">
-              <label>Nombre de places</label>
-              <input type="number" name="places" />
+              <label for="places">Nombre de places (Obligatoire)</label>
+              <input type="number" name="places" id="places" required />
             </div>
 
             <div class="form-group">
-              <label>Date de la représentation</label>
-              <select name="date">
+              <label for="date">Date de la représentation (Obligatoire)</label>
+              <select name="date" id="date" required>
                 <option>Sélectionnez une date</option>
                 <option>12 avril 2025 - Nantes</option>
                 <option>19 avril 2025 - Dijon</option>
@@ -153,13 +162,15 @@
             </fieldset>
 
             <div class="form-group">
-              <textarea name="message" placeholder="Votre message"></textarea>
+              <label for="message">Message complémentaire (optionnel)</label>
+              <textarea name="message" placeholder="Votre message" id="message"></textarea>
             </div>
 
-            <button class="btn">
-              <i class="fas fa-paper-plane"></i>
+            <!-- Ajout d’un aria-label et type submit pour accessibilité clavier/screen reader -->
+            <button class="btn" type="submit" aria-label="Envoyer la réservation">
+              <i class="fas fa-paper-plane" aria-hidden="true"></i>
             </button>
-          </div>
+          </form>
         </div>
       </div>
     </main>

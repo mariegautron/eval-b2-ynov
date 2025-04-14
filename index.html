@@ -18,7 +18,15 @@
   </head>
 
   <body>
-    <div class="navbar">
+
+    <!-- Lien d'évitement ajouté en premier élément -->
+    <a href="#contenu" class="skip-link">Aller au contenu principal</a>
+    <a href="#presentation" class="skip-link">Aller a la presentation du spéctacle</a>
+    <a href="#points-forts" class="skip-link">Aller au points forts du spéctacle</a>
+    <a href="#distribution" class="skip-link">Aller a la distribution du spéctacle</a>
+
+    <!-- Correction sémantique : remplacement div par nav -->
+    <nav class="navbar" aria-label="Navigation principale" role="banner">
       <div class="nav-container">
         <div>
           <a href="index.html" class="active" aria-current="page">Accueil</a>
@@ -27,7 +35,7 @@
           <a href="infos.html">Infos & Réservation</a>
         </div>
       </div>
-    </div>
+    </nav>
 
     <main id="contenu">
       <!-- Section Héros -->
@@ -42,12 +50,12 @@
           </svg>
         </div>
         <div class="hero-content container">
-          <img src="images/moliere.png" class="hero-image" />
+          <img aria-hidden="true" src="images/moliere.png" class="hero-image" alt="" />
           <div class="hero-text">
-            <h3>Molière, le spectacle musical</h3>
+            <h1>Molière, le spectacle musical</h1> <!-- correction de la hiérarchie des titres -->
             <p>La fabuleuse histoire d'un génie du théâtre français</p>
             <a href="infos.html#billetterie" class="btn">
-              <i class="fas fa-ticket-alt" alt="Icône billet"></i>
+              <i class="fas fa-ticket-alt" aria-hidden="true"></i>
               <span>Cliquez ici</span>
             </a>
           </div>
@@ -56,7 +64,7 @@
 
       <!-- Citation -->
       <div class="bandeau-citation">
-        <h6 id="titre-citation">Citation de Molière</h6>
+        <p id="titre-citation">Citation de Molière</p> <!-- Remplacement des balises <h6> par des balises <p> qui sont reduite par le css -->
         <p>
           "Le devoir de la comédie est de corriger les hommes en les
           divertissant." — Molière
@@ -68,6 +76,7 @@
         class="section-intro"
         role="region"
         aria-labelledby="titre-intro"
+        id="presentation"
       >
         <div class="container grid grid-2">
           <div>
@@ -104,9 +113,10 @@
         class="section-intro alt-bg"
         role="region"
         aria-labelledby="titre-points"
+        id="points-forts"
       >
         <div class="container">
-          <h4 id="titre-points">Les points forts du spectacle</h4>
+          <h3 id="titre-points">Les points forts du spectacle</h3> <!-- correction de la hiérarchie des titres -->
           <p>52 chansons originales mêlant slam, opéra urbain et pop.</p>
           <p>Une scénographie moderne avec décors mobiles et effets visuels.</p>
           <p>
@@ -127,12 +137,12 @@
           <h3 id="titre-chiffres">Quelques chiffres marquants</h3>
           <div class="cards">
             <div class="card">
-              <i class="fas fa-users" alt="Icône utilisateurs"></i>
+              <i class="fas fa-users" aria-hidden="true"></i>
               <h3>30 artistes</h3>
               <p>Chanteurs, danseurs, comédiens et musiciens sur scène.</p>
             </div>
             <div class="card">
-              <i class="fas fa-mask" alt="Icône masque"></i>
+              <i class="fas fa-mask" aria-hidden="true"></i>
               <h3>52 chansons</h3>
               <p>De "Rêver j’en ai l’habitude" à "On se moque".</p>
             </div>
@@ -150,12 +160,13 @@
         class="section-intro"
         role="region"
         aria-labelledby="titre-galerie"
+        role="region"
       >
         <div class="container">
           <h4 id="titre-galerie">Galerie photos du spectacle</h4>
           <div class="gallery">
-            <img src="images/scene1.png" />
-            <img src="images/scene2.jpg" alt="Scène illustrative" />
+            <img aria-hidden="true" src="images/scene1.png" alt="" role="presentation"/>
+            <img aria-hidden="true" src="images/scene2.jpg" alt="" role="presentation" />
           </div>
         </div>
       </section>
@@ -165,6 +176,7 @@
         class="section-intro alt-bg"
         role="region"
         aria-labelledby="titre-distribution"
+        id="distribution"
       >
         <div class="container">
           <h2 id="titre-distribution">La distribution du spectacle</h2>
@@ -207,7 +219,7 @@
 
       <!-- Bandeau storytelling -->
       <div class="bandeau-citation">
-        <h6 id="titre-story">Esprit du spectacle</h6>
+        <p id="titre-story">Esprit du spectacle</p> <!-- Remplacement des balises <h6> par des balises <p> qui sont reduite par le css -->
         <p>Une œuvre pop et engagée, entre hommage classique et slam urbain.</p>
       </div>
 
