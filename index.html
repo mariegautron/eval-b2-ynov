@@ -5,19 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accueil – Molière, le spectacle musical</title>
 
+    <!-- ajout des polices -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
       rel="stylesheet"
     />
 
+    <!--style -->
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      crossorigin="anonymous"
     />
   </head>
 
   <body>
+    <!-- ajout lien d'évittement -->
+    <a href="#contenu" class="skip-link">Aller au contenu principal</a>
+
+    <!-- Barre de navigation -->
     <div class="navbar">
       <div class="nav-container">
         <div>
@@ -29,10 +36,11 @@
       </div>
     </div>
 
+    <!-- Contenu principal de la page -->
     <main id="contenu">
-      <!-- Section Héros -->
-      <div class="hero" role="banner">
-        <div class="svg-decoration">
+      <!-- Section Héros avec image et titre principal -->
+      <header class="hero" role="banner">
+        <div class="svg-decoration" aria-hidden="true">
           <svg viewBox="0 0 1440 320" focusable="false">
             <path
               fill="#ffb347"
@@ -42,101 +50,71 @@
           </svg>
         </div>
         <div class="hero-content container">
-          <img src="images/moliere.png" class="hero-image" />
+          <!-- ajout alternatif descriptif -->
+          <img src="images/moliere.png" class="hero-image" alt="Portrait stylisé de Molière avec fond graphique" />
           <div class="hero-text">
-            <h3>Molière, le spectacle musical</h3>
+            <!-- Titre principal de la page (H1) -->
+            <h1>Molière, le spectacle musical</h1>
             <p>La fabuleuse histoire d'un génie du théâtre français</p>
-            <a href="infos.html#billetterie" class="btn">
-              <i class="fas fa-ticket-alt" alt="Icône billet"></i>
+            <a href="infos.html#billetterie" class="btn" role="button" tabindex="0" aria-label="Accéder à la billetterie">
+              <i class="fas fa-ticket-alt" aria-hidden="true"></i>
               <span>Cliquez ici</span>
             </a>
           </div>
         </div>
-      </div>
+      </header>
 
-      <!-- Citation -->
+      <!-- Bandeau citation correcte -->
       <div class="bandeau-citation">
-        <h6 id="titre-citation">Citation de Molière</h6>
+        <h2 id="titre-citation">Citation de Molière</h2>
         <p>
-          "Le devoir de la comédie est de corriger les hommes en les
-          divertissant." — Molière
+          "Le devoir de la comédie est de corriger les hommes en les divertissant." — Molière
         </p>
       </div>
 
-      <!-- Présentation du spectacle -->
-      <section
-        class="section-intro"
-        role="region"
-        aria-labelledby="titre-intro"
-      >
+      <!--texte et image informative -->
+      <section class="section-intro" role="region" aria-labelledby="titre-intro">
         <div class="container grid grid-2">
           <div>
-            <h2 id="titre-intro">
-              Présentation du spectacle : Molière, rockstar du Grand Siècle
-            </h2>
-            <p>
-              Molière, le spectacle musical – aussi connu comme "Molière,
-              l'opéra urbain" – est une comédie musicale française imaginée par
-              Dove Attia et mise en scène par Ladislas Chollat.
-            </p>
-            <p>
-              Ce spectacle retrace avec fougue et audace le destin de
-              Jean-Baptiste Poquelin, de ses débuts dans l’Illustre Théâtre à sa
-              consécration auprès de Louis XIV.
-            </p>
-            <p>
-              <strong>400 000 spectateurs</strong> en un an,
-              <strong>7 récompenses majeures</strong>,
-              <strong>52 chansons originales</strong>… Un phénomène culturel
-              unique en France.
-            </p>
+            <h2 id="titre-intro">Présentation du spectacle : Molière, rockstar du Grand Siècle</h2>
+            <p>Molière, le spectacle musical – aussi connu comme "Molière, l'opéra urbain" – est une comédie musicale française imaginée par Dove Attia et mise en scène par Ladislas Chollat.</p>
+            <p>Ce spectacle retrace avec fougue et audace le destin de Jean-Baptiste Poquelin, de ses débuts dans l’Illustre Théâtre à sa consécration auprès de Louis XIV.</p>
+            <p><strong>400 000 spectateurs</strong> en un an, <strong>7 récompenses majeures</strong>, <strong>52 chansons originales</strong>… Un phénomène culturel unique en France.</p>
           </div>
-          <img
-            src="images/scene1.png"
-            alt="Image d'une belle scène"
-            class="section-image"
-          />
+          <img src="images/scene1.png" alt="Scène musicale du spectacle avec effets lumineux" class="section-image" />
         </div>
       </section>
 
-      <!-- Points forts -->
-      <div
-        class="section-intro alt-bg"
-        role="region"
-        aria-labelledby="titre-points"
-      >
+      <!-- liste accessible -->
+      <section class="section-intro alt-bg" role="region" aria-labelledby="titre-points">
         <div class="container">
-          <h4 id="titre-points">Les points forts du spectacle</h4>
-          <p>52 chansons originales mêlant slam, opéra urbain et pop.</p>
-          <p>Une scénographie moderne avec décors mobiles et effets visuels.</p>
-          <p>
-            Un hommage vibrant à Molière, dramaturge rebelle et visionnaire.
-          </p>
-          <p>Une troupe de 30 artistes pluridisciplinaires.</p>
-          <p>Des anachronismes créatifs qui dynamitent les codes classiques.</p>
+          <h2 id="titre-points">Les points forts du spectacle</h2>
+          <ul class="list-points">
+            <li>52 chansons originales mêlant slam, opéra urbain et pop.</li>
+            <li>Une scénographie moderne avec décors mobiles et effets visuels.</li>
+            <li>Un hommage vibrant à Molière, dramaturge rebelle et visionnaire.</li>
+            <li>Une troupe de 30 artistes pluridisciplinaires.</li>
+            <li>Des anachronismes créatifs qui dynamitent les codes classiques.</li>
+          </ul>
         </div>
-      </div>
+      </section>
 
-      <!-- Chiffres clés -->
-      <section
-        class="section-chiffres"
-        role="region"
-        aria-labelledby="titre-chiffres"
-      >
+      <!-- clavier activé -->
+      <section class="section-chiffres" role="region" aria-labelledby="titre-chiffres">
         <div class="container">
-          <h3 id="titre-chiffres">Quelques chiffres marquants</h3>
+          <h2 id="titre-chiffres">Quelques chiffres marquants</h2>
           <div class="cards">
-            <div class="card">
-              <i class="fas fa-users" alt="Icône utilisateurs"></i>
+            <div class="card" tabindex="0">
+              <i class="fas fa-users" aria-hidden="true"></i>
               <h3>30 artistes</h3>
               <p>Chanteurs, danseurs, comédiens et musiciens sur scène.</p>
             </div>
-            <div class="card">
-              <i class="fas fa-mask" alt="Icône masque"></i>
+            <div class="card" tabindex="0">
+              <i class="fas fa-mask" aria-hidden="true"></i>
               <h3>52 chansons</h3>
               <p>De "Rêver j’en ai l’habitude" à "On se moque".</p>
             </div>
-            <div class="card">
+            <div class="card" tabindex="0">
               <i class="fas fa-award" aria-hidden="true"></i>
               <h3>7 trophées</h3>
               <p>Dont meilleure comédie musicale et révélation artistique.</p>
@@ -145,59 +123,39 @@
         </div>
       </section>
 
-      <!-- Galerie -->
-      <section
-        class="section-intro"
-        role="region"
-        aria-labelledby="titre-galerie"
-      >
+      <!--textes alternatifs informatifs -->
+      <section class="section-intro" role="region" aria-labelledby="titre-galerie">
         <div class="container">
-          <h4 id="titre-galerie">Galerie photos du spectacle</h4>
+          <h2 id="titre-galerie">Galerie photos du spectacle</h2>
           <div class="gallery">
-            <img src="images/scene1.png" />
-            <img src="images/scene2.jpg" alt="Scène illustrative" />
+            <img src="images/scene1.png" alt="Scène du spectacle avec décors baroques" />
+            <img src="images/scene2.jpg" alt="Artistes sur scène dans une ambiance urbaine" />
           </div>
         </div>
       </section>
 
-      <!-- Distribution -->
-      <section
-        class="section-intro alt-bg"
-        role="region"
-        aria-labelledby="titre-distribution"
-      >
+      <!-- fiche accessible -->
+      <section class="section-intro alt-bg" role="region" aria-labelledby="titre-distribution">
         <div class="container">
           <h2 id="titre-distribution">La distribution du spectacle</h2>
           <div class="cards">
             <div class="card">
-              <img
-                src="images/petitom.jpg"
-                alt="Portrait de PETiTOM, interprète de Molière"
-              />
+              <img src="images/petitom.jpg" alt="Portrait de PETiTOM, interprète de Molière" />
               <h3>PETiTOM</h3>
               <p>Molière</p>
             </div>
             <div class="card">
-              <img
-                src="images/loujean.png"
-                alt="Portrait de Lou Jean, interprète d'Armande Béjart"
-              />
+              <img src="images/loujean.png" alt="Portrait de Lou Jean, interprète d'Armande Béjart" />
               <h3>Lou Jean</h3>
               <p>Armande Béjart</p>
             </div>
             <div class="card">
-              <img
-                src="images/shaina.jpeg"
-                alt="Portrait de Shaïna Pronzola, interprète de Marquise"
-              />
+              <img src="images/shaina.jpeg" alt="Portrait de Shaïna Pronzola, interprète de Marquise" />
               <h3>Shaïna Pronzola</h3>
               <p>Marquise</p>
             </div>
             <div class="card">
-              <img
-                src="images/abi.jpg"
-                alt="Portrait d’Abi Bernadoth, interprète du Prince de Conti"
-              />
+              <img src="images/abi.jpg" alt="Portrait d’Abi Bernadoth, interprète du Prince de Conti" />
               <h3>Abi Bernadoth</h3>
               <p>Prince de Conti</p>
             </div>
@@ -205,20 +163,15 @@
         </div>
       </section>
 
-      <!-- Bandeau storytelling -->
       <div class="bandeau-citation">
-        <h6 id="titre-story">Esprit du spectacle</h6>
+        <h2 id="titre-story">Esprit du spectacle</h2>
         <p>Une œuvre pop et engagée, entre hommage classique et slam urbain.</p>
       </div>
 
-      <!-- Réseaux sociaux -->
-      <section
-        class="section-reseaux"
-        role="region"
-        aria-labelledby="titre-reseaux"
-      >
+      <!-- Réseaux sociaux accessibles -->
+      <section class="section-reseaux" role="region" aria-labelledby="titre-reseaux">
         <div class="container">
-          <h3 id="titre-reseaux">Suivez-nous sur les réseaux sociaux</h3>
+          <h2 id="titre-reseaux">Suivez-nous sur les réseaux sociaux</h2>
           <div class="reseaux-links">
             <a
               href="https://www.youtube.com/channel/UCc5t5wb25TAO4bCA1d8yMrQ"
@@ -226,7 +179,7 @@
               rel="noopener noreferrer"
               aria-label="Chaîne YouTube officielle du spectacle Molière"
             >
-              <i class="fab fa-youtube" alt="Icône YouTube"></i> YouTube
+              <i class="fab fa-youtube" aria-hidden="true"></i> YouTube
             </a>
             <a
               href="https://www.facebook.com/moliereloperaurbain/?locale=fr_FR"
@@ -234,7 +187,7 @@
               rel="noopener noreferrer"
               aria-label="Page Facebook officielle du spectacle Molière"
             >
-              <i class="fab fa-facebook" alt="Icône Facebook"></i> Facebook
+              <i class="fab fa-facebook" aria-hidden="true"></i> Facebook
             </a>
             <a
               href="https://www.instagram.com/molierelespectaclemusical/"
@@ -242,19 +195,16 @@
               rel="noopener noreferrer"
               aria-label="Profil Instagram du spectacle Molière"
             >
-              <i class="fab fa-instagram" alt="Icône Instagram"></i> Instagram
+              <i class="fab fa-instagram" aria-hidden="true"></i> Instagram
             </a>
           </div>
         </div>
       </section>
     </main>
-
-    <div class="footer">
+    <footer class="footer">
       <div class="container">
-        <p>
-          &copy; 2025 – Molière, le spectacle musical. Tous droits réservés.
-        </p>
+        <p>&copy; 2025 – Molière, le spectacle musical. Tous droits réservés.</p>
       </div>
-    </div>
+    </footer>
   </body>
 </html>
