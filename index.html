@@ -18,20 +18,26 @@
   </head>
 
   <body>
-    <div class="navbar">
-      <div class="nav-container">
+    <!-- MODIF: Ajout du lien d'évitement pour l'accessibilité -->
+    <a href="#contenu" class="skip-link">Aller au contenu principal</a>
+
+    <!-- MODIF: Remplacement de div par header pour la navigation -->
+    <header class="navbar">
+      <!-- MODIF: Remplacement de div par nav pour la navigation -->
+      <nav class="nav-container">
         <div>
           <a href="index.html" class="active" aria-current="page">Accueil</a>
         </div>
         <div>
           <a href="infos.html">Infos & Réservation</a>
         </div>
-      </div>
-    </div>
+      </nav>
+    </header>
 
+   
     <main id="contenu">
-      <!-- Section Héros -->
-      <div class="hero" role="banner">
+      <!-- MODIF: Remplacement de div par section pour la section héros -->
+      <section class="hero" role="banner">
         <div class="svg-decoration">
           <svg viewBox="0 0 1440 320" focusable="false">
             <path
@@ -42,28 +48,33 @@
           </svg>
         </div>
         <div class="hero-content container">
-          <img src="images/moliere.png" class="hero-image" />
+          <!-- MODIF: Ajout de l'attribut alt manquant -->
+          <img src="images/moliere.png" class="hero-image" alt="Portrait de Molière" />
           <div class="hero-text">
-            <h3>Molière, le spectacle musical</h3>
+            <!-- MODIF: Changement de h3 en h1 pour le titre principal -->
+            <h1>Molière, le spectacle musical</h1>
             <p>La fabuleuse histoire d'un génie du théâtre français</p>
             <a href="infos.html#billetterie" class="btn">
-              <i class="fas fa-ticket-alt" alt="Icône billet"></i>
+              <!-- MODIF: Remplacement de alt par aria-hidden pour les icônes -->
+              <i class="fas fa-ticket-alt" aria-hidden="true"></i>
               <span>Cliquez ici</span>
             </a>
           </div>
         </div>
-      </div>
+      </section>
 
-      <!-- Citation -->
-      <div class="bandeau-citation">
-        <h6 id="titre-citation">Citation de Molière</h6>
-        <p>
+      <!-- MODIF: Remplacement de div par aside pour la citation -->
+      <aside class="bandeau-citation">
+        <!-- MODIF: Changement de h6 en h2 pour la hiérarchie des titres -->
+        <h2 id="titre-citation">Citation de Molière</h2>
+        <!-- MODIF: Remplacement de p par blockquote pour la citation -->
+        <blockquote>
           "Le devoir de la comédie est de corriger les hommes en les
           divertissant." — Molière
-        </p>
-      </div>
+        </blockquote>
+      </aside>
 
-      <!-- Présentation du spectacle -->
+    
       <section
         class="section-intro"
         role="region"
@@ -81,7 +92,7 @@
             </p>
             <p>
               Ce spectacle retrace avec fougue et audace le destin de
-              Jean-Baptiste Poquelin, de ses débuts dans l’Illustre Théâtre à sa
+              Jean-Baptiste Poquelin, de ses débuts dans l'Illustre Théâtre à sa
               consécration auprès de Louis XIV.
             </p>
             <p>
@@ -106,7 +117,8 @@
         aria-labelledby="titre-points"
       >
         <div class="container">
-          <h4 id="titre-points">Les points forts du spectacle</h4>
+          <!-- MODIF: Changement de h4 en h3 pour respecter la hiérarchie -->
+          <h3 id="titre-points">Les points forts du spectacle</h3>
           <p>52 chansons originales mêlant slam, opéra urbain et pop.</p>
           <p>Une scénographie moderne avec décors mobiles et effets visuels.</p>
           <p>
@@ -117,7 +129,6 @@
         </div>
       </div>
 
-      <!-- Chiffres clés -->
       <section
         class="section-chiffres"
         role="region"
@@ -127,14 +138,16 @@
           <h3 id="titre-chiffres">Quelques chiffres marquants</h3>
           <div class="cards">
             <div class="card">
-              <i class="fas fa-users" alt="Icône utilisateurs"></i>
+              <!-- MODIF: Remplacement de alt par aria-hidden pour les icônes -->
+              <i class="fas fa-users" aria-hidden="true"></i>
               <h3>30 artistes</h3>
               <p>Chanteurs, danseurs, comédiens et musiciens sur scène.</p>
             </div>
             <div class="card">
-              <i class="fas fa-mask" alt="Icône masque"></i>
+              <!-- MODIF: Remplacement de alt par aria-hidden pour les icônes -->
+              <i class="fas fa-mask" aria-hidden="true"></i>
               <h3>52 chansons</h3>
-              <p>De "Rêver j’en ai l’habitude" à "On se moque".</p>
+              <p>De "Rêver j'en ai l'habitude" à "On se moque".</p>
             </div>
             <div class="card">
               <i class="fas fa-award" aria-hidden="true"></i>
@@ -152,15 +165,15 @@
         aria-labelledby="titre-galerie"
       >
         <div class="container">
-          <h4 id="titre-galerie">Galerie photos du spectacle</h4>
+          <!-- MODIF: Changement de h4 en h3 pour respecter la hiérarchie -->
+          <h3 id="titre-galerie">Galerie photos du spectacle</h3>
           <div class="gallery">
-            <img src="images/scene1.png" />
+            <img src="images/scene1.png" alt="Scène du spectacle Molière" />
             <img src="images/scene2.jpg" alt="Scène illustrative" />
           </div>
         </div>
       </section>
 
-      <!-- Distribution -->
       <section
         class="section-intro alt-bg"
         role="region"
@@ -196,7 +209,7 @@
             <div class="card">
               <img
                 src="images/abi.jpg"
-                alt="Portrait d’Abi Bernadoth, interprète du Prince de Conti"
+                alt="Portrait d'Abi Bernadoth, interprète du Prince de Conti"
               />
               <h3>Abi Bernadoth</h3>
               <p>Prince de Conti</p>
@@ -205,20 +218,20 @@
         </div>
       </section>
 
-      <!-- Bandeau storytelling -->
       <div class="bandeau-citation">
-        <h6 id="titre-story">Esprit du spectacle</h6>
+        <!-- MODIF: Changement de h6 en h2 pour la hiérarchie des titres -->
+        <h2 id="titre-story">Esprit du spectacle</h2>
         <p>Une œuvre pop et engagée, entre hommage classique et slam urbain.</p>
       </div>
 
-      <!-- Réseaux sociaux -->
       <section
         class="section-reseaux"
         role="region"
         aria-labelledby="titre-reseaux"
       >
         <div class="container">
-          <h3 id="titre-reseaux">Suivez-nous sur les réseaux sociaux</h3>
+          <!-- MODIF: Changement de h3 en h2 pour la hiérarchie des titres -->
+          <h2 id="titre-reseaux">Suivez-nous sur les réseaux sociaux</h2>
           <div class="reseaux-links">
             <a
               href="https://www.youtube.com/channel/UCc5t5wb25TAO4bCA1d8yMrQ"
@@ -226,7 +239,8 @@
               rel="noopener noreferrer"
               aria-label="Chaîne YouTube officielle du spectacle Molière"
             >
-              <i class="fab fa-youtube" alt="Icône YouTube"></i> YouTube
+              <!-- MODIF: Remplacement de alt par aria-hidden pour les icônes -->
+              <i class="fab fa-youtube" aria-hidden="true"></i> YouTube
             </a>
             <a
               href="https://www.facebook.com/moliereloperaurbain/?locale=fr_FR"
@@ -234,7 +248,8 @@
               rel="noopener noreferrer"
               aria-label="Page Facebook officielle du spectacle Molière"
             >
-              <i class="fab fa-facebook" alt="Icône Facebook"></i> Facebook
+              <!-- MODIF: Remplacement de alt par aria-hidden pour les icônes -->
+              <i class="fab fa-facebook" aria-hidden="true"></i> Facebook
             </a>
             <a
               href="https://www.instagram.com/molierelespectaclemusical/"
@@ -242,19 +257,19 @@
               rel="noopener noreferrer"
               aria-label="Profil Instagram du spectacle Molière"
             >
-              <i class="fab fa-instagram" alt="Icône Instagram"></i> Instagram
+              <!-- MODIF: Remplacement de alt par aria-hidden pour les icônes -->
+              <i class="fab fa-instagram" aria-hidden="true"></i> Instagram
             </a>
           </div>
         </div>
       </section>
     </main>
 
-    <div class="footer">
+    <!-- MODIF: Remplacement de div par footer pour le pied de page -->
+    <footer>
       <div class="container">
-        <p>
-          &copy; 2025 – Molière, le spectacle musical. Tous droits réservés.
-        </p>
+        <p>&copy; 2025 - Molière, le spectacle musical. Tous droits réservés.</p>
       </div>
-    </div>
+    </footer>
   </body>
 </html>

@@ -1,7 +1,7 @@
 :root {
   --color-bg: #0e0e0e;
-  --color-text: #bcbcbc;
-  --color-secondary-text: #8a8a8a;
+  --color-text: #e0e0e0;
+  --color-secondary-text: #a0a0a0;
   --color-accent: #c17dff;
   --color-accent-light: #d6a3ff;
   --color-card-bg: #1a1a1a;
@@ -36,6 +36,36 @@ body {
   font-size: 1.125rem;
 }
 
+/* Focus visible pour tous les éléments interactifs */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-focus-outline);
+  outline-offset: 4px;
+  background-color: var(--color-focus-bg);
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: 0;
+  background: var(--color-accent);
+  color: #000;
+  padding: 1rem;
+  text-decoration: none;
+  transition: top 0.3s ease;
+  z-index: 1001;
+  font-weight: bold;
+}
+
+.skip-link:focus-visible {
+  top: 0;
+  outline: none;
+}
+
 /* Typo titres */
 h1,
 h2,
@@ -63,12 +93,6 @@ a {
 
 a:focus,
 a:hover {
-  background-color: var(--color-focus-bg);
-}
-
-a:focus-visible {
-  outline: 3px solid var(--color-focus-outline);
-  outline-offset: 4px;
   background-color: var(--color-focus-bg);
 }
 
@@ -107,6 +131,7 @@ img {
   font-size: 1.125rem;
   font-weight: 600;
   position: relative;
+  color: var(--color-text);
 }
 
 .navbar a::after {
@@ -180,28 +205,35 @@ img {
   align-items: center;
   gap: 0.75rem;
   background-color: var(--color-accent);
-  color: var(--color-bandeau-text);
+  color: #000;
   padding: 0.75rem 1.5rem;
   border-radius: 50px;
   font-weight: bold;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
   font-family: "Inter", sans-serif;
   margin: 20px;
+  border: 2px solid transparent;
+  position: relative;
 }
 
 .btn:hover,
 .btn:focus {
   background-color: var(--color-accent-light);
-  color: var(--color-bandeau-text);
-  outline: none;
-  outline-offset: 0;
+  transform: scale(1.05);
+}
+
+.btn:focus-visible {
+  outline: 3px solid #000;
+  outline-offset: 2px;
+  border-color: #000;
+  box-shadow: 0 0 0 4px var(--color-accent-light);
 }
 
 /* BANDEAUX */
 .bandeau-citation,
 .bandeau-story {
   background-color: var(--color-bandeau-bg);
-  color: var(--color-bandeau-text);
+  color: #000;
   text-align: center;
   padding: 2.5rem;
   font-weight: bold;
@@ -384,26 +416,25 @@ img {
 }
 
 /* FORMULAIRE */
-
 .form-reservation {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.form-group,
-fieldset.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+.form-group {
+  margin-bottom: 1.5rem;
 }
 
-.form-group label,
-fieldset.form-group legend {
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
   font-weight: 600;
-  font-family: "Inter", sans-serif;
-  margin-bottom: 0.25rem;
+}
+
+.form-group .required {
+  color: var(--color-accent);
+  font-size: 0.9em;
+  font-weight: normal;
 }
 
 input[type="text"],
@@ -413,66 +444,51 @@ select,
 textarea {
   width: 100%;
   padding: 0.75rem;
-  border-radius: 0.5rem;
-  border: 1px solid #444;
-  background-color: var(--color-card-bg);
+  border: 2px solid var(--color-card-bg);
+  border-radius: 4px;
+  background-color: var(--color-bg);
   color: var(--color-text);
-  font-family: "Inter", sans-serif;
   font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus-visible,
+input[type="email"]:focus-visible,
+input[type="number"]:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  border-color: var(--color-accent);
 }
 
 fieldset.form-group {
-  border: none;
-  padding: 0;
-  margin: 0;
+  border: 2px solid var(--color-card-bg);
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+fieldset.form-group legend {
+  padding: 0 0.5rem;
+  font-weight: 600;
 }
 
 fieldset.form-group div {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 fieldset.form-group input[type="checkbox"] {
-  width: auto;
-  height: auto;
+  margin-right: 0.5rem;
 }
 
 textarea {
+  min-height: 100px;
   resize: vertical;
 }
 
-.section-intro input::placeholder,
-.section-intro textarea::placeholder {
-  color: var(--color-secondary-text);
-}
-
-.section-intro input:focus,
-.section-intro select:focus,
-.section-intro textarea:focus {
-  outline: none;
-  background-color: var(--color-card-bg);
-}
-
-.section-intro .btn {
-  display: inline-flex;
-  align-items: center;
+/* Bouton du formulaire */
+.form-reservation .btn {
+  width: 100%;
   justify-content: center;
-  background-color: var(--color-accent);
-  color: var(--color-bandeau-text);
-  padding: 0.75rem;
-  border-radius: 50%;
-  width: 3rem;
-  height: 3rem;
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.section-intro .btn:hover,
-.section-intro .btn:focus {
-  background-color: var(--color-accent);
-  outline: none;
+  margin-top: 2rem;
 }
 
 /* Responsive */
