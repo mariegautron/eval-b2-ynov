@@ -153,3 +153,4 @@ Au-delà de cette date, la merge request ne sera plus prise en compte.
 ## 📩 Questions ?
 
 En cas de doute, vous pouvez poser vos questions directement sur Discord.
+

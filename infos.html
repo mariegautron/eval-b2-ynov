@@ -18,7 +18,7 @@
     />
   </head>
   <body>
-    <div class="navbar">
+    <nav class="navbar" aria-label="Navigation principale">
       <div class="nav-container">
         <div>
           <a href="index.html">Accueil</a>
@@ -29,7 +29,7 @@
           >
         </div>
       </div>
-    </div>
+    </nav>
 
     <main id="contenu">
       <!-- En-tête -->
@@ -46,7 +46,7 @@
         role="region"
         aria-labelledby="titre-infos"
       >
-        <div class="container">
+        <div class="container" tabindex="0">
           <h2 id="titre-infos">Informations pratiques pour votre venue</h2>
           <ul class="list-points">
             <li>
@@ -92,84 +92,129 @@
       </section>
 
       <!-- Formulaire de réservation -->
-      <div class="section-intro">
+      <section class="section-intro">
         <div class="container">
           <h2>Réservez vos places</h2>
 
-          <div>
+          <form>
             <div class="form-group">
-              <label>Prénom</label>
-              <input type="text" name="prenom" />
+              <label for="prenom">Prénom *</label>
+              <input type="text" id="prenom" name="prenom" required aria-required="true" aria-describedby="prenom-help" />
+              <span id="prenom-help" class="help-text">Veuillez entrer votre prénom (obligatoire)</span>
             </div>
 
             <div class="form-group">
-              <label>Nom</label>
-              <input type="text" name="nom" />
+              <label for="nom">Nom *</label>
+              <input type="text" id="nom" name="nom" required aria-required="true" aria-describedby="nom-help" />
+              <span id="nom-help" class="help-text">Veuillez entrer votre nom (obligatoire)</span>
             </div>
 
             <div class="form-group">
-              <label>Email</label>
-              <input type="email" name="email" />
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required aria-required="true" aria-describedby="email-help" />
+              <span id="email-help" class="help-text">Veuillez entrer une adresse email valide (obligatoire)</span>
             </div>
 
             <div class="form-group">
-              <label>Nombre de places</label>
-              <input type="number" name="places" />
+              <label for="places">Nombre de places *</label>
+              <input type="number" id="places" name="places" required aria-required="true" min="1" max="10" aria-describedby="places-help" />
+              <span id="places-help" class="help-text">Veuillez indiquer le nombre de places souhaitées (maximum 10)</span>
             </div>
 
             <div class="form-group">
-              <label>Date de la représentation</label>
-              <select name="date">
-                <option>Sélectionnez une date</option>
-                <option>12 avril 2025 - Nantes</option>
-                <option>19 avril 2025 - Dijon</option>
-                <option>26 avril 2025 - Floirac</option>
-                <option>17 mai 2025 - Toulouse</option>
-                <option>23-25 mai 2025 - Lille</option>
-                <option>21-22 juin 2025 - Caen</option>
+              <label for="date">Date de la représentation *</label>
+              <select id="date" name="date" required aria-required="true" aria-describedby="date-help">
+                <option value="" disabled selected>Sélectionnez une date</option>
+                <option value="2025-04-12">12 avril 2025 - Nantes</option>
+                <option value="2025-04-19">19 avril 2025 - Dijon</option>
+                <option value="2025-04-26">26 avril 2025 - Floirac</option>
+                <option value="2025-05-17">17 mai 2025 - Toulouse</option>
+                <option value="2025-05-23">23-25 mai 2025 - Lille</option>
+                <option value="2025-06-21">21-22 juin 2025 - Caen</option>
               </select>
+              <span id="date-help" class="help-text">Veuillez sélectionner une date de représentation (obligatoire)</span>
             </div>
 
             <fieldset class="form-group">
               <legend>Besoin d'un aménagement particulier ?</legend>
-              <div>
-                <input
-                  type="checkbox"
-                  id="pmr"
-                  name="accessibilite[]"
-                  value="pmr"
-                />
-                <label for="pmr">Accès PMR (Personne à Mobilité Réduite)</label>
-              </div>
-              <div>
-                <input
-                  type="checkbox"
-                  id="malentendant"
-                  name="accessibilite[]"
-                  value="malentendant"
-                />
-                <label for="malentendant">Aide pour malentendants</label>
+              <div class="checkbox-group">
+                <div class="checkbox-item">
+                  <input
+                    type="checkbox"
+                    id="pmr"
+                    name="accessibilite[]"
+                    value="pmr"
+                    aria-describedby="pmr-help"
+                    tabindex="0"
+                  />
+                  <label for="pmr">Accès PMR (Personne à Mobilité Réduite)</label>
+                  <span id="pmr-help" class="help-text">Nous adapterons votre réservation pour un accès PMR</span>
+                </div>
+                <div class="checkbox-item">
+                  <input
+                    type="checkbox"
+                    id="malentendant"
+                    name="accessibilite[]"
+                    value="malentendant"
+                    aria-describedby="malentendant-help"
+                    tabindex="0"
+                  />
+                  <label for="malentendant">Aide pour malentendants</label>
+                  <span id="malentendant-help" class="help-text">Nous adapterons votre réservation pour un accès malentendant</span>
+                </div>
               </div>
             </fieldset>
 
             <div class="form-group">
-              <textarea name="message" placeholder="Votre message"></textarea>
+              <label for="message">Message complémentaire</label>
+              <textarea id="message" name="message" aria-describedby="message-help"></textarea>
+              <span id="message-help" class="help-text">Vous pouvez ajouter ici toute information complémentaire concernant votre réservation</span>
             </div>
 
-            <button class="btn">
-              <i class="fas fa-paper-plane"></i>
+            <button type="submit" class="btn" aria-label="Envoyer la réservation">
+              <i class="fas fa-paper-plane" aria-hidden="true"></i>
+              <span>Envoyer la réservation</span>
             </button>
-          </div>
+          </form>
         </div>
-      </div>
+      </section>
     </main>
 
-    <div class="footer">
+    <footer class="footer">
       <div class="container">
         <p>
           &copy; 2025 – Molière, le spectacle musical. Tous droits réservés.
         </p>
+        <nav class="reseaux-links" aria-label="Réseaux sociaux">
+          <a
+            href="https://www.youtube.com/channel/UCc5t5wb25TAO4bCA1d8yMrQ"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Chaîne YouTube officielle du spectacle Molière (nouvelle fenêtre)"
+          >
+            <i class="fab fa-youtube" aria-hidden="true"></i>
+            <span>YouTube</span>
+          </a>
+          <a
+            href="https://www.facebook.com/moliereloperaurbain/?locale=fr_FR"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Page Facebook officielle du spectacle Molière (nouvelle fenêtre)"
+          >
+            <i class="fab fa-facebook" aria-hidden="true"></i>
+            <span>Facebook</span>
+          </a>
+          <a
+            href="https://www.instagram.com/molierelespectaclemusical/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Profil Instagram du spectacle Molière (nouvelle fenêtre)"
+          >
+            <i class="fab fa-instagram" aria-hidden="true"></i>
+            <span>Instagram</span>
+          </a>
+        </nav>
       </div>
-    </div>
+    </footer>
   </body>
 </html>
